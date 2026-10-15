@@ -317,6 +317,7 @@ tst_finder_modes_autogen/timestamp: \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QDir \
 	/usr/include/qt6/QtCore/QEvent \
+	/usr/include/qt6/QtCore/QFile \
 	/usr/include/qt6/QtCore/QFileInfo \
 	/usr/include/qt6/QtCore/QList \
 	/usr/include/qt6/QtCore/QMargins \
@@ -325,6 +326,7 @@ tst_finder_modes_autogen/timestamp: \
 	/usr/include/qt6/QtCore/QRect \
 	/usr/include/qt6/QtCore/QSize \
 	/usr/include/qt6/QtCore/QSizeF \
+	/usr/include/qt6/QtCore/QTemporaryDir \
 	/usr/include/qt6/QtCore/q17memory.h \
 	/usr/include/qt6/QtCore/q20bit.h \
 	/usr/include/qt6/QtCore/q20functional.h \
@@ -415,6 +417,7 @@ tst_finder_modes_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qmetaobject.h \
 	/usr/include/qt6/QtCore/qmetatype.h \
 	/usr/include/qt6/QtCore/qminmax.h \
+	/usr/include/qt6/QtCore/qmutex.h \
 	/usr/include/qt6/QtCore/qnamespace.h \
 	/usr/include/qt6/QtCore/qnativeinterface.h \
 	/usr/include/qt6/QtCore/qnumeric.h \
@@ -473,6 +476,7 @@ tst_finder_modes_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qtnoop.h \
 	/usr/include/qt6/QtCore/qtpreprocessorsupport.h \
 	/usr/include/qt6/QtCore/qtresource.h \
+	/usr/include/qt6/QtCore/qtsan_impl.h \
 	/usr/include/qt6/QtCore/qttranslation.h \
 	/usr/include/qt6/QtCore/qttypetraits.h \
 	/usr/include/qt6/QtCore/qtversion.h \
@@ -534,9 +538,11 @@ tst_finder_modes_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qvectornd.h \
 	/usr/include/qt6/QtGui/qwindow.h \
 	/usr/include/qt6/QtGui/qwindowdefs.h \
+	/usr/include/qt6/QtTest/QSignalSpy \
 	/usr/include/qt6/QtTest/QTest \
 	/usr/include/qt6/QtTest/qbenchmark.h \
 	/usr/include/qt6/QtTest/qbenchmarkmetric.h \
+	/usr/include/qt6/QtTest/qsignalspy.h \
 	/usr/include/qt6/QtTest/qtest.h \
 	/usr/include/qt6/QtTest/qtest_gui.h \
 	/usr/include/qt6/QtTest/qtest_widgets.h \
@@ -544,6 +550,7 @@ tst_finder_modes_autogen/timestamp: \
 	/usr/include/qt6/QtTest/qtestcase.h \
 	/usr/include/qt6/QtTest/qtestdata.h \
 	/usr/include/qt6/QtTest/qtestevent.h \
+	/usr/include/qt6/QtTest/qtesteventloop.h \
 	/usr/include/qt6/QtTest/qtestkeyboard.h \
 	/usr/include/qt6/QtTest/qtestmouse.h \
 	/usr/include/qt6/QtTest/qtestspontaneevent.h \

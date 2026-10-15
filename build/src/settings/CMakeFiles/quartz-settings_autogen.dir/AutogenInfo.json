@@ -12,6 +12,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsconfigcontroller.h",
+			"MU",
+			"EWIEGA46WW/moc_settingsconfigcontroller.cpp",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.h",
 			"MU",
 			"EWIEGA46WW/moc_settingsmodel.cpp",
@@ -24,6 +30,7 @@
 	"MOC_DEFINITIONS" : 
 	[
 		"QT_CORE_LIB",
+		"QT_DBUS_LIB",
 		"QT_GUI_LIB",
 		"QT_NETWORK_LIB",
 		"QT_NO_DEBUG",
@@ -55,6 +62,7 @@
 		"/usr/include/qt6/QtQmlIntegration",
 		"/usr/include/qt6/QtNetwork",
 		"/usr/include/qt6/QtOpenGL",
+		"/usr/include/qt6/QtDBus",
 		"/usr/include",
 		"/usr/include/c++/16",
 		"/usr/include/c++/16/x86_64-pc-linux-gnu",
@@ -100,6 +108,11 @@
 	"SOURCES" : 
 	[
 		[ "/home/pedro/Proyectos/WhiteQuartz/src/settings/main.cpp", "MU", null ],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsconfigcontroller.cpp",
+			"MU",
+			null
+		],
 		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.cpp",
 			"MU",

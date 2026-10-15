@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "settingsmodel.h"
+#include "settingsconfigcontroller.h"
 #include "../style/quartzstyle.h"
 
 int main(int argc, char *argv[])
@@ -15,7 +16,9 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     auto *navModel = new Quartz::Settings::SettingsNavigationModel(&app);
+    auto *configCtrl = new Quartz::Settings::SettingsConfigController(&app);
     engine.rootContext()->setContextProperty(QStringLiteral("settingsModel"), navModel);
+    engine.rootContext()->setContextProperty(QStringLiteral("settingsConfigCtrl"), configCtrl);
 
     // Cargar interfaz principal de Ajustes
     const QUrl url(QStringLiteral("qrc:/qml/SettingsMainWindow.qml"));

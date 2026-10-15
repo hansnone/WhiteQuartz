@@ -104,8 +104,9 @@ pub struct SpotlightServer;
 
 #[interface(name = "org.quartz.Spotlight")]
 impl SpotlightServer {
-    async fn toggle(&self) -> zbus::fdo::Result<()> {
+    async fn toggle(&self, #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>) -> zbus::fdo::Result<()> {
         info!("Alternando visibilidad de la barra flotante de Spotlight (680px)");
+        let _ = Self::toggled(&ctxt).await;
         Ok(())
     }
 
@@ -117,6 +118,9 @@ impl SpotlightServer {
             .collect();
         Ok(serializable)
     }
+
+    #[zbus(signal)]
+    async fn toggled(ctxt: &zbus::SignalContext<'_>) -> zbus::Result<()>;
 }
 
 #[tokio::main]

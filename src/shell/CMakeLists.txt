@@ -4,6 +4,10 @@ add_executable(quartz-shell
     menubar/MenuBarController.h
     dock/DockController.cpp
     dock/DockController.h
+    spotlight/SpotlightController.cpp
+    spotlight/SpotlightController.h
+    quicklook/QuickLookController.cpp
+    quicklook/QuickLookController.h
     resources.qrc
 )
 
@@ -23,8 +27,16 @@ target_link_libraries(quartz-shell PRIVATE
     Qt6::Widgets
     Qt6::Quick
     Qt6::Qml
+    Qt6::DBus
     quartz-style
 )
+
+find_package(LayerShellQt QUIET)
+if(LayerShellQt_FOUND)
+    message(STATUS "LayerShellQt detectado: habilitando zonas exclusivas Wayland para MenuBar y Dock")
+    target_link_libraries(quartz-shell PRIVATE LayerShellQt::Interface)
+    target_compile_definitions(quartz-shell PRIVATE HAVE_LAYERSHELLQT)
+endif()
 
 install(TARGETS quartz-shell
     RUNTIME DESTINATION bin

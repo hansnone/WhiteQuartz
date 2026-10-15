@@ -53,7 +53,8 @@ template <> constexpr inline auto Quartz::Finder::FinderColumnView::qt_create_me
         "onListItemClicked",
         "QTreeWidgetItem*",
         "column",
-        "onIconItemClicked"
+        "onIconItemClicked",
+        "onGalleryItemClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -79,6 +80,10 @@ template <> constexpr inline auto Quartz::Finder::FinderColumnView::qt_create_me
         }}),
         // Slot 'onIconItemClicked'
         QtMocHelpers::SlotData<void(QListWidgetItem *)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 9, 10 },
+        }}),
+        // Slot 'onGalleryItemClicked'
+        QtMocHelpers::SlotData<void(QListWidgetItem *)>(15, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { 0x80000000 | 9, 10 },
         }}),
     };
@@ -110,6 +115,7 @@ void Quartz::Finder::FinderColumnView::qt_static_metacall(QObject *_o, QMetaObje
         case 3: _t->onColumnItemClicked((*reinterpret_cast<std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
         case 4: _t->onListItemClicked((*reinterpret_cast<std::add_pointer_t<QTreeWidgetItem*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
         case 5: _t->onIconItemClicked((*reinterpret_cast<std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
+        case 6: _t->onGalleryItemClicked((*reinterpret_cast<std::add_pointer_t<QListWidgetItem*>>(_a[1]))); break;
         default: ;
         }
     }
@@ -142,14 +148,14 @@ int Quartz::Finder::FinderColumnView::qt_metacall(QMetaObject::Call _c, int _id,
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

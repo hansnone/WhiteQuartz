@@ -160,13 +160,14 @@ ApplicationWindow {
                 // Tarjeta Inset Grouped
                 Rectangle {
                     Layout.fillWidth: true
-                    Layout.preferredHeight: 120
+                    Layout.preferredHeight: contentCol.implicitHeight + 32
                     radius: 10
                     color: "#FFFFFF"
                     border.color: "#E5E5EA"
                     border.width: 1
 
                     ColumnLayout {
+                        id: contentCol
                         anchors.fill: parent
                         anchors.margins: 16
                         spacing: 12
@@ -180,7 +181,13 @@ ApplicationWindow {
                                 color: "#1C1C1E"
                             }
                             Switch {
-                                checked: false
+                                id: stageManagerSwitch
+                                checked: typeof settingsConfigCtrl !== "undefined" ? settingsConfigCtrl.stageManagerEnabled : false
+                                onToggled: {
+                                    if (typeof settingsConfigCtrl !== "undefined") {
+                                        settingsConfigCtrl.stageManagerEnabled = checked
+                                    }
+                                }
                             }
                         }
 
@@ -199,7 +206,63 @@ ApplicationWindow {
                                 color: "#1C1C1E"
                             }
                             Switch {
-                                checked: true
+                                id: appearanceSwitch
+                                checked: typeof settingsConfigCtrl !== "undefined" ? (settingsConfigCtrl.appearanceMode === "Auto") : true
+                                onToggled: {
+                                    if (typeof settingsConfigCtrl !== "undefined") {
+                                        settingsConfigCtrl.appearanceMode = checked ? "Auto" : "Light"
+                                    }
+                                }
+                            }
+                        }
+
+                        Rectangle {
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 1
+                            color: "#E5E5EA"
+                        }
+
+                        RowLayout {
+                            Layout.fillWidth: true
+                            Text {
+                                Layout.fillWidth: true
+                                text: qsTr("Tema del Sistema")
+                                font.pixelSize: 14
+                                color: "#1C1C1E"
+                            }
+                            ComboBox {
+                                model: ["Aqua", "Orchis", "Orchis-Dark"]
+                                currentIndex: typeof settingsConfigCtrl !== "undefined" ? Math.max(0, model.indexOf(settingsConfigCtrl.themeName)) : 0
+                                onActivated: {
+                                    if (typeof settingsConfigCtrl !== "undefined") {
+                                        settingsConfigCtrl.themeName = currentText
+                                    }
+                                }
+                            }
+                        }
+
+                        Rectangle {
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 1
+                            color: "#E5E5EA"
+                        }
+
+                        RowLayout {
+                            Layout.fillWidth: true
+                            Text {
+                                Layout.fillWidth: true
+                                text: qsTr("Tema de Iconos")
+                                font.pixelSize: 14
+                                color: "#1C1C1E"
+                            }
+                            ComboBox {
+                                model: ["Colloid", "Colloid-dark"]
+                                currentIndex: typeof settingsConfigCtrl !== "undefined" ? Math.max(0, model.indexOf(settingsConfigCtrl.iconTheme)) : 0
+                                onActivated: {
+                                    if (typeof settingsConfigCtrl !== "undefined") {
+                                        settingsConfigCtrl.iconTheme = currentText
+                                    }
+                                }
                             }
                         }
                     }

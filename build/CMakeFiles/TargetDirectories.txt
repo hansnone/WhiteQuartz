@@ -59,6 +59,8 @@
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_settings_model.dir
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_stagemanager_math.dir
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_finder_modes.dir
+/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_settingsconfig.dir
+/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_shell_controllers.dir
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/test.dir
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/edit_cache.dir
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/rebuild_cache.dir
@@ -74,3 +76,7 @@
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_stagemanager_math_autogen.dir
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_finder_modes_autogen_timestamp_deps.dir
 /home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_finder_modes_autogen.dir
+/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_settingsconfig_autogen_timestamp_deps.dir
+/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_settingsconfig_autogen.dir
+/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_shell_controllers_autogen_timestamp_deps.dir
+/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_shell_controllers_autogen.dir

@@ -84,38 +84,65 @@ impl QuickLookServer {
 
 #[interface(name = "org.quartz.QuickLook")]
 impl QuickLookServer {
-    async fn toggle_preview(&mut self, file_uri: String, _geometry: (i32, i32, i32, i32)) -> zbus::fdo::Result<()> {
+    async fn toggle_preview(
+        &mut self,
+        file_uri: String,
+        _geometry: (i32, i32, i32, i32),
+        #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>,
+    ) -> zbus::fdo::Result<()> {
         let mut lock = self.current_preview.lock().await;
         if let Some(current) = &*lock {
             if current.uri == file_uri {
                 info!("Cerrando Quick Look para: {}", file_uri);
                 *lock = None;
+                let _ = Self::preview_closed(&ctxt).await;
                 return Ok(());
             }
         }
 
         let info = PreviewInspector::inspect(&file_uri);
         info!("Abriendo Quick Look para: {} [{}]", info.file_name, info.summary);
+        let preview_type_str = format!("{:?}", info.preview_type);
+        let _ = Self::preview_requested(&ctxt, &info.uri, &info.file_name, &info.summary, &preview_type_str).await;
         *lock = Some(info);
         Ok(())
     }
 
-    async fn update_selection(&mut self, file_uri: String) -> zbus::fdo::Result<()> {
+    async fn update_selection(
+        &mut self,
+        file_uri: String,
+        #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>,
+    ) -> zbus::fdo::Result<()> {
         let mut lock = self.current_preview.lock().await;
         if lock.is_some() {
             let info = PreviewInspector::inspect(&file_uri);
             info!("Actualizando Quick Look a: {} [{}]", info.file_name, info.summary);
+            let preview_type_str = format!("{:?}", info.preview_type);
+            let _ = Self::preview_requested(&ctxt, &info.uri, &info.file_name, &info.summary, &preview_type_str).await;
             *lock = Some(info);
         }
         Ok(())
     }
 
-    async fn close_preview(&mut self) -> zbus::fdo::Result<()> {
+    async fn close_preview(&mut self, #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>) -> zbus::fdo::Result<()> {
         let mut lock = self.current_preview.lock().await;
         info!("Cierre explícito de Quick Look solicitado.");
         *lock = None;
+        let _ = Self::preview_closed(&ctxt).await;
         Ok(())
     }
+
+    #[zbus(signal)]
+    async fn preview_requested(
+        ctxt: &zbus::SignalContext<'_>,
+        file_uri: &str,
+        file_name: &str,
+        summary: &str,
+        preview_type: &str,
+    ) -> zbus::Result<()>;
+
+    #[zbus(signal)]
+    async fn preview_closed(ctxt: &zbus::SignalContext<'_>) -> zbus::Result<()>;
 }
 
 #[tokio::main]

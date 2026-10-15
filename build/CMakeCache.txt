@@ -291,6 +291,9 @@ KF6Screen_DIR:PATH=/usr/lib/cmake/KF6Screen
 //The directory containing a CMake configuration file for KF6WindowSystem.
 KF6WindowSystem_DIR:PATH=/usr/lib/cmake/KF6WindowSystem
 
+//The directory containing a CMake configuration file for LayerShellQt.
+LayerShellQt_DIR:PATH=/usr/lib/cmake/LayerShellQt
+
 //Path to a file.
 OPENGL_EGL_INCLUDE_DIR:PATH=/usr/include
 

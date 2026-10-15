@@ -98,18 +98,52 @@ ApplicationWindow {
         border.color: "#33FFFFFF"
         border.width: 1
 
+        property real mouseXPos: -1000
+        property bool isHovered: false
+
+        HoverHandler {
+            id: dockHover
+            onHoveredChanged: {
+                dockContainer.isHovered = dockHover.hovered
+                if (!dockHover.hovered) {
+                    dockContainer.mouseXPos = -1000
+                }
+            }
+            onPointChanged: {
+                if (dockHover.hovered) {
+                    dockContainer.mouseXPos = dockHover.point.position.x
+                }
+            }
+        }
+
         Row {
             id: dockRow
-            anchors.centerIn: parent
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 6
+            anchors.horizontalCenter: parent.horizontalCenter
             spacing: 8
 
             Repeater {
                 model: dockCtrl.defaultApps()
                 delegate: Item {
-                    width: modelData.isSeparator ? 8 : (mouseArea.containsMouse ? 56 : 46)
+                    id: dockItem
+                    property real baseSize: dockCtrl.baseIconSize
+                    property real targetIconSize: {
+                        if (modelData.isSeparator) return 8
+                        if (!dockContainer.isHovered || dockContainer.mouseXPos < 0) {
+                            return baseSize
+                        }
+                        var itemCenterX = dockRow.x + dockItem.x + baseSize / 2
+                        var dist = Math.abs(dockContainer.mouseXPos - itemCenterX)
+                        return dockCtrl.calculateGaussianMagnification(dist, 55.0)
+                    }
+
+                    width: modelData.isSeparator ? 8 : (targetIconSize + 2)
                     height: 52
 
-                    Behavior on width { NumberAnimation { duration: 120 } }
+                    Behavior on width {
+                        NumberAnimation { duration: 60; easing.type: Easing.OutQuad }
+                    }
 
                     // Separador vertical fino
                     Rectangle {
@@ -124,21 +158,27 @@ ApplicationWindow {
                     Rectangle {
                         id: appIcon
                         visible: !modelData.isSeparator
-                        anchors.centerIn: parent
-                        width: mouseArea.containsMouse ? 52 : 44
-                        height: mouseArea.containsMouse ? 52 : 44
-                        radius: 11
+                        anchors.bottom: parent.bottom
+                        anchors.bottomMargin: 4
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        width: targetIconSize
+                        height: targetIconSize
+                        radius: Math.min(18, Math.round(width * 0.23))
                         color: "#007AFF"
 
-                        Behavior on width { NumberAnimation { duration: 120 } }
-                        Behavior on height { NumberAnimation { duration: 120 } }
+                        Behavior on width {
+                            NumberAnimation { duration: 60; easing.type: Easing.OutQuad }
+                        }
+                        Behavior on height {
+                            NumberAnimation { duration: 60; easing.type: Easing.OutQuad }
+                        }
 
                         Text {
                             anchors.centerIn: parent
                             text: modelData.name ? modelData.name.charAt(0) : ""
                             color: "white"
                             font.bold: true
-                            font.pixelSize: 18
+                            font.pixelSize: Math.max(14, Math.round(appIcon.width * 0.38))
                         }
 
                         MouseArea {
@@ -146,7 +186,44 @@ ApplicationWindow {
                             anchors.fill: parent
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
-                            onClicked: dockCtrl.launchApp(modelData.cmd)
+                            onClicked: {
+                                if (modelData.cmd === "quartz-spotlight") {
+                                    if (typeof spotlightCtrl !== "undefined") {
+                                        spotlightCtrl.toggle()
+                                        return
+                                    }
+                                }
+                                dockCtrl.launchApp(modelData.cmd)
+                            }
+                        }
+
+                        // Animación de rebote parabólico
+                        SequentialAnimation {
+                            id: bounceAnim
+                            loops: 2
+                            NumberAnimation {
+                                target: appIcon
+                                property: "anchors.bottomMargin"
+                                to: 4 + 20
+                                duration: 180
+                                easing.type: Easing.OutQuad
+                            }
+                            NumberAnimation {
+                                target: appIcon
+                                property: "anchors.bottomMargin"
+                                to: 4
+                                duration: 180
+                                easing.type: Easing.InQuad
+                            }
+                        }
+
+                        Connections {
+                            target: dockCtrl
+                            function onAppBouncingRequested(cmd) {
+                                if (modelData.cmd === cmd) {
+                                    bounceAnim.restart()
+                                }
+                            }
                         }
                     }
 
@@ -154,7 +231,7 @@ ApplicationWindow {
                     Rectangle {
                         visible: !modelData.isSeparator && modelData.running
                         anchors.bottom: parent.bottom
-                        anchors.bottomMargin: 1
+                        anchors.bottomMargin: 0
                         anchors.horizontalCenter: parent.horizontalCenter
                         width: 4
                         height: 4

@@ -23,3 +23,20 @@ add_executable(tst_finder_modes tst_finder_modes.cpp ${CMAKE_SOURCE_DIR}/src/fin
 target_include_directories(tst_finder_modes PRIVATE ${CMAKE_SOURCE_DIR}/src/finder ${CMAKE_SOURCE_DIR}/src/style)
 target_link_libraries(tst_finder_modes PRIVATE Qt6::Core Qt6::Widgets Qt6::Test quartz-style)
 add_test(NAME tst_finder_modes COMMAND tst_finder_modes)
+
+# Test 5: Controlador de Ajustes D-Bus y Configuración
+add_executable(tst_settingsconfig tst_settingsconfig.cpp ${CMAKE_SOURCE_DIR}/src/settings/settingsconfigcontroller.cpp)
+target_include_directories(tst_settingsconfig PRIVATE ${CMAKE_SOURCE_DIR}/src/settings)
+target_link_libraries(tst_settingsconfig PRIVATE Qt6::Core Qt6::DBus Qt6::Test)
+add_test(NAME tst_settingsconfig COMMAND tst_settingsconfig)
+
+# Test 6: Controladores de Shell (Spotlight, QuickLook y Dock)
+add_executable(tst_shell_controllers
+    tst_shell_controllers.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/spotlight/SpotlightController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/quicklook/QuickLookController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/dock/DockController.cpp
+)
+target_include_directories(tst_shell_controllers PRIVATE ${CMAKE_SOURCE_DIR}/src/shell ${CMAKE_SOURCE_DIR}/src/style)
+target_link_libraries(tst_shell_controllers PRIVATE Qt6::Core Qt6::DBus Qt6::Test)
+add_test(NAME tst_shell_controllers COMMAND tst_shell_controllers)

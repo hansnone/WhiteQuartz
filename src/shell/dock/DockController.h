@@ -22,6 +22,7 @@ public:
     Q_INVOKABLE qreal calculateGaussianMagnification(qreal itemCenterDistance, qreal sigma = 65.0) const;
     Q_INVOKABLE qreal calculateParabolicBounce(qreal progress, qreal bounceHeight = 22.0) const;
     Q_INVOKABLE QVariantList defaultApps() const;
+    Q_INVOKABLE QStringList parseCommandLine(const QString &cmd) const;
     Q_INVOKABLE void launchApp(const QString &cmd);
     Q_INVOKABLE void requestAppAttention(const QString &cmd);
 

@@ -33,6 +33,11 @@ void FinderColumnView::setupIconsView()
     m_iconsList->setStyleSheet(QStringLiteral("QListWidget { background: #FFFFFF; border: none; }"));
 
     connect(m_iconsList, &QListWidget::itemClicked, this, &FinderColumnView::onIconItemClicked);
+    connect(m_iconsList, &QListWidget::itemDoubleClicked, this, [this](QListWidgetItem *item) {
+        if (item) {
+            Q_EMIT fileDoubleClicked(item->data(Qt::UserRole).toString());
+        }
+    });
     m_viewStack->addWidget(m_iconsList);
 }
 
@@ -46,6 +51,11 @@ void FinderColumnView::setupListView()
     m_listTree->setStyleSheet(QStringLiteral("QTreeWidget { background: #FFFFFF; border: none; }"));
 
     connect(m_listTree, &QTreeWidget::itemClicked, this, &FinderColumnView::onListItemClicked);
+    connect(m_listTree, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item, int /*col*/) {
+        if (item) {
+            Q_EMIT fileDoubleClicked(item->data(0, Qt::UserRole).toString());
+        }
+    });
     m_viewStack->addWidget(m_listTree);
 }
 
@@ -102,6 +112,14 @@ void FinderColumnView::setupGalleryView()
     m_galleryThumbnailStrip->setViewMode(QListView::IconMode);
     m_galleryThumbnailStrip->setIconSize(QSize(60, 60));
     m_galleryThumbnailStrip->setSpacing(8);
+    m_galleryThumbnailStrip->setStyleSheet(QStringLiteral("QListWidget { background: #FFFFFF; border: 1px solid #E5E5EA; border-radius: 8px; }"));
+
+    connect(m_galleryThumbnailStrip, &QListWidget::itemClicked, this, &FinderColumnView::onGalleryItemClicked);
+    connect(m_galleryThumbnailStrip, &QListWidget::itemDoubleClicked, this, [this](QListWidgetItem *item) {
+        if (item) {
+            Q_EMIT fileDoubleClicked(item->data(Qt::UserRole).toString());
+        }
+    });
 
     m_galleryDetailsLabel = new QLabel(QStringLiteral("Metadatos y Detalles"), m_galleryWidget);
     m_galleryDetailsLabel->setFixedHeight(40);
@@ -140,12 +158,13 @@ void FinderColumnView::setRootPath(const QString &path)
     truncateColumnsAfter(-1);
     addColumn(path);
 
-    // Cargar también en la vista de lista e iconos
+    // Cargar también en la vista de lista, iconos y galería
     QDir dir(path);
     QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot, QDir::DirsFirst | QDir::Name);
 
     m_iconsList->clear();
     m_listTree->clear();
+    m_galleryThumbnailStrip->clear();
 
     for (const QFileInfo &info : entries) {
         // Iconos
@@ -158,6 +177,20 @@ void FinderColumnView::setRootPath(const QString &path)
         treeItem->setText(1, info.lastModified().toString(QStringLiteral("dd/MM/yyyy HH:mm")));
         treeItem->setText(2, info.isDir() ? QStringLiteral("--") : QString::number(info.size() / 1024) + QStringLiteral(" KB"));
         treeItem->setData(0, Qt::UserRole, info.absoluteFilePath());
+
+        // Galería
+        auto *galleryItem = new QListWidgetItem(info.fileName(), m_galleryThumbnailStrip);
+        galleryItem->setData(Qt::UserRole, info.absoluteFilePath());
+        galleryItem->setData(Qt::UserRole + 1, info.isDir());
+    }
+
+    if (m_galleryThumbnailStrip->count() > 0) {
+        m_galleryThumbnailStrip->setCurrentRow(0);
+        onGalleryItemClicked(m_galleryThumbnailStrip->item(0));
+    } else {
+        m_galleryMainPreview->clear();
+        m_galleryMainPreview->setText(QStringLiteral("Carpeta vacía"));
+        m_galleryDetailsLabel->setText(QString());
     }
 }
 
@@ -189,6 +222,11 @@ void FinderColumnView::addColumn(const QString &path)
     }
 
     connect(listWidget, &QListWidget::itemClicked, this, &FinderColumnView::onColumnItemClicked);
+    connect(listWidget, &QListWidget::itemDoubleClicked, this, [this](QListWidgetItem *item) {
+        if (item) {
+            Q_EMIT fileDoubleClicked(item->data(Qt::UserRole).toString());
+        }
+    });
 
     // Si el inspector está en el layout, insertarlo antes del inspector
     if (m_inspectorWidget && m_columnsLayout->indexOf(m_inspectorWidget) != -1) {
@@ -284,6 +322,81 @@ void FinderColumnView::onIconItemClicked(QListWidgetItem *item)
     QString path = item->data(Qt::UserRole).toString();
     m_currentSelectedFile = path;
     Q_EMIT fileSelected(path);
+}
+
+void FinderColumnView::onGalleryItemClicked(QListWidgetItem *item)
+{
+    if (!item) {
+        return;
+    }
+    QString path = item->data(Qt::UserRole).toString();
+    m_currentSelectedFile = path;
+    Q_EMIT fileSelected(path);
+    updateGalleryPreview(path);
+}
+
+void FinderColumnView::updateGalleryPreview(const QString &filePath)
+{
+    QFileInfo info(filePath);
+    if (!info.exists()) {
+        m_galleryMainPreview->clear();
+        m_galleryMainPreview->setText(QStringLiteral("Archivo no disponible"));
+        m_galleryDetailsLabel->setText(QString());
+        return;
+    }
+
+    QString ext = info.suffix().toLower();
+    bool isImage = (ext == QLatin1String("png") || ext == QLatin1String("jpg") ||
+                    ext == QLatin1String("jpeg") || ext == QLatin1String("svg") ||
+                    ext == QLatin1String("webp") || ext == QLatin1String("bmp"));
+
+    if (isImage) {
+        QPixmap pix(filePath);
+        if (!pix.isNull()) {
+            QSize targetSize = m_galleryMainPreview->size();
+            if (targetSize.width() < 100 || targetSize.height() < 100) {
+                targetSize = QSize(400, 300);
+            }
+            m_galleryMainPreview->setPixmap(pix.scaled(targetSize, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        } else {
+            m_galleryMainPreview->clear();
+            m_galleryMainPreview->setText(info.fileName());
+        }
+    } else if (info.isDir()) {
+        m_galleryMainPreview->clear();
+        m_galleryMainPreview->setText(QStringLiteral("📁  %1\n(Carpeta)").arg(info.fileName()));
+    } else {
+        m_galleryMainPreview->clear();
+        m_galleryMainPreview->setText(QStringLiteral("📄  %1\n(%2)").arg(info.fileName(), info.suffix().toUpper()));
+    }
+
+    QString details = QStringLiteral("<b>%1</b> &nbsp;|&nbsp; %2 &nbsp;|&nbsp; %3 &nbsp;|&nbsp; %4")
+                          .arg(info.fileName())
+                          .arg(info.isDir() ? QStringLiteral("Carpeta") : QString::number(info.size() / 1024) + QStringLiteral(" KB"))
+                          .arg(info.isDir() ? QStringLiteral("Directorio") : (info.suffix().isEmpty() ? QStringLiteral("Archivo") : info.suffix().toUpper()))
+                          .arg(info.lastModified().toString(QStringLiteral("dd/MM/yyyy HH:mm")));
+
+    m_galleryDetailsLabel->setText(details);
+}
+
+int FinderColumnView::galleryItemCount() const
+{
+    return m_galleryThumbnailStrip ? m_galleryThumbnailStrip->count() : 0;
+}
+
+int FinderColumnView::columnCount() const
+{
+    return m_columns.size();
+}
+
+int FinderColumnView::iconItemCount() const
+{
+    return m_iconsList ? m_iconsList->count() : 0;
+}
+
+int FinderColumnView::listItemCount() const
+{
+    return m_listTree ? m_listTree->topLevelItemCount() : 0;
 }
 
 } // namespace Quartz::Finder

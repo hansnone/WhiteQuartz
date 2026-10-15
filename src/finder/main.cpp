@@ -5,6 +5,10 @@
 #include <QListWidget>
 #include <QShortcut>
 #include <QDir>
+#include <QStandardPaths>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QFileInfo>
 #include <QActionGroup>
 #include "findercolumnview.h"
 #include "quicklookclient.h"
@@ -26,8 +30,13 @@ int main(int argc, char *argv[])
     QToolBar *toolbar = mainWindow.addToolBar(QStringLiteral("Barra de Navegación"));
     toolbar->setMovable(false);
     toolbar->setFloatable(false);
-    toolbar->addAction(QStringLiteral("‹"));
-    toolbar->addAction(QStringLiteral("›"));
+    auto *actBack = toolbar->addAction(QStringLiteral("‹"));
+    actBack->setToolTip(QStringLiteral("Atrás (Alt+Izquierda)"));
+    actBack->setShortcut(QKeySequence(Qt::ALT | Qt::Key_Left));
+
+    auto *actForward = toolbar->addAction(QStringLiteral("›"));
+    actForward->setToolTip(QStringLiteral("Adelante (Alt+Derecha)"));
+    actForward->setShortcut(QKeySequence(Qt::ALT | Qt::Key_Right));
     toolbar->addSeparator();
 
     auto *modeGroup = new QActionGroup(&mainWindow);
@@ -53,15 +62,124 @@ int main(int argc, char *argv[])
         "QListWidget::item:selected { background-color: #D1D1D6; color: #1C1C1E; }"
     ));
 
-    new QListWidgetItem(QStringLiteral("Inicio"), sidebar);
-    new QListWidgetItem(QStringLiteral("Escritorio"), sidebar);
-    new QListWidgetItem(QStringLiteral("Documentos"), sidebar);
-    new QListWidgetItem(QStringLiteral("Descargas"), sidebar);
-    new QListWidgetItem(QStringLiteral("Proyectos"), sidebar);
+    auto addSidebarLocation = [&](const QString &title, const QString &path) {
+        auto *item = new QListWidgetItem(title, sidebar);
+        item->setData(Qt::UserRole, path);
+    };
+
+    addSidebarLocation(QStringLiteral("Inicio"), QDir::homePath());
+    addSidebarLocation(QStringLiteral("Escritorio"), QStandardPaths::writableLocation(QStandardPaths::DesktopLocation));
+    addSidebarLocation(QStringLiteral("Documentos"), QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
+    addSidebarLocation(QStringLiteral("Descargas"), QStandardPaths::writableLocation(QStandardPaths::DownloadLocation));
+
+    QString projPath = QDir::homePath() + QStringLiteral("/Proyectos");
+    if (!QDir(projPath).exists()) {
+        projPath = QDir::homePath();
+    }
+    addSidebarLocation(QStringLiteral("Proyectos"), projPath);
 
     // Vista multimodal de Finder
     auto *columnView = new Quartz::Finder::FinderColumnView(splitter);
-    columnView->setRootPath(QDir::homePath());
+
+    // Historial de navegación y cambio de ruta
+    QList<QString> history;
+    int historyIndex = -1;
+
+    auto updateHistoryButtons = [&]() {
+        actBack->setEnabled(historyIndex > 0);
+        actForward->setEnabled(historyIndex >= 0 && historyIndex < history.size() - 1);
+    };
+
+    auto navigateTo = [&](const QString &path, bool recordHistory = true) {
+        QDir dir(path);
+        if (!dir.exists()) {
+            return;
+        }
+        QString canonical = dir.canonicalPath();
+        if (canonical.isEmpty()) {
+            canonical = path;
+        }
+
+        if (recordHistory) {
+            while (history.size() > historyIndex + 1) {
+                history.removeLast();
+            }
+            history.append(canonical);
+            historyIndex = history.size() - 1;
+        }
+
+        columnView->setRootPath(canonical);
+
+        QString folderName = QFileInfo(canonical).fileName();
+        if (folderName.isEmpty()) {
+            folderName = canonical;
+        }
+        mainWindow.setWindowTitle(QStringLiteral("Finder — %1").arg(folderName));
+
+        // Sincronizar selección en la barra lateral si coincide
+        for (int i = 0; i < sidebar->count(); ++i) {
+            QListWidgetItem *it = sidebar->item(i);
+            if (it->data(Qt::UserRole).toString() == canonical) {
+                sidebar->setCurrentItem(it, QItemSelectionModel::ClearAndSelect);
+                break;
+            }
+        }
+
+        updateHistoryButtons();
+    };
+
+    QObject::connect(actBack, &QAction::triggered, [&]() {
+        if (historyIndex > 0) {
+            --historyIndex;
+            navigateTo(history[historyIndex], false);
+        }
+    });
+
+    QObject::connect(actForward, &QAction::triggered, [&]() {
+        if (historyIndex >= 0 && historyIndex < history.size() - 1) {
+            ++historyIndex;
+            navigateTo(history[historyIndex], false);
+        }
+    });
+
+    QObject::connect(sidebar, &QListWidget::itemClicked, [&](QListWidgetItem *item) {
+        if (item) {
+            QString path = item->data(Qt::UserRole).toString();
+            if (!path.isEmpty()) {
+                navigateTo(path, true);
+            }
+        }
+    });
+
+    // Doble clic: entrar en subdirectorios o abrir archivos
+    QObject::connect(columnView, &Quartz::Finder::FinderColumnView::fileDoubleClicked, [&](const QString &filePath) {
+        QFileInfo fi(filePath);
+        if (fi.isDir()) {
+            navigateTo(fi.absoluteFilePath(), true);
+        } else {
+            QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
+        }
+    });
+
+    // Determinar ruta inicial (soporte para argumentos CLI)
+    QString initialPath = QDir::homePath();
+    if (argc > 1) {
+        QString argPath = QString::fromLocal8Bit(argv[1]);
+        if (argPath.startsWith(QLatin1String("~/"))) {
+            argPath = QDir::homePath() + argPath.mid(1);
+        } else if (argPath == QLatin1String("~")) {
+            argPath = QDir::homePath();
+        }
+        QFileInfo argInfo(argPath);
+        if (argInfo.exists()) {
+            if (argInfo.isDir()) {
+                initialPath = argInfo.canonicalFilePath();
+            } else {
+                initialPath = argInfo.dir().canonicalPath();
+            }
+        }
+    }
+    navigateTo(initialPath, true);
 
     splitter->addWidget(sidebar);
     splitter->addWidget(columnView);

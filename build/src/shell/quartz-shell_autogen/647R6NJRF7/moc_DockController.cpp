@@ -50,6 +50,7 @@ template <> constexpr inline auto Quartz::Shell::DockController::qt_create_metao
         "bounceHeight",
         "defaultApps",
         "QVariantList",
+        "parseCommandLine",
         "launchApp",
         "requestAppAttention",
         "baseIconSize",
@@ -79,20 +80,24 @@ template <> constexpr inline auto Quartz::Shell::DockController::qt_create_metao
         }}),
         // Method 'defaultApps'
         QtMocHelpers::MethodData<QVariantList() const>(10, 2, QMC::AccessPublic, 0x80000000 | 11),
+        // Method 'parseCommandLine'
+        QtMocHelpers::MethodData<QStringList(const QString &) const>(12, 2, QMC::AccessPublic, QMetaType::QStringList, {{
+            { QMetaType::QString, 3 },
+        }}),
         // Method 'launchApp'
-        QtMocHelpers::MethodData<void(const QString &)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::MethodData<void(const QString &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 3 },
         }}),
         // Method 'requestAppAttention'
-        QtMocHelpers::MethodData<void(const QString &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::MethodData<void(const QString &)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 3 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'baseIconSize'
-        QtMocHelpers::PropertyData<int>(14, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
-        // property 'maxMagnifiedSize'
         QtMocHelpers::PropertyData<int>(15, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
+        // property 'maxMagnifiedSize'
+        QtMocHelpers::PropertyData<int>(16, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -125,8 +130,10 @@ void Quartz::Shell::DockController::qt_static_metacall(QObject *_o, QMetaObject:
             if (_a[0]) *reinterpret_cast<qreal*>(_a[0]) = std::move(_r); }  break;
         case 5: { QVariantList _r = _t->defaultApps();
             if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 6: _t->launchApp((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 7: _t->requestAppAttention((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 6: { QStringList _r = _t->parseCommandLine((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+            if (_a[0]) *reinterpret_cast<QStringList*>(_a[0]) = std::move(_r); }  break;
+        case 7: _t->launchApp((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 8: _t->requestAppAttention((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -163,14 +170,14 @@ int Quartz::Shell::DockController::qt_metacall(QMetaObject::Call _c, int _id, vo
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 9;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

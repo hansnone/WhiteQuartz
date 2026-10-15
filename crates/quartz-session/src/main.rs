@@ -85,6 +85,150 @@ impl SessionLifecycleManager {
         let map = self.apps.lock().await;
         Ok(map.contains_key(&app_id))
     }
+
+    // --- Métodos de Control de Sesión y Energía ---
+    async fn lock_screen(&self) -> zbus::fdo::Result<()> {
+        info!("Solicitud de bloqueo de pantalla recibida vía D-Bus.");
+        let _ = Command::new("loginctl").arg("lock-session").spawn();
+        Ok(())
+    }
+
+    async fn request_logout(&self) -> zbus::fdo::Result<()> {
+        info!("Solicitud de cierre de sesión recibida vía D-Bus.");
+        let _ = Command::new("loginctl").arg("terminate-session").arg("").spawn();
+        Ok(())
+    }
+
+    async fn request_reboot(&self) -> zbus::fdo::Result<()> {
+        info!("Solicitud de reinicio de equipo recibida vía D-Bus.");
+        let _ = Command::new("systemctl").arg("reboot").spawn();
+        Ok(())
+    }
+
+    async fn request_shutdown(&self) -> zbus::fdo::Result<()> {
+        info!("Solicitud de apagado de equipo recibida vía D-Bus.");
+        let _ = Command::new("systemctl").arg("poweroff").spawn();
+        Ok(())
+    }
+
+    async fn is_locked(&self) -> zbus::fdo::Result<bool> {
+        Ok(false)
+    }
+}
+
+use libquartz::config::{AppearanceMode, QuartzDesktopConfig};
+
+#[derive(Clone)]
+pub struct ConfigManager {
+    config: Arc<Mutex<QuartzDesktopConfig>>,
+}
+
+impl ConfigManager {
+    pub fn new() -> Self {
+        let loaded = QuartzDesktopConfig::load_from_xdg();
+        Self {
+            config: Arc::new(Mutex::new(loaded)),
+        }
+    }
+}
+
+#[interface(name = "org.quartz.Config")]
+impl ConfigManager {
+    async fn get_config(&self) -> zbus::fdo::Result<String> {
+        let cfg = self.config.lock().await;
+        cfg.to_json().map_err(|e| zbus::fdo::Error::Failed(e.to_string()))
+    }
+
+    async fn set_config(&mut self, json: String, #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>) -> zbus::fdo::Result<bool> {
+        if let Ok(new_cfg) = QuartzDesktopConfig::from_json(&json) {
+            let mut cfg = self.config.lock().await;
+            *cfg = new_cfg.clone();
+            let _ = cfg.save_to_xdg();
+            let _ = Self::config_changed(&ctxt, &json).await;
+            info!("Configuración de QuartzDE actualizada vía D-Bus.");
+            return Ok(true);
+        }
+        Ok(false)
+    }
+
+    async fn get_stage_manager_enabled(&self) -> zbus::fdo::Result<bool> {
+        let cfg = self.config.lock().await;
+        Ok(cfg.stage_manager.enabled)
+    }
+
+    async fn set_stage_manager_enabled(&mut self, enabled: bool, #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>) -> zbus::fdo::Result<bool> {
+        let mut cfg = self.config.lock().await;
+        if cfg.stage_manager.enabled != enabled {
+            cfg.stage_manager.enabled = enabled;
+            let _ = cfg.save_to_xdg();
+            if let Ok(json) = cfg.to_json() {
+                let _ = Self::config_changed(&ctxt, &json).await;
+            }
+            info!("Ajuste Stage Manager modificado: enabled={}", enabled);
+        }
+        Ok(true)
+    }
+
+    async fn get_appearance_mode(&self) -> zbus::fdo::Result<String> {
+        let cfg = self.config.lock().await;
+        let mode_str = match cfg.appearance {
+            AppearanceMode::Light => "Light",
+            AppearanceMode::Dark => "Dark",
+            AppearanceMode::Auto => "Auto",
+        };
+        Ok(mode_str.to_string())
+    }
+
+    async fn set_appearance_mode(&mut self, mode: String, #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>) -> zbus::fdo::Result<bool> {
+        let mut cfg = self.config.lock().await;
+        let new_mode = match mode.to_lowercase().as_str() {
+            "light" => AppearanceMode::Light,
+            "dark" => AppearanceMode::Dark,
+            _ => AppearanceMode::Auto,
+        };
+        cfg.appearance = new_mode;
+        let _ = cfg.save_to_xdg();
+        if let Ok(json) = cfg.to_json() {
+            let _ = Self::config_changed(&ctxt, &json).await;
+        }
+        info!("Ajuste Modo de Apariencia modificado: {:?}", new_mode);
+        Ok(true)
+    }
+
+    async fn get_theme(&self) -> zbus::fdo::Result<String> {
+        let cfg = self.config.lock().await;
+        Ok(cfg.theme_name.clone())
+    }
+
+    async fn set_theme(&mut self, theme: String, #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>) -> zbus::fdo::Result<bool> {
+        let mut cfg = self.config.lock().await;
+        cfg.theme_name = theme.clone();
+        let _ = cfg.save_to_xdg();
+        if let Ok(json) = cfg.to_json() {
+            let _ = Self::config_changed(&ctxt, &json).await;
+        }
+        info!("Tema QuartzDE actualizado a: {}", theme);
+        Ok(true)
+    }
+
+    async fn get_icon_theme(&self) -> zbus::fdo::Result<String> {
+        let cfg = self.config.lock().await;
+        Ok(cfg.icon_theme.clone())
+    }
+
+    async fn set_icon_theme(&mut self, icon_theme: String, #[zbus(signal_context)] ctxt: zbus::SignalContext<'_>) -> zbus::fdo::Result<bool> {
+        let mut cfg = self.config.lock().await;
+        cfg.icon_theme = icon_theme.clone();
+        let _ = cfg.save_to_xdg();
+        if let Ok(json) = cfg.to_json() {
+            let _ = Self::config_changed(&ctxt, &json).await;
+        }
+        info!("Tema de iconos QuartzDE actualizado a: {}", icon_theme);
+        Ok(true)
+    }
+
+    #[zbus(signal)]
+    async fn config_changed(ctxt: &zbus::SignalContext<'_>, json: &str) -> zbus::Result<()>;
 }
 
 use std::path::{Path, PathBuf};
@@ -224,31 +368,38 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         info!("Compositor Wayland inicializado y listo en {}", socket_name);
     }
 
-    // 2. Registrar servicio de ciclo de vida de aplicaciones en D-Bus
+    // 2. Registrar servicios de sesión y configuración en D-Bus
     let lifecycle = SessionLifecycleManager::new();
-    match connection::Builder::session() {
+    let config_mgr = ConfigManager::new();
+    let _conn = match connection::Builder::session() {
         Ok(builder) => {
             match builder
                 .name("org.quartz.Session")
+                .and_then(|b| b.name("org.quartz.Config"))
                 .and_then(|b| b.serve_at("/org/quartz/Session", lifecycle))
+                .and_then(|b| b.serve_at("/org/quartz/Config", config_mgr))
             {
                 Ok(b) => match b.build().await {
-                    Ok(_conn) => {
-                        info!("Servicio D-Bus org.quartz.Session registrado para ciclo de vida de aplicaciones.");
+                    Ok(conn) => {
+                        info!("Servicios D-Bus org.quartz.Session y org.quartz.Config registrados correctamente.");
+                        Some(conn)
                     }
                     Err(e) => {
                         warn!("No se pudo inicializar la conexión D-Bus: {}. Continuando...", e);
+                        None
                     }
                 },
                 Err(e) => {
-                    warn!("Error configurando interfaz D-Bus: {}. Continuando...", e);
+                    warn!("Error configurando interfaces D-Bus: {}. Continuando...", e);
+                    None
                 }
             }
         }
         Err(e) => {
             warn!("No se pudo conectar al bus de sesión D-Bus: {}. Continuando...", e);
+            None
         }
-    }
+    };
 
     // 3. Lanzar servicios del entorno de escritorio
     session.spawn_service("quartz-quicklookd", &[]);
@@ -337,5 +488,23 @@ mod tests {
         let socket_path = temp_dir.join(format!("quartz_non_existent_{}", std::process::id()));
         let res = wait_for_wayland_socket(&socket_path, Duration::from_millis(100), None).await;
         assert!(res.is_err());
+    }
+
+    #[tokio::test]
+    async fn test_session_power_methods() {
+        let manager = SessionLifecycleManager::new();
+        assert!(!manager.is_locked().await.unwrap());
+    }
+
+    #[tokio::test]
+    async fn test_config_manager_methods() {
+        let manager = ConfigManager::new();
+        let cfg_json = manager.get_config().await.unwrap();
+        assert!(cfg_json.contains("Aqua"));
+        assert!(cfg_json.contains("Colloid"));
+
+        assert_eq!(manager.get_theme().await.unwrap(), "Aqua");
+        assert_eq!(manager.get_icon_theme().await.unwrap(), "Colloid");
+        assert_eq!(manager.get_appearance_mode().await.unwrap(), "Auto");
     }
 }

@@ -2,5 +2,9 @@
 <RCC version="1.0">
     <qresource prefix="/">
         <file>qml/ShellWindow.qml</file>
+        <file>qml/MenuBarWindow.qml</file>
+        <file>qml/DockWindow.qml</file>
+        <file>qml/SpotlightOverlay.qml</file>
+        <file>qml/QuickLookModal.qml</file>
     </qresource>
 </RCC>

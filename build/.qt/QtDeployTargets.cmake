@@ -1,4 +1,4 @@
-set(__QT_DEPLOY_TARGETS "quartz-style;quartz-compositor;quartz-settings;quartz-shell;quartz-finder;tst_quartzstyle;tst_settings_model;tst_stagemanager_math;tst_finder_modes")
+set(__QT_DEPLOY_TARGETS "quartz-style;quartz-compositor;quartz-settings;quartz-shell;quartz-finder;tst_quartzstyle;tst_settings_model;tst_stagemanager_math;tst_finder_modes;tst_settingsconfig;tst_shell_controllers")
 set(__QT_DEPLOY_TARGET_quartz-style_FILE /home/pedro/Proyectos/WhiteQuartz/build/src/style/libquartz-style.so)
 set(__QT_DEPLOY_TARGET_quartz-style_TYPE SHARED_LIBRARY)
 set(__QT_DEPLOY_TARGET_quartz-compositor_FILE /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/libquartz-compositor.so)
@@ -17,3 +17,7 @@ set(__QT_DEPLOY_TARGET_tst_stagemanager_math_FILE /home/pedro/Proyectos/WhiteQua
 set(__QT_DEPLOY_TARGET_tst_stagemanager_math_TYPE EXECUTABLE)
 set(__QT_DEPLOY_TARGET_tst_finder_modes_FILE /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes)
 set(__QT_DEPLOY_TARGET_tst_finder_modes_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_tst_settingsconfig_FILE /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settingsconfig)
+set(__QT_DEPLOY_TARGET_tst_settingsconfig_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_tst_shell_controllers_FILE /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_shell_controllers)
+set(__QT_DEPLOY_TARGET_tst_shell_controllers_TYPE EXECUTABLE)

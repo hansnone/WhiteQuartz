@@ -7,6 +7,11 @@
 	"CMAKE_LIST_FILES" : 
 	[
 		"/home/pedro/Proyectos/WhiteQuartz/src/shell/CMakeLists.txt",
+		"/usr/lib/cmake/LayerShellQt/LayerShellQtConfigVersion.cmake",
+		"/usr/lib/cmake/LayerShellQt/LayerShellQtConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/LayerShellQt/LayerShellQtTargets.cmake",
+		"/usr/lib/cmake/LayerShellQt/LayerShellQtTargets-noconfig.cmake",
 		"/home/pedro/Proyectos/WhiteQuartz/src/shell/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/pedro/Proyectos/WhiteQuartz",
@@ -26,6 +31,18 @@
 			"MU",
 			"UWWZ7EI2JW/moc_MenuBarController.cpp",
 			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.h",
+			"MU",
+			"OHMANK7QA7/moc_QuickLookController.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/spotlight/SpotlightController.h",
+			"MU",
+			"JVLETVOX7S/moc_SpotlightController.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -33,7 +50,9 @@
 	"MOC_COMPILATION_FILE" : "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
+		"HAVE_LAYERSHELLQT",
 		"QT_CORE_LIB",
+		"QT_DBUS_LIB",
 		"QT_GUI_LIB",
 		"QT_NETWORK_LIB",
 		"QT_NO_DEBUG",
@@ -66,6 +85,7 @@
 		"/usr/include/qt6/QtQmlIntegration",
 		"/usr/include/qt6/QtNetwork",
 		"/usr/include/qt6/QtOpenGL",
+		"/usr/include/qt6/QtDBus",
 		"/usr/include",
 		"/usr/include/c++/16",
 		"/usr/include/c++/16/x86_64-pc-linux-gnu",
@@ -118,6 +138,16 @@
 		[ "/home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp", "MU", null ],
 		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/spotlight/SpotlightController.cpp",
 			"MU",
 			null
 		]

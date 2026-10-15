@@ -2,6 +2,8 @@ add_executable(quartz-settings
     main.cpp
     settingsmodel.cpp
     settingsmodel.h
+    settingsconfigcontroller.cpp
+    settingsconfigcontroller.h
 )
 
 target_compile_definitions(quartz-settings PRIVATE
@@ -19,6 +21,7 @@ target_link_libraries(quartz-settings PRIVATE
     Qt6::Widgets
     Qt6::Quick
     Qt6::Qml
+    Qt6::DBus
     quartz-style
 )
 

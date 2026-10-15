@@ -27,10 +27,16 @@ public:
     explicit FinderColumnView(QWidget *parent = nullptr);
 
     void setRootPath(const QString &path);
+    QString rootPath() const { return m_rootPath; }
     QString selectedFilePath() const { return m_currentSelectedFile; }
 
     FinderViewMode currentViewMode() const { return m_viewMode; }
     void setViewMode(FinderViewMode mode);
+
+    int galleryItemCount() const;
+    int columnCount() const;
+    int iconItemCount() const;
+    int listItemCount() const;
 
 Q_SIGNALS:
     void fileSelected(const QString &filePath);
@@ -41,6 +47,7 @@ private Q_SLOTS:
     void onColumnItemClicked(QListWidgetItem *item);
     void onListItemClicked(QTreeWidgetItem *item, int column);
     void onIconItemClicked(QListWidgetItem *item);
+    void onGalleryItemClicked(QListWidgetItem *item);
 
 private:
     void setupIconsView();
@@ -51,6 +58,7 @@ private:
     void addColumn(const QString &path);
     void truncateColumnsAfter(int columnIndex);
     void updateInspector(const QString &filePath);
+    void updateGalleryPreview(const QString &filePath);
 
     FinderViewMode m_viewMode = FinderViewMode::Columns;
     QString m_rootPath;

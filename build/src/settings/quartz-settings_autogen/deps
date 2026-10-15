@@ -2,6 +2,8 @@ quartz-settings_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/build/src/settings/quartz-settings_autogen/moc_predefs.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/CMakeLists.txt \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/main.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsconfigcontroller.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsconfigcontroller.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.h \
 	/usr/include/alloca.h \
@@ -306,6 +308,7 @@ quartz-settings_autogen/timestamp: \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QAbstractListModel \
 	/usr/include/qt6/QtCore/QList \
+	/usr/include/qt6/QtCore/QObject \
 	/usr/include/qt6/QtCore/QString \
 	/usr/include/qt6/QtCore/q17memory.h \
 	/usr/include/qt6/QtCore/q20bit.h \
@@ -428,6 +431,21 @@ quartz-settings_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qversiontagging.h \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
+	/usr/include/qt6/QtDBus/QDBusConnection \
+	/usr/include/qt6/QtDBus/QDBusInterface \
+	/usr/include/qt6/QtDBus/QDBusReply \
+	/usr/include/qt6/QtDBus/qdbusabstractinterface.h \
+	/usr/include/qt6/QtDBus/qdbusargument.h \
+	/usr/include/qt6/QtDBus/qdbusconnection.h \
+	/usr/include/qt6/QtDBus/qdbuserror.h \
+	/usr/include/qt6/QtDBus/qdbusextratypes.h \
+	/usr/include/qt6/QtDBus/qdbusinterface.h \
+	/usr/include/qt6/QtDBus/qdbusmessage.h \
+	/usr/include/qt6/QtDBus/qdbuspendingcall.h \
+	/usr/include/qt6/QtDBus/qdbuspendingreply.h \
+	/usr/include/qt6/QtDBus/qdbusreply.h \
+	/usr/include/qt6/QtDBus/qtdbusexports.h \
+	/usr/include/qt6/QtDBus/qtdbusglobal.h \
 	/usr/include/qt6/QtQml/qqmlregistration.h \
 	/usr/include/qt6/QtQmlIntegration/qqmlintegration.h \
 	/usr/include/sched.h \

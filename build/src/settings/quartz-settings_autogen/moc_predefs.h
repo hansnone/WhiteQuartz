@@ -233,6 +233,7 @@
 #define __VERSION__ "16.2.1 20260810"
 #define __UINT64_C(c) c ## UL
 #define __cpp_unicode_characters 201411L
+#define QT_DBUS_LIB 1
 #define __DEC64X_MIN__ 1E-6143D64x
 #define _STDC_PREDEF_H 1
 #define __INT_LEAST32_MAX__ 0x7fffffff

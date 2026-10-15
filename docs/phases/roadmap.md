@@ -23,3 +23,26 @@
 - [x] MenuBar con introspección dinámica de menús mediante tecla `Alt` en `src/shell/menubar/`
 - [x] Finder multimodal con 4 modos (`Ctrl+1` a `Ctrl+4`) e inspector de metadatos en `src/finder/`
 - [x] Suite de pruebas unitarias ampliada (12 tests en total: 8 en Rust, 4 en C++/CTest)
+
+## Fase 3: Integración de Subsistema y Funcionalidad Real
+- [x] **Bloque 1: Unificación IPC y Persistencia de Configuración XDG**
+  - [x] Persistencia atómica en `$XDG_CONFIG_HOME/quartz/config.json` en `libquartz::config`
+  - [x] Soporte para temas locales (`theme_name`, `icon_theme`) inspirados en `themes/Orchis-kde` y `themes/Colloid-icon-theme`
+  - [x] Unificación del contrato D-Bus `org.quartz.Session` (ciclo de vida de apps y energía/sesión)
+  - [x] Implementación y exposición del servicio D-Bus reactivo `org.quartz.Config` en `crates/quartz-session`
+  - [x] Conexión reactiva en `quartz-settings` mediante `SettingsConfigController` y controles en QML
+  - [x] Suite de tests ampliada (19 tests: 14 en Rust, 5 en C++/CTest)
+- [x] **Bloque 2: Wayland Layer-Shell y UI de Servicios**
+  - [x] Integración de `LayerShellQt` en `quartz-shell` (MenuBar con zona exclusiva de 24px y Dock anclado inferior)
+  - [x] Superficies QML en capa `LayerOverlay` para `Spotlight` y `QuickLook`
+  - [x] Separación de `MenuBarWindow.qml`, `DockWindow.qml`, `SpotlightOverlay.qml` y `QuickLookModal.qml`
+  - [x] Controladores D-Bus `SpotlightController` y `QuickLookController` con señales reactivas
+  - [x] Suite de tests ampliada (20 tests: 14 en Rust, 6 en C++/CTest)
+- [x] **Bloque 3: Completitud funcional en `quartz-finder` y Dock**
+  - [x] Conexión de sidebar, historial, doble clic y vista Galería en `quartz-finder`
+  - [x] Física continua gaussiana en el Dock capturando coordenadas continuas de cursor
+  - [x] Parcheo de rutas CLI y `QProcess::splitCommand` con expansión de tilde (`~`)
+  - [x] Suite de tests ampliada (20 tests: 14 en Rust, 6 en C++/CTest con pruebas de física, splitCommand y modos)
+- [ ] **Bloque 4: Enlace real con KWin**
+  - [ ] Adaptación de `QuartzDecoration` a `KDecoration2::Decoration`
+  - [ ] Inyección de shaders (`squircle.frag`) en `KWin::GLShader` y pipeline de composición

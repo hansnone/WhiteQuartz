@@ -1,10 +1,10 @@
-Start testing: Oct 15 22:57 CEST
+Start testing: Oct 15 23:37 CEST
 ----------------------------------------------------------
-1/4 Testing: tst_quartzstyle
-1/4 Test: tst_quartzstyle
+1/6 Testing: tst_quartzstyle
+1/6 Test: tst_quartzstyle
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_quartzstyle" start time: Oct 15 22:57 CEST
+"tst_quartzstyle" start time: Oct 15 23:37 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestQuartzStyle *********
@@ -21,15 +21,15 @@ Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_quartzstyle" end time: Oct 15 22:57 CEST
+"tst_quartzstyle" end time: Oct 15 23:37 CEST
 "tst_quartzstyle" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-2/4 Testing: tst_settings_model
-2/4 Test: tst_settings_model
+2/6 Testing: tst_settings_model
+2/6 Test: tst_settings_model
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_settings_model" start time: Oct 15 22:57 CEST
+"tst_settings_model" start time: Oct 15 23:37 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestSettingsModel *********
@@ -44,15 +44,15 @@ Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_settings_model" end time: Oct 15 22:57 CEST
+"tst_settings_model" end time: Oct 15 23:37 CEST
 "tst_settings_model" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-3/4 Testing: tst_stagemanager_math
-3/4 Test: tst_stagemanager_math
+3/6 Testing: tst_stagemanager_math
+3/6 Test: tst_stagemanager_math
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_stagemanager_math" start time: Oct 15 22:57 CEST
+"tst_stagemanager_math" start time: Oct 15 23:37 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestStageManagerMath *********
@@ -67,18 +67,18 @@ PASS   : TestStageManagerMath::cleanupTestCase()
 Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
 ********* Finished testing of TestStageManagerMath *********
 <end of output>
-Test time =   0.08 sec
+Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_stagemanager_math" end time: Oct 15 22:57 CEST
+"tst_stagemanager_math" end time: Oct 15 23:37 CEST
 "tst_stagemanager_math" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-4/4 Testing: tst_finder_modes
-4/4 Test: tst_finder_modes
+4/6 Testing: tst_finder_modes
+4/6 Test: tst_finder_modes
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_finder_modes" start time: Oct 15 22:57 CEST
+"tst_finder_modes" start time: Oct 15 23:37 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestFinderModes *********
@@ -86,15 +86,70 @@ Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared
 PASS   : TestFinderModes::initTestCase()
 PASS   : TestFinderModes::testInitialMode()
 PASS   : TestFinderModes::testModeSwitching()
+PASS   : TestFinderModes::testGalleryPopulationAndDirectoryEntries()
+PASS   : TestFinderModes::testSignalsEmission()
 PASS   : TestFinderModes::cleanupTestCase()
-Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 20ms
+Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 24ms
 ********* Finished testing of TestFinderModes *********
 <end of output>
-Test time =   0.09 sec
+Test time =   0.10 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_finder_modes" end time: Oct 15 22:57 CEST
+"tst_finder_modes" end time: Oct 15 23:37 CEST
 "tst_finder_modes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 15 22:57 CEST
+5/6 Testing: tst_settingsconfig
+5/6 Test: tst_settingsconfig
+Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settingsconfig"
+Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
+"tst_settingsconfig" start time: Oct 15 23:37 CEST
+Output:
+----------------------------------------------------------
+********* Start testing of TestSettingsConfig *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), cachyos unknown
+PASS   : TestSettingsConfig::initTestCase()
+QWARN  : TestSettingsConfig::testDefaults() Servicio D-Bus org.quartz.Config no disponible. Utilizando valores locales.
+PASS   : TestSettingsConfig::testDefaults()
+QWARN  : TestSettingsConfig::testSignalsAndMutations() Servicio D-Bus org.quartz.Config no disponible. Utilizando valores locales.
+PASS   : TestSettingsConfig::testSignalsAndMutations()
+QWARN  : TestSettingsConfig::testOnConfigChangedParsing() Servicio D-Bus org.quartz.Config no disponible. Utilizando valores locales.
+PASS   : TestSettingsConfig::testOnConfigChangedParsing()
+PASS   : TestSettingsConfig::cleanupTestCase()
+Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of TestSettingsConfig *********
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"tst_settingsconfig" end time: Oct 15 23:37 CEST
+"tst_settingsconfig" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/6 Testing: tst_shell_controllers
+6/6 Test: tst_shell_controllers
+Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_shell_controllers"
+Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
+"tst_shell_controllers" start time: Oct 15 23:37 CEST
+Output:
+----------------------------------------------------------
+********* Start testing of TestShellControllers *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), cachyos unknown
+PASS   : TestShellControllers::initTestCase()
+PASS   : TestShellControllers::testSpotlightVisibilityAndSearch()
+PASS   : TestShellControllers::testQuickLookPreviewHandling()
+PASS   : TestShellControllers::testDockGaussianPhysicsAndBounce()
+PASS   : TestShellControllers::testDockCommandLineParsing()
+PASS   : TestShellControllers::testDockAppAttentionSignal()
+PASS   : TestShellControllers::cleanupTestCase()
+Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of TestShellControllers *********
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"tst_shell_controllers" end time: Oct 15 23:37 CEST
+"tst_shell_controllers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 15 23:37 CEST

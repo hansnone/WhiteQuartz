@@ -1,5 +1,6 @@
 #include "DockController.h"
 #include <QProcess>
+#include <QDir>
 
 namespace Quartz::Shell {
 
@@ -65,11 +66,35 @@ QVariantList DockController::defaultApps() const
     return list;
 }
 
+QStringList DockController::parseCommandLine(const QString &cmd) const
+{
+    if (cmd.trimmed().isEmpty()) {
+        return {};
+    }
+
+    QStringList parts = QProcess::splitCommand(cmd);
+    for (QString &arg : parts) {
+        if (arg.startsWith(QLatin1String("~/"))) {
+            arg = QDir::homePath() + arg.mid(1);
+        } else if (arg == QLatin1String("~")) {
+            arg = QDir::homePath();
+        }
+    }
+    return parts;
+}
+
 void DockController::launchApp(const QString &cmd)
 {
-    if (!cmd.isEmpty()) {
-        Q_EMIT appBouncingRequested(cmd);
-        QProcess::startDetached(cmd, {});
+    if (cmd.trimmed().isEmpty()) {
+        return;
+    }
+
+    Q_EMIT appBouncingRequested(cmd);
+
+    QStringList parts = parseCommandLine(cmd);
+    if (!parts.isEmpty()) {
+        QString program = parts.takeFirst();
+        QProcess::startDetached(program, parts);
     }
 }
 

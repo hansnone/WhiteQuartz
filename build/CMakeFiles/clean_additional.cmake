@@ -24,11 +24,17 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "Release")
   "tests/CMakeFiles/tst_quartzstyle_autogen.dir/ParseCache.txt"
   "tests/CMakeFiles/tst_settings_model_autogen.dir/AutogenUsed.txt"
   "tests/CMakeFiles/tst_settings_model_autogen.dir/ParseCache.txt"
+  "tests/CMakeFiles/tst_settingsconfig_autogen.dir/AutogenUsed.txt"
+  "tests/CMakeFiles/tst_settingsconfig_autogen.dir/ParseCache.txt"
+  "tests/CMakeFiles/tst_shell_controllers_autogen.dir/AutogenUsed.txt"
+  "tests/CMakeFiles/tst_shell_controllers_autogen.dir/ParseCache.txt"
   "tests/CMakeFiles/tst_stagemanager_math_autogen.dir/AutogenUsed.txt"
   "tests/CMakeFiles/tst_stagemanager_math_autogen.dir/ParseCache.txt"
   "tests/tst_finder_modes_autogen"
   "tests/tst_quartzstyle_autogen"
   "tests/tst_settings_model_autogen"
+  "tests/tst_settingsconfig_autogen"
+  "tests/tst_shell_controllers_autogen"
   "tests/tst_stagemanager_math_autogen"
   )
 endif()

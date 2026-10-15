@@ -235,6 +235,7 @@
 #define __VERSION__ "16.2.1 20260810"
 #define __UINT64_C(c) c ## UL
 #define __cpp_unicode_characters 201411L
+#define QT_DBUS_LIB 1
 #define __DEC64X_MIN__ 1E-6143D64x
 #define _STDC_PREDEF_H 1
 #define __INT_LEAST32_MAX__ 0x7fffffff
@@ -429,6 +430,7 @@
 #define __FLT16_HAS_DENORM__ 1
 #define __DBL_DECIMAL_DIG__ 17
 #define __STDC_UTF_32__ 1
+#define HAVE_LAYERSHELLQT 1
 #define __INT_FAST8_WIDTH__ 8
 #define __FXSR__ 1
 #define __FLT32X_MAX__ 1.79769313486231570814527423731704357e+308F32x

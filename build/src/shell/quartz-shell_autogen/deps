@@ -6,7 +6,11 @@ quartz-shell_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/resources.qrc \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/spotlight/SpotlightController.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/spotlight/SpotlightController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/style/quartzmetrics.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
@@ -446,6 +450,17 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qversiontagging.h \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
+	/usr/include/qt6/QtDBus/QDBusConnection \
+	/usr/include/qt6/QtDBus/QDBusInterface \
+	/usr/include/qt6/QtDBus/qdbusabstractinterface.h \
+	/usr/include/qt6/QtDBus/qdbusconnection.h \
+	/usr/include/qt6/QtDBus/qdbuserror.h \
+	/usr/include/qt6/QtDBus/qdbusextratypes.h \
+	/usr/include/qt6/QtDBus/qdbusinterface.h \
+	/usr/include/qt6/QtDBus/qdbusmessage.h \
+	/usr/include/qt6/QtDBus/qdbuspendingcall.h \
+	/usr/include/qt6/QtDBus/qtdbusexports.h \
+	/usr/include/qt6/QtDBus/qtdbusglobal.h \
 	/usr/include/sched.h \
 	/usr/include/stdc-predef.h \
 	/usr/include/stdint.h \
@@ -460,8 +475,13 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/time.h \
 	/usr/include/wchar.h \
 	/usr/include/wctype.h \
+	/usr/lib/cmake/LayerShellQt/LayerShellQtConfig.cmake \
+	/usr/lib/cmake/LayerShellQt/LayerShellQtConfigVersion.cmake \
+	/usr/lib/cmake/LayerShellQt/LayerShellQtTargets-noconfig.cmake \
+	/usr/lib/cmake/LayerShellQt/LayerShellQtTargets.cmake \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \
+	/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
 	/usr/bin/cmake
