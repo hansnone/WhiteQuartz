@@ -50,6 +50,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "message-v1"
     backtrace:
@@ -117,6 +118,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -176,6 +178,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -214,6 +217,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "message-v1"
     backtrace:
@@ -281,6 +285,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -326,6 +331,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -371,6 +377,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -416,6 +423,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -461,6 +469,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -506,6 +515,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -551,6 +561,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -596,6 +607,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -653,6 +665,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -698,6 +711,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -755,6 +769,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -837,6 +852,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "find-v1"
     backtrace:
@@ -919,6 +935,7 @@ events:
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -928,8 +945,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-FLtbCr"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-FLtbCr"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-yCRDw0"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-yCRDw0"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -940,10 +957,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: false
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-FLtbCr'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-yCRDw0'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_4187f
-        [1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/ninja -v cmTC_5c295
+        [1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -951,8 +968,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.2.1 20260810 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4187f.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4187f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccdeLya1.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5c295.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5c295.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cciPyYrg.s
         GNU C++20 (GCC) version 16.2.1 20260810 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 16.2.1 20260810, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.28-GMP
         
@@ -969,13 +986,13 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 28a31ad65a3474623aa15fc494746870
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4187f.dir/'
-         as -v --64 -o CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccdeLya1.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5c295.dir/'
+         as -v --64 -o CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o /tmp/cciPyYrg.s
         GNU assembler version 2.47 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.47
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4187f   && :
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_5c295   && :
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper
@@ -986,12 +1003,12 @@ events:
         gcc version 16.2.1 20260810 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4187f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4187f.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpAiWNo.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4187f /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5c295' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5c295.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAqZLJv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5c295 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
         collect2 version 16.2.1 20260810
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpAiWNo.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4187f /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAqZLJv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5c295 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.47
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4187f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4187f.'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5c295' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5c295.'
         
       exitCode: 0
   -
@@ -1030,10 +1047,10 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild))("|,| |$)]
-        ignore line: [Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-FLtbCr']
+        ignore line: [Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-yCRDw0']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_4187f]
-        ignore line: [[1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_5c295]
+        ignore line: [[1/2] /usr/bin/c++   -v -o CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1041,8 +1058,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.2.1 20260810 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4187f.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4187f.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccdeLya1.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5c295.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5c295.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cciPyYrg.s]
         ignore line: [GNU C++20 (GCC) version 16.2.1 20260810 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 16.2.1 20260810  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.28-GMP]
         ignore line: []
@@ -1059,13 +1076,13 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 28a31ad65a3474623aa15fc494746870]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4187f.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccdeLya1.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5c295.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o /tmp/cciPyYrg.s]
         ignore line: [GNU assembler version 2.47 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.47]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /usr/bin/c++  -v -Wl -v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4187f   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /usr/bin/c++  -v -Wl -v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_5c295   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper]
@@ -1076,13 +1093,13 @@ events:
         ignore line: [gcc version 16.2.1 20260810 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4187f' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4187f.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpAiWNo.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4187f /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5c295' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5c295.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAqZLJv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5c295 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccpAiWNo.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccAqZLJv.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
@@ -1098,7 +1115,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_4187f] ==> ignore
+          arg [cmTC_5c295] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o]
@@ -1110,7 +1127,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1122,9 +1139,9 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
         ignore line: [collect2 version 16.2.1 20260810]
-        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpAiWNo.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4187f /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker [/usr/bin/ld]
-        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpAiWNo.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4187f /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker architecture flags [-m;elf]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpAiWNo.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4187f /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4187f.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAqZLJv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5c295 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker [/usr/bin/ld]
+        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAqZLJv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5c295 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker architecture flags [-m;elf]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAqZLJv.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5c295 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5c295.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld -m;elf
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1164,12 +1181,12 @@ events:
       - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
       - "/usr/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:206 (include)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-L9Gbro"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-L9Gbro"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-IX4nZA"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-IX4nZA"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1181,11 +1198,11 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-L9Gbro'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-IX4nZA'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_469da
-        [1/2] /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_469da.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-L9Gbro/src.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_469da.dir/src.cxx.o -o cmTC_469da   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_27e1b
+        [1/2] /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_27e1b.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-IX4nZA/src.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_27e1b.dir/src.cxx.o -o cmTC_27e1b   && :
         
       exitCode: 0
   -
@@ -1200,12 +1217,12 @@ events:
       - "/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:54 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-06xT51"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-06xT51"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iDfi0s"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iDfi0s"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1217,11 +1234,11 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-06xT51'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iDfi0s'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_c1381
-        [1/2] /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_c1381.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-06xT51/src.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_c1381.dir/src.cxx.o -o cmTC_c1381   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_32185
+        [1/2] /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_32185.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iDfi0s/src.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_32185.dir/src.cxx.o -o cmTC_32185   && :
         
       exitCode: 0
   -
@@ -1231,7 +1248,7 @@ events:
       - "/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:44 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:54 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6CoreTools"
     configs:
       -
@@ -1449,7 +1466,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6Core"
     configs:
       -
@@ -1593,7 +1610,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "OPENGL_INCLUDE_DIR"
     description: "Path to a file."
@@ -1685,7 +1702,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "OPENGL_GLX_INCLUDE_DIR"
     description: "Path to a file."
@@ -1774,7 +1791,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "OPENGL_EGL_INCLUDE_DIR"
     description: "Path to a file."
@@ -1863,7 +1880,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "OPENGL_GLES2_INCLUDE_DIR"
     description: "Path to a file."
@@ -1952,7 +1969,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "OPENGL_GLES3_INCLUDE_DIR"
     description: "Path to a file."
@@ -2041,7 +2058,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "OPENGL_xmesa_INCLUDE_DIR"
     description: "Path to a file."
@@ -2146,7 +2163,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "OPENGL_GLU_INCLUDE_DIR"
     description: "Path to a file."
@@ -2235,7 +2252,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "library"
     variable: "OPENGL_opengl_LIBRARY"
     description: "Path to a library."
@@ -2324,7 +2341,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "library"
     variable: "OPENGL_glx_LIBRARY"
     description: "Path to a library."
@@ -2450,7 +2467,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "library"
     variable: "OPENGL_egl_LIBRARY"
     description: "Path to a library."
@@ -2576,7 +2593,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "library"
     variable: "OPENGL_gles2_LIBRARY"
     description: "Path to a library."
@@ -2665,7 +2682,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "library"
     variable: "OPENGL_gles3_LIBRARY"
     description: "Path to a library."
@@ -2778,7 +2795,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "library"
     variable: "OPENGL_glu_LIBRARY"
     description: "Path to a library."
@@ -2869,7 +2886,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "path"
     variable: "Vulkan_INCLUDE_DIR"
     description: "Path to a file."
@@ -2966,7 +2983,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "library"
     variable: "Vulkan_LIBRARY"
     description: "Path to a library."
@@ -3053,7 +3070,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLC_EXECUTABLE"
     description: "Path to a program."
@@ -3134,7 +3151,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
     description: "Path to a program."
@@ -3213,7 +3230,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:45 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6GuiTools"
     configs:
       -
@@ -3439,7 +3456,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:53 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6DBusTools"
     configs:
       -
@@ -3662,7 +3679,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:53 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6DBus"
     configs:
       -
@@ -3784,7 +3801,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6Gui"
     configs:
       -
@@ -3908,7 +3925,7 @@ events:
       - "/usr/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6WidgetsTools"
     configs:
       -
@@ -4126,7 +4143,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6Widgets"
     configs:
       -
@@ -4253,7 +4270,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6QmlTools"
     configs:
       -
@@ -4474,7 +4491,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6QuickTools"
     configs:
       -
@@ -4702,7 +4719,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6QmlIntegration"
     configs:
       -
@@ -4818,7 +4835,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6Network"
     configs:
       -
@@ -4955,7 +4972,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6QmlCompilerPlusPrivateTools"
     configs:
       -
@@ -5316,7 +5333,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6Qml"
     configs:
       -
@@ -5675,7 +5692,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6QmlModels"
     configs:
       -
@@ -5799,7 +5816,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6QmlWorkerScript"
     configs:
       -
@@ -5918,7 +5935,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6QmlMeta"
     configs:
       -
@@ -6037,7 +6054,7 @@ events:
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:51 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6OpenGL"
     configs:
       -
@@ -6159,7 +6176,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6Quick"
     configs:
       -
@@ -6975,7 +6992,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:17 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
     name: "Qt6"
     components:
       -
@@ -9506,7 +9523,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:27 (find_package)"
+      - "CMakeLists.txt:30 (find_package)"
     name: "KF6CoreAddons"
     configs:
       -
@@ -9722,7 +9739,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:28 (find_package)"
+      - "CMakeLists.txt:31 (find_package)"
     name: "KF6Config"
     configs:
       -
@@ -9950,7 +9967,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_X11_INCLUDE_PATH"
     description: "Path to a file."
@@ -10042,7 +10059,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xlib_INCLUDE_PATH"
     description: "Path to a file."
@@ -10134,7 +10151,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_ICE_INCLUDE_PATH"
     description: "Path to a file."
@@ -10226,7 +10243,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_SM_INCLUDE_PATH"
     description: "Path to a file."
@@ -10318,7 +10335,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xaccessrules_INCLUDE_PATH"
     description: "Path to a file."
@@ -10410,7 +10427,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xaccessstr_INCLUDE_PATH"
     description: "Path to a file."
@@ -10502,7 +10519,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xau_INCLUDE_PATH"
     description: "Path to a file."
@@ -10594,7 +10611,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xaw_INCLUDE_PATH"
     description: "Path to a file."
@@ -10686,7 +10703,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_INCLUDE_PATH"
     description: "Path to a file."
@@ -10778,7 +10795,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_X11_xcb_INCLUDE_PATH"
     description: "Path to a file."
@@ -10870,7 +10887,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_composite_INCLUDE_PATH"
     description: "Path to a file."
@@ -10962,7 +10979,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_cursor_INCLUDE_PATH"
     description: "Path to a file."
@@ -11054,7 +11071,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_damage_INCLUDE_PATH"
     description: "Path to a file."
@@ -11146,7 +11163,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_dpms_INCLUDE_PATH"
     description: "Path to a file."
@@ -11238,7 +11255,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_dri2_INCLUDE_PATH"
     description: "Path to a file."
@@ -11330,7 +11347,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_dri3_INCLUDE_PATH"
     description: "Path to a file."
@@ -11422,7 +11439,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_errors_INCLUDE_PATH"
     description: "Path to a file."
@@ -11514,7 +11531,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_ewmh_INCLUDE_PATH"
     description: "Path to a file."
@@ -11606,7 +11623,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_glx_INCLUDE_PATH"
     description: "Path to a file."
@@ -11698,7 +11715,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_icccm_INCLUDE_PATH"
     description: "Path to a file."
@@ -11790,7 +11807,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_image_INCLUDE_PATH"
     description: "Path to a file."
@@ -11882,7 +11899,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_keysyms_INCLUDE_PATH"
     description: "Path to a file."
@@ -11974,7 +11991,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_present_INCLUDE_PATH"
     description: "Path to a file."
@@ -12066,7 +12083,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_randr_INCLUDE_PATH"
     description: "Path to a file."
@@ -12158,7 +12175,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_record_INCLUDE_PATH"
     description: "Path to a file."
@@ -12250,7 +12267,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_render_INCLUDE_PATH"
     description: "Path to a file."
@@ -12342,7 +12359,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_render_util_INCLUDE_PATH"
     description: "Path to a file."
@@ -12434,7 +12451,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_res_INCLUDE_PATH"
     description: "Path to a file."
@@ -12526,7 +12543,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_screensaver_INCLUDE_PATH"
     description: "Path to a file."
@@ -12618,7 +12635,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_shape_INCLUDE_PATH"
     description: "Path to a file."
@@ -12710,7 +12727,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_shm_INCLUDE_PATH"
     description: "Path to a file."
@@ -12802,7 +12819,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_sync_INCLUDE_PATH"
     description: "Path to a file."
@@ -12894,7 +12911,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_util_INCLUDE_PATH"
     description: "Path to a file."
@@ -12986,7 +13003,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xf86dri_INCLUDE_PATH"
     description: "Path to a file."
@@ -13078,7 +13095,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xfixes_INCLUDE_PATH"
     description: "Path to a file."
@@ -13170,7 +13187,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xinerama_INCLUDE_PATH"
     description: "Path to a file."
@@ -13262,7 +13279,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xinput_INCLUDE_PATH"
     description: "Path to a file."
@@ -13354,7 +13371,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xkb_INCLUDE_PATH"
     description: "Path to a file."
@@ -13446,7 +13463,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xrm_INCLUDE_PATH"
     description: "Path to a file."
@@ -13555,7 +13572,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xtest_INCLUDE_PATH"
     description: "Path to a file."
@@ -13647,7 +13664,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xvmc_INCLUDE_PATH"
     description: "Path to a file."
@@ -13739,7 +13756,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xcb_xv_INCLUDE_PATH"
     description: "Path to a file."
@@ -13831,7 +13848,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xcomposite_INCLUDE_PATH"
     description: "Path to a file."
@@ -13923,7 +13940,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xcursor_INCLUDE_PATH"
     description: "Path to a file."
@@ -14015,7 +14032,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xdamage_INCLUDE_PATH"
     description: "Path to a file."
@@ -14107,7 +14124,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xdbe_INCLUDE_PATH"
     description: "Path to a file."
@@ -14199,7 +14216,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xdmcp_INCLUDE_PATH"
     description: "Path to a file."
@@ -14291,7 +14308,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xext_INCLUDE_PATH"
     description: "Path to a file."
@@ -14383,7 +14400,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_dpms_INCLUDE_PATH"
     description: "Path to a file."
@@ -14475,7 +14492,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xxf86misc_INCLUDE_PATH"
     description: "Path to a file."
@@ -14584,7 +14601,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xxf86vm_INCLUDE_PATH"
     description: "Path to a file."
@@ -14676,7 +14693,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xfixes_INCLUDE_PATH"
     description: "Path to a file."
@@ -14768,7 +14785,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xft_INCLUDE_PATH"
     description: "Path to a file."
@@ -14860,7 +14877,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xi_INCLUDE_PATH"
     description: "Path to a file."
@@ -14952,7 +14969,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xinerama_INCLUDE_PATH"
     description: "Path to a file."
@@ -15044,7 +15061,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xkb_INCLUDE_PATH"
     description: "Path to a file."
@@ -15136,7 +15153,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xkbcommon_INCLUDE_PATH"
     description: "Path to a file."
@@ -15228,7 +15245,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xkbcommon_X11_INCLUDE_PATH"
     description: "Path to a file."
@@ -15320,7 +15337,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xkblib_INCLUDE_PATH"
     description: "Path to a file."
@@ -15412,7 +15429,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_xkbfile_INCLUDE_PATH"
     description: "Path to a file."
@@ -15504,7 +15521,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xmu_INCLUDE_PATH"
     description: "Path to a file."
@@ -15596,7 +15613,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xpm_INCLUDE_PATH"
     description: "Path to a file."
@@ -15688,7 +15705,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xpresent_INCLUDE_PATH"
     description: "Path to a file."
@@ -15780,7 +15797,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xtst_INCLUDE_PATH"
     description: "Path to a file."
@@ -15872,7 +15889,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_XShm_INCLUDE_PATH"
     description: "Path to a file."
@@ -15964,7 +15981,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xrandr_INCLUDE_PATH"
     description: "Path to a file."
@@ -16056,7 +16073,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xrender_INCLUDE_PATH"
     description: "Path to a file."
@@ -16148,7 +16165,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_XRes_INCLUDE_PATH"
     description: "Path to a file."
@@ -16240,7 +16257,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xss_INCLUDE_PATH"
     description: "Path to a file."
@@ -16332,7 +16349,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xshape_INCLUDE_PATH"
     description: "Path to a file."
@@ -16424,7 +16441,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xutil_INCLUDE_PATH"
     description: "Path to a file."
@@ -16516,7 +16533,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xt_INCLUDE_PATH"
     description: "Path to a file."
@@ -16608,7 +16625,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_Xv_INCLUDE_PATH"
     description: "Path to a file."
@@ -16700,7 +16717,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "X11_XSync_INCLUDE_PATH"
     description: "Path to a file."
@@ -16792,7 +16809,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_X11_LIB"
     description: "Path to a library."
@@ -16882,7 +16899,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_ICE_LIB"
     description: "Path to a library."
@@ -16972,7 +16989,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_SM_LIB"
     description: "Path to a library."
@@ -17062,7 +17079,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xau_LIB"
     description: "Path to a library."
@@ -17152,7 +17169,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xaw_LIB"
     description: "Path to a library."
@@ -17242,7 +17259,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_LIB"
     description: "Path to a library."
@@ -17332,7 +17349,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_X11_xcb_LIB"
     description: "Path to a library."
@@ -17422,7 +17439,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_composite_LIB"
     description: "Path to a library."
@@ -17512,7 +17529,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_cursor_LIB"
     description: "Path to a library."
@@ -17602,7 +17619,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_damage_LIB"
     description: "Path to a library."
@@ -17692,7 +17709,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_dpms_LIB"
     description: "Path to a library."
@@ -17782,7 +17799,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_dri2_LIB"
     description: "Path to a library."
@@ -17872,7 +17889,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_dri3_LIB"
     description: "Path to a library."
@@ -17962,7 +17979,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_errors_LIB"
     description: "Path to a library."
@@ -18052,7 +18069,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_ewmh_LIB"
     description: "Path to a library."
@@ -18142,7 +18159,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_glx_LIB"
     description: "Path to a library."
@@ -18232,7 +18249,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_icccm_LIB"
     description: "Path to a library."
@@ -18322,7 +18339,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_image_LIB"
     description: "Path to a library."
@@ -18412,7 +18429,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_keysyms_LIB"
     description: "Path to a library."
@@ -18502,7 +18519,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_present_LIB"
     description: "Path to a library."
@@ -18592,7 +18609,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_randr_LIB"
     description: "Path to a library."
@@ -18682,7 +18699,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_record_LIB"
     description: "Path to a library."
@@ -18772,7 +18789,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_render_LIB"
     description: "Path to a library."
@@ -18862,7 +18879,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_render_util_LIB"
     description: "Path to a library."
@@ -18952,7 +18969,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_res_LIB"
     description: "Path to a library."
@@ -19042,7 +19059,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_screensaver_LIB"
     description: "Path to a library."
@@ -19132,7 +19149,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_shape_LIB"
     description: "Path to a library."
@@ -19222,7 +19239,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_shm_LIB"
     description: "Path to a library."
@@ -19312,7 +19329,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_sync_LIB"
     description: "Path to a library."
@@ -19402,7 +19419,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_util_LIB"
     description: "Path to a library."
@@ -19492,7 +19509,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xf86dri_LIB"
     description: "Path to a library."
@@ -19582,7 +19599,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xfixes_LIB"
     description: "Path to a library."
@@ -19672,7 +19689,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xinerama_LIB"
     description: "Path to a library."
@@ -19762,7 +19779,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xinput_LIB"
     description: "Path to a library."
@@ -19852,7 +19869,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xkb_LIB"
     description: "Path to a library."
@@ -19942,7 +19959,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xrm_LIB"
     description: "Path to a library."
@@ -20047,7 +20064,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xtest_LIB"
     description: "Path to a library."
@@ -20137,7 +20154,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xvmc_LIB"
     description: "Path to a library."
@@ -20227,7 +20244,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xcb_xv_LIB"
     description: "Path to a library."
@@ -20317,7 +20334,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xcomposite_LIB"
     description: "Path to a library."
@@ -20407,7 +20424,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xcursor_LIB"
     description: "Path to a library."
@@ -20497,7 +20514,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xdamage_LIB"
     description: "Path to a library."
@@ -20587,7 +20604,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xdmcp_LIB"
     description: "Path to a library."
@@ -20677,7 +20694,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xext_LIB"
     description: "Path to a library."
@@ -20767,7 +20784,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xfixes_LIB"
     description: "Path to a library."
@@ -20857,7 +20874,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xft_LIB"
     description: "Path to a library."
@@ -20947,7 +20964,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xi_LIB"
     description: "Path to a library."
@@ -21037,7 +21054,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xinerama_LIB"
     description: "Path to a library."
@@ -21127,7 +21144,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xkbcommon_LIB"
     description: "Path to a library."
@@ -21217,7 +21234,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xkbcommon_X11_LIB"
     description: "Path to a library."
@@ -21307,7 +21324,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_xkbfile_LIB"
     description: "Path to a library."
@@ -21397,7 +21414,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xmu_LIB"
     description: "Path to a library."
@@ -21487,7 +21504,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xpm_LIB"
     description: "Path to a library."
@@ -21577,7 +21594,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xpresent_LIB"
     description: "Path to a library."
@@ -21667,7 +21684,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xrandr_LIB"
     description: "Path to a library."
@@ -21757,7 +21774,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xrender_LIB"
     description: "Path to a library."
@@ -21847,7 +21864,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_XRes_LIB"
     description: "Path to a library."
@@ -21937,7 +21954,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xss_LIB"
     description: "Path to a library."
@@ -22027,7 +22044,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xt_LIB"
     description: "Path to a library."
@@ -22117,7 +22134,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xtst_LIB"
     description: "Path to a library."
@@ -22207,7 +22224,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xv_LIB"
     description: "Path to a library."
@@ -22297,7 +22314,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xxf86misc_LIB"
     description: "Path to a library."
@@ -22402,7 +22419,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "X11_Xxf86vm_LIB"
     description: "Path to a library."
@@ -22493,7 +22510,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "FREETYPE_INCLUDE_DIR_ft2build"
     description: "Path to a file."
@@ -22689,7 +22706,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "FREETYPE_INCLUDE_DIR_freetype2"
     description: "Path to a file."
@@ -22886,7 +22903,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "FREETYPE_LIBRARY_RELEASE"
     description: "Path to a library."
@@ -23011,7 +23028,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "FREETYPE_LIBRARY_DEBUG"
     description: "Path to a library."
@@ -23248,7 +23265,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "program"
     variable: "PKG_CONFIG_EXECUTABLE"
     description: "pkg-config executable"
@@ -23337,7 +23354,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "pkgcfg_lib_PKG_FONTCONFIG_fontconfig"
     description: "Path to a library."
@@ -23387,7 +23404,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "path"
     variable: "Fontconfig_INCLUDE_DIR"
     description: "Path to a file."
@@ -23463,7 +23480,7 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     mode: "library"
     variable: "Fontconfig_LIBRARY"
     description: "Path to a library."
@@ -23550,10 +23567,10 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-EC3gY4"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-EC3gY4"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-4Ki3KA"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-4Ki3KA"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -23565,11 +23582,11 @@ events:
       variable: "X11_LIB_X11_SOLO"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-EC3gY4'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-4Ki3KA'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_ee4c8
-        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=XOpenDisplay  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_ee4c8.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-EC3gY4/CheckFunctionExists.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_ee4c8.dir/CheckFunctionExists.cxx.o -o cmTC_ee4c8  /usr/lib/libX11.so  /usr/lib/libXext.so && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_fa7af
+        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=XOpenDisplay  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_fa7af.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-4Ki3KA/CheckFunctionExists.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_fa7af.dir/CheckFunctionExists.cxx.o -o cmTC_fa7af  /usr/lib/libX11.so  /usr/lib/libXext.so && :
         
       exitCode: 0
   -
@@ -23580,10 +23597,10 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-z5ObvT"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-z5ObvT"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8CbXeJ"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8CbXeJ"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -23595,11 +23612,11 @@ events:
       variable: "CMAKE_HAVE_GETHOSTBYNAME"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-z5ObvT'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8CbXeJ'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_12b71
-        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=gethostbyname  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_12b71.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-z5ObvT/CheckFunctionExists.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_12b71.dir/CheckFunctionExists.cxx.o -o cmTC_12b71   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_58ad7
+        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=gethostbyname  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_58ad7.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8CbXeJ/CheckFunctionExists.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_58ad7.dir/CheckFunctionExists.cxx.o -o cmTC_58ad7   && :
         
       exitCode: 0
   -
@@ -23610,10 +23627,10 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-KLPMEc"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-KLPMEc"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-2ka2Ej"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-2ka2Ej"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -23625,11 +23642,11 @@ events:
       variable: "CMAKE_HAVE_CONNECT"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-KLPMEc'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-2ka2Ej'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_d7004
-        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=connect  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_d7004.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-KLPMEc/CheckFunctionExists.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_d7004.dir/CheckFunctionExists.cxx.o -o cmTC_d7004   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_f9356
+        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=connect  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_f9356.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-2ka2Ej/CheckFunctionExists.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_f9356.dir/CheckFunctionExists.cxx.o -o cmTC_f9356   && :
         
       exitCode: 0
   -
@@ -23640,10 +23657,10 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8Xzrt1"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8Xzrt1"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-tJTJXQ"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-tJTJXQ"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -23655,11 +23672,11 @@ events:
       variable: "CMAKE_HAVE_REMOVE"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8Xzrt1'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-tJTJXQ'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_ce1d9
-        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=remove  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_ce1d9.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-8Xzrt1/CheckFunctionExists.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_ce1d9.dir/CheckFunctionExists.cxx.o -o cmTC_ce1d9   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1b511
+        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=remove  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_1b511.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-tJTJXQ/CheckFunctionExists.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_1b511.dir/CheckFunctionExists.cxx.o -o cmTC_1b511   && :
         
       exitCode: 0
   -
@@ -23670,10 +23687,10 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iV4oxc"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iV4oxc"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-W1X3nO"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-W1X3nO"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -23685,11 +23702,11 @@ events:
       variable: "CMAKE_HAVE_SHMAT"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iV4oxc'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-W1X3nO'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_dbc35
-        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=shmat  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_dbc35.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-iV4oxc/CheckFunctionExists.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_dbc35.dir/CheckFunctionExists.cxx.o -o cmTC_dbc35   && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1c865
+        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=shmat  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_1c865.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-W1X3nO/CheckFunctionExists.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_1c865.dir/CheckFunctionExists.cxx.o -o cmTC_1c865   && :
         
       exitCode: 0
   -
@@ -23700,10 +23717,10 @@ events:
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
       - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
       - "/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake:41 (find_dependency)"
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     directories:
-      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-xgd6RP"
-      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-xgd6RP"
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-q9XllR"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-q9XllR"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -23715,17 +23732,17 @@ events:
       variable: "CMAKE_LIB_ICE_HAS_ICECONNECTIONNUMBER"
       cached: true
       stdout: |
-        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-xgd6RP'
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-q9XllR'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_fa081
-        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=IceConnectionNumber  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_fa081.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-xgd6RP/CheckFunctionExists.cxx
-        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_fa081.dir/CheckFunctionExists.cxx.o -o cmTC_fa081  -lICE && :
+        Run Build Command(s): /usr/bin/ninja -v cmTC_2802c
+        [1/2] /usr/bin/c++ -DCHECK_FUNCTION_EXISTS=IceConnectionNumber  -std=gnu++20 -fPIE -o CMakeFiles/cmTC_2802c.dir/CheckFunctionExists.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-q9XllR/CheckFunctionExists.cxx
+        [2/2] : && /usr/bin/c++   CMakeFiles/cmTC_2802c.dir/CheckFunctionExists.cxx.o -o cmTC_2802c  -lICE && :
         
       exitCode: 0
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:29 (find_package)"
+      - "CMakeLists.txt:32 (find_package)"
     name: "KF6WindowSystem"
     configs:
       -
@@ -23941,7 +23958,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:30 (find_package)"
+      - "CMakeLists.txt:33 (find_package)"
     name: "KF6PulseAudioQt"
     configs:
       -
@@ -24157,7 +24174,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:31 (find_package)"
+      - "CMakeLists.txt:34 (find_package)"
     name: "KF6Screen"
     configs:
       -

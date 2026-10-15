@@ -1,0 +1,14 @@
+# Artefactos locales de compilación (evitar transferir cachés de CMake entre máquinas)
+/build/
+/target/
+
+# Cachés de Python
+__pycache__/
+*.pyc
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+*.user
+*.swp
+*~

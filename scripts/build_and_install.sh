@@ -136,6 +136,16 @@ fi
 
 # 3. Compilación de componentes C++/Qt6 (CMake + Ninja)
 log_info "[2/3] Configurando y compilando componentes C++/Qt6 (CMake)..."
+
+# Saneamiento automático de caché foránea (si el directorio build fue copiado de otra máquina o ruta)
+if [[ -f "${BUILD_DIR}/CMakeCache.txt" ]]; then
+    if ! grep -q "CMAKE_CACHEFILE_DIR:INTERNAL=${BUILD_DIR}" "${BUILD_DIR}/CMakeCache.txt" 2>/dev/null; then
+        log_warn "Detectada caché previa de CMake generada en otra ruta o equipo."
+        log_warn "Purgando ${BUILD_DIR} para reconfigurar limpiamente..."
+        rm -rf "${BUILD_DIR}"
+    fi
+fi
+
 cmake -B "${BUILD_DIR}" -S "${PROJECT_ROOT}" -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="${INSTALL_PREFIX}"
