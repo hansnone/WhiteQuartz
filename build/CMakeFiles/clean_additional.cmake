@@ -1,0 +1,34 @@
+# Additional clean files
+cmake_minimum_required(VERSION 3.16)
+
+if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "Release")
+  file(REMOVE_RECURSE
+  "src/compositor/CMakeFiles/quartz-compositor_autogen.dir/AutogenUsed.txt"
+  "src/compositor/CMakeFiles/quartz-compositor_autogen.dir/ParseCache.txt"
+  "src/compositor/quartz-compositor_autogen"
+  "src/finder/CMakeFiles/quartz-finder_autogen.dir/AutogenUsed.txt"
+  "src/finder/CMakeFiles/quartz-finder_autogen.dir/ParseCache.txt"
+  "src/finder/quartz-finder_autogen"
+  "src/settings/CMakeFiles/quartz-settings_autogen.dir/AutogenUsed.txt"
+  "src/settings/CMakeFiles/quartz-settings_autogen.dir/ParseCache.txt"
+  "src/settings/quartz-settings_autogen"
+  "src/shell/CMakeFiles/quartz-shell_autogen.dir/AutogenUsed.txt"
+  "src/shell/CMakeFiles/quartz-shell_autogen.dir/ParseCache.txt"
+  "src/shell/quartz-shell_autogen"
+  "src/style/CMakeFiles/quartz-style_autogen.dir/AutogenUsed.txt"
+  "src/style/CMakeFiles/quartz-style_autogen.dir/ParseCache.txt"
+  "src/style/quartz-style_autogen"
+  "tests/CMakeFiles/tst_finder_modes_autogen.dir/AutogenUsed.txt"
+  "tests/CMakeFiles/tst_finder_modes_autogen.dir/ParseCache.txt"
+  "tests/CMakeFiles/tst_quartzstyle_autogen.dir/AutogenUsed.txt"
+  "tests/CMakeFiles/tst_quartzstyle_autogen.dir/ParseCache.txt"
+  "tests/CMakeFiles/tst_settings_model_autogen.dir/AutogenUsed.txt"
+  "tests/CMakeFiles/tst_settings_model_autogen.dir/ParseCache.txt"
+  "tests/CMakeFiles/tst_stagemanager_math_autogen.dir/AutogenUsed.txt"
+  "tests/CMakeFiles/tst_stagemanager_math_autogen.dir/ParseCache.txt"
+  "tests/tst_finder_modes_autogen"
+  "tests/tst_quartzstyle_autogen"
+  "tests/tst_settings_model_autogen"
+  "tests/tst_stagemanager_math_autogen"
+  )
+endif()

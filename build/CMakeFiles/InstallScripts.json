@@ -1,0 +1,13 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/pedro/Proyectos/WhiteQuartz/build/cmake_install.cmake",
+		"/home/pedro/Proyectos/WhiteQuartz/build/src/style/cmake_install.cmake",
+		"/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/cmake_install.cmake",
+		"/home/pedro/Proyectos/WhiteQuartz/build/src/settings/cmake_install.cmake",
+		"/home/pedro/Proyectos/WhiteQuartz/build/src/shell/cmake_install.cmake",
+		"/home/pedro/Proyectos/WhiteQuartz/build/src/finder/cmake_install.cmake",
+		"/home/pedro/Proyectos/WhiteQuartz/build/tests/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

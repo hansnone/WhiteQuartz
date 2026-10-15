@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=QuartzDE
+Comment=Quartz Desktop Environment (macOS inspired Wayland DE)
+Exec=/usr/local/bin/startquartz
+TryExec=/usr/local/bin/startquartz
+Type=Application
+DesktopNames=Quartz:KDE
+X-KDE-PluginInfo-Version=0.1.0

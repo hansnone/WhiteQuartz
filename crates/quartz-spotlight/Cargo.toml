@@ -1,0 +1,21 @@
+[package]
+name = "quartz-spotlight"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "quartz-spotlight"
+path = "src/main.rs"
+
+[dependencies]
+libquartz = { path = "../libquartz" }
+zbus = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+clap = { workspace = true }
+anyhow = { workspace = true }

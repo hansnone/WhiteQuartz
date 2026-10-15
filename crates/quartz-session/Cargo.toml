@@ -1,0 +1,20 @@
+[package]
+name = "quartz-session"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "startquartz"
+path = "src/main.rs"
+
+[dependencies]
+libquartz = { path = "../libquartz" }
+zbus = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+clap = { workspace = true }
+nix = { workspace = true }
+anyhow = { workspace = true }

@@ -1,0 +1,100 @@
+Start testing: Oct 15 21:50 CEST
+----------------------------------------------------------
+1/4 Testing: tst_quartzstyle
+1/4 Test: tst_quartzstyle
+Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle"
+Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
+"tst_quartzstyle" start time: Oct 15 21:50 CEST
+Output:
+----------------------------------------------------------
+********* Start testing of TestQuartzStyle *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), cachyos unknown
+PASS   : TestQuartzStyle::initTestCase()
+PASS   : TestQuartzStyle::testMetrics()
+PASS   : TestQuartzStyle::testTrafficLightSymbols()
+PASS   : TestQuartzStyle::testModalSheetRendering()
+PASS   : TestQuartzStyle::testButtonSizeFromContents()
+PASS   : TestQuartzStyle::cleanupTestCase()
+Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+********* Finished testing of TestQuartzStyle *********
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"tst_quartzstyle" end time: Oct 15 21:50 CEST
+"tst_quartzstyle" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/4 Testing: tst_settings_model
+2/4 Test: tst_settings_model
+Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model"
+Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
+"tst_settings_model" start time: Oct 15 21:50 CEST
+Output:
+----------------------------------------------------------
+********* Start testing of TestSettingsModel *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), cachyos unknown
+PASS   : TestSettingsModel::initTestCase()
+PASS   : TestSettingsModel::testInitialPopulation()
+PASS   : TestSettingsModel::testFiltering()
+PASS   : TestSettingsModel::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
+********* Finished testing of TestSettingsModel *********
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"tst_settings_model" end time: Oct 15 21:50 CEST
+"tst_settings_model" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/4 Testing: tst_stagemanager_math
+3/4 Test: tst_stagemanager_math
+Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math"
+Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
+"tst_stagemanager_math" start time: Oct 15 21:50 CEST
+Output:
+----------------------------------------------------------
+********* Start testing of TestStageManagerMath *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), cachyos unknown
+PASS   : TestStageManagerMath::initTestCase()
+PASS   : TestStageManagerMath::testStateToggle()
+PASS   : TestStageManagerMath::testSpatialModes()
+PASS   : TestStageManagerMath::testSquircleDistanceFormula()
+PASS   : TestStageManagerMath::testDropShadowKeyWindowVsInactive()
+PASS   : TestStageManagerMath::testTransformMatrix()
+PASS   : TestStageManagerMath::cleanupTestCase()
+Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
+********* Finished testing of TestStageManagerMath *********
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"tst_stagemanager_math" end time: Oct 15 21:50 CEST
+"tst_stagemanager_math" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/4 Testing: tst_finder_modes
+4/4 Test: tst_finder_modes
+Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes"
+Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
+"tst_finder_modes" start time: Oct 15 21:50 CEST
+Output:
+----------------------------------------------------------
+********* Start testing of TestFinderModes *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), cachyos unknown
+PASS   : TestFinderModes::initTestCase()
+PASS   : TestFinderModes::testInitialMode()
+PASS   : TestFinderModes::testModeSwitching()
+PASS   : TestFinderModes::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 21ms
+********* Finished testing of TestFinderModes *********
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"tst_finder_modes" end time: Oct 15 21:50 CEST
+"tst_finder_modes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 15 21:50 CEST

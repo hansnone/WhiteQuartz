@@ -1,0 +1,158 @@
+[
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -Dquartz_style_EXPORTS -I/home/pedro/Proyectos/WhiteQuartz/build/src/style/quartz-style_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/style/CMakeFiles/quartz-style.dir/quartz-style_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/src/style/quartz-style_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/src/style/quartz-style_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/style/CMakeFiles/quartz-style.dir/quartz-style_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -Dquartz_style_EXPORTS -I/home/pedro/Proyectos/WhiteQuartz/build/src/style/quartz-style_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/style/CMakeFiles/quartz-style.dir/quartzstyle.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/style/quartzstyle.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/style/quartzstyle.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/style/CMakeFiles/quartz-style.dir/quartzstyle.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -Dquartz_compositor_EXPORTS -I/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/quartz-compositor_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtDBus -isystem /usr/include/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/compositor/CMakeFiles/quartz-compositor.dir/quartz-compositor_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/quartz-compositor_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/quartz-compositor_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-compositor.dir/quartz-compositor_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -Dquartz_compositor_EXPORTS -I/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/quartz-compositor_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtDBus -isystem /usr/include/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/compositor/CMakeFiles/quartz-compositor.dir/stagemanagereffect.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/compositor/stagemanagereffect.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/compositor/stagemanagereffect.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-compositor.dir/stagemanagereffect.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -Dquartz_compositor_EXPORTS -I/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/quartz-compositor_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtDBus -isystem /usr/include/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIC -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/compositor/CMakeFiles/quartz-compositor.dir/quartzdecoration.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/compositor/quartzdecoration.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/compositor/quartzdecoration.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-compositor.dir/quartzdecoration.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQUARTZ_SETTINGS_QML_DIR=\\\"/home/pedro/Proyectos/WhiteQuartz/src/settings/qml\\\" -I/home/pedro/Proyectos/WhiteQuartz/build/src/settings/quartz-settings_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/settings -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtOpenGL -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/settings/CMakeFiles/quartz-settings.dir/quartz-settings_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/src/settings/quartz-settings_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/src/settings/quartz-settings_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/settings/CMakeFiles/quartz-settings.dir/quartz-settings_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQUARTZ_SETTINGS_QML_DIR=\\\"/home/pedro/Proyectos/WhiteQuartz/src/settings/qml\\\" -I/home/pedro/Proyectos/WhiteQuartz/build/src/settings/quartz-settings_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/settings -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtOpenGL -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/settings/CMakeFiles/quartz-settings.dir/main.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/settings/main.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/settings/main.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/settings/CMakeFiles/quartz-settings.dir/main.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQUARTZ_SETTINGS_QML_DIR=\\\"/home/pedro/Proyectos/WhiteQuartz/src/settings/qml\\\" -I/home/pedro/Proyectos/WhiteQuartz/build/src/settings/quartz-settings_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/settings -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtOpenGL -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/settings/CMakeFiles/quartz-settings.dir/settingsmodel.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/settings/CMakeFiles/quartz-settings.dir/settingsmodel.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQUARTZ_SHELL_QML_DIR=\\\"/home/pedro/Proyectos/WhiteQuartz/src/shell/qml\\\" -I/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/shell -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtOpenGL -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/shell/CMakeFiles/quartz-shell.dir/quartz-shell_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/CMakeFiles/quartz-shell.dir/quartz-shell_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQUARTZ_SHELL_QML_DIR=\\\"/home/pedro/Proyectos/WhiteQuartz/src/shell/qml\\\" -I/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/shell -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtOpenGL -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/shell/CMakeFiles/quartz-shell.dir/main.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/CMakeFiles/quartz-shell.dir/main.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQUARTZ_SHELL_QML_DIR=\\\"/home/pedro/Proyectos/WhiteQuartz/src/shell/qml\\\" -I/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/shell -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtOpenGL -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/shell/CMakeFiles/quartz-shell.dir/menubar/MenuBarController.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/CMakeFiles/quartz-shell.dir/menubar/MenuBarController.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DQT_WIDGETS_LIB -DQUARTZ_SHELL_QML_DIR=\\\"/home/pedro/Proyectos/WhiteQuartz/src/shell/qml\\\" -I/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/shell -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtQuick -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtOpenGL -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/shell/CMakeFiles/quartz-shell.dir/dock/DockController.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/shell/dock/DockController.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/shell/dock/DockController.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/CMakeFiles/quartz-shell.dir/dock/DockController.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/finder -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtDBus -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/finder/CMakeFiles/quartz-finder.dir/quartz-finder_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/finder/CMakeFiles/quartz-finder.dir/quartz-finder_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/finder -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtDBus -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/finder/CMakeFiles/quartz-finder.dir/main.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/finder/main.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/finder/main.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/finder/CMakeFiles/quartz-finder.dir/main.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/finder -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtDBus -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/finder/CMakeFiles/quartz-finder.dir/findercolumnview.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/finder/CMakeFiles/quartz-finder.dir/findercolumnview.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/finder -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtDBus -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o src/finder/CMakeFiles/quartz-finder.dir/quicklookclient.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/finder/quicklookclient.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/finder/quicklookclient.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/src/finder/CMakeFiles/quartz-finder.dir/quicklookclient.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_quartzstyle.dir/tst_quartzstyle_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_quartzstyle.dir/tst_quartzstyle_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_quartzstyle.dir/tst_quartzstyle.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/tests/tst_quartzstyle.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/tests/tst_quartzstyle.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_quartzstyle.dir/tst_quartzstyle.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/settings -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_settings_model.dir/tst_settings_model_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_settings_model.dir/tst_settings_model_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/settings -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_settings_model.dir/tst_settings_model.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/tests/tst_settings_model.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/tests/tst_settings_model.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_settings_model.dir/tst_settings_model.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_QMLINTEGRATION_LIB -DQT_QML_LIB -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/settings -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtQml -isystem /usr/include/qt6/QtQmlIntegration -isystem /usr/include/qt6/QtNetwork -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_settings_model.dir/__/src/settings/settingsmodel.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_settings_model.dir/__/src/settings/settingsmodel.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtTest -isystem /usr/include/qt6/QtDBus -isystem /usr/include/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_stagemanager_math.dir/tst_stagemanager_math_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_stagemanager_math.dir/tst_stagemanager_math_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_DBUS_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtTest -isystem /usr/include/qt6/QtDBus -isystem /usr/include/qt6/QtWidgets -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_stagemanager_math.dir/tst_stagemanager_math.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/tests/tst_stagemanager_math.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/tests/tst_stagemanager_math.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_stagemanager_math.dir/tst_stagemanager_math.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/finder -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_finder_modes.dir/tst_finder_modes_autogen/mocs_compilation.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/mocs_compilation.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/mocs_compilation.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_finder_modes.dir/tst_finder_modes_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/finder -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_finder_modes.dir/tst_finder_modes.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/tests/tst_finder_modes.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/tests/tst_finder_modes.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_finder_modes.dir/tst_finder_modes.cpp.o"
+},
+{
+  "directory": "/home/pedro/Proyectos/WhiteQuartz/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_TESTCASE_BUILDDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/build/tests\\\" -DQT_TESTCASE_SOURCEDIR=\\\"/home/pedro/Proyectos/WhiteQuartz/tests\\\" -DQT_TESTLIB_LIB -DQT_WIDGETS_LIB -I/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/include -I/home/pedro/Proyectos/WhiteQuartz/src/finder -I/home/pedro/Proyectos/WhiteQuartz/src/style -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtTest -O3 -DNDEBUG -std=gnu++20 -fPIE -Wall -Wextra -Wpedantic -mno-direct-extern-access -o tests/CMakeFiles/tst_finder_modes.dir/__/src/finder/findercolumnview.cpp.o -c /home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.cpp",
+  "file": "/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.cpp",
+  "output": "/home/pedro/Proyectos/WhiteQuartz/build/tests/CMakeFiles/tst_finder_modes.dir/__/src/finder/findercolumnview.cpp.o"
+}
+]

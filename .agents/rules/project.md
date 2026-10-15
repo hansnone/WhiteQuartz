@@ -1,0 +1,5 @@
+- Lee siempre los documentos de docs/requirements/ antes de planificar o implementar.
+- Si existe docs/phases/roadmap.md, no implementes fuera de la fase activa aprobada.
+- Antes de proponer soluciones, busca patrones en docs/references/.
+- Cita el documento de origen o el análisis de referencia en cada decisión importante.
+- Al finalizar una fase, actualiza docs/phases/status.md.
