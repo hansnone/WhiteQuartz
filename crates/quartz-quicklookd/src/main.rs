@@ -140,12 +140,24 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::path::Path;
 
     #[test]
     fn test_inspect_text_file() {
-        let info = PreviewInspector::inspect("file:///home/pedro/Proyectos/WhiteQuartz/Cargo.toml");
+        let manifest_dir = env!("CARGO_MANIFEST_DIR");
+        let toml_path = Path::new(manifest_dir).join("Cargo.toml");
+        let uri = format!("file://{}", toml_path.to_string_lossy());
+
+        let info = PreviewInspector::inspect(&uri);
         assert_eq!(info.preview_type, PreviewType::Text);
         assert_eq!(info.file_name, "Cargo.toml");
-        assert!(info.size_bytes > 0);
+        assert!(info.size_bytes > 0, "El tamaño de Cargo.toml debe ser mayor que 0");
+    }
+
+    #[test]
+    fn test_inspect_non_existent_file() {
+        let info = PreviewInspector::inspect("file:///tmp/non_existent_file_test_quartz.xyz");
+        assert_eq!(info.preview_type, PreviewType::Generic);
+        assert_eq!(info.size_bytes, 0);
     }
 }

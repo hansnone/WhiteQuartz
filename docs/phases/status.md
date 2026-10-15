@@ -9,12 +9,14 @@
 - **Estado:** COMPLETADA (100%)
 - **Fecha:** 2026-10-15
 - **Resultado de Compilación:** Compilación limpia en `target/release/` y `build/` sin instalación en el host.
-- **Resultado de Tests:** 12/12 tests aprobados (100%).
-  - Rust Workspace (`cargo test --release --workspace`): 4 suites / 8 tests aprobados.
+- **Resultado de Tests:** 13/13 tests aprobados (100%).
+  - Rust Workspace (`cargo test --release --workspace`): 4 suites / 9 tests aprobados.
   - C++ Test Suite (`ctest`): 4 tests aprobados.
 
-## Incidencia Resuelta: Aprovisionamiento en VM Ubuntu 26.04 ("Resolute")
-- **Diagnóstico:** Los paquetes `kwin-dev` y `liblayershellqtinterface-dev` estaban ausentes por falta del componente `universe` y por el uso de nombres obsoletos (`libkwin-dev`, `liblayershellqt-dev`).
-- **Solución implementada:**
-  - `scripts/setup_vm_dependencies.sh`: Automatización de `add-apt-repository -y universe`, sustitución por `kwin-dev` y `liblayershellqtinterface-dev`, y estructura modular tolerante a fallos.
-  - Preservación del aislamiento: El host permanece 100% limpio sin instalaciones.
+## Incidencias Resueltas en VM:
+1. **Aprovisionamiento en VM Ubuntu 26.04 ("Resolute"):**
+   - Habilitado `universe` automáticamente y corregidos nombres oficiales de paquetes (`kwin-dev`, `liblayershellqtinterface-dev`).
+2. **Portabilidad de Tests Unitarios (`quartz-quicklookd`):**
+   - Eliminada ruta hardcodeada local `/home/pedro/...` en `test_inspect_text_file`.
+   - Implementada resolución dinámica universal con `env!("CARGO_MANIFEST_DIR")` + `Cargo.toml`.
+   - Añadido test para tolerancia a ficheros inexistentes (`test_inspect_non_existent_file`).
