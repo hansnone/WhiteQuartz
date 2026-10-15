@@ -1,5 +1,5 @@
-tst_quartzstyle 4 0.0213775
-tst_settings_model 4 0.00226354
-tst_stagemanager_math 4 0.020601
-tst_finder_modes 2 0.0499907
+tst_quartzstyle 5 0.0162539
+tst_settings_model 5 0.00174395
+tst_stagemanager_math 5 0.0162036
+tst_finder_modes 3 0.0310582
 ---
