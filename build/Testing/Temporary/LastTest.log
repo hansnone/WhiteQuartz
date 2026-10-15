@@ -1,10 +1,10 @@
-Start testing: Oct 15 22:43 CEST
+Start testing: Oct 15 22:57 CEST
 ----------------------------------------------------------
 1/4 Testing: tst_quartzstyle
 1/4 Test: tst_quartzstyle
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_quartzstyle" start time: Oct 15 22:43 CEST
+"tst_quartzstyle" start time: Oct 15 22:57 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestQuartzStyle *********
@@ -21,7 +21,7 @@ Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_quartzstyle" end time: Oct 15 22:43 CEST
+"tst_quartzstyle" end time: Oct 15 22:57 CEST
 "tst_quartzstyle" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -29,7 +29,7 @@ Test Passed.
 2/4 Test: tst_settings_model
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_settings_model" start time: Oct 15 22:43 CEST
+"tst_settings_model" start time: Oct 15 22:57 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestSettingsModel *********
@@ -44,7 +44,7 @@ Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_settings_model" end time: Oct 15 22:43 CEST
+"tst_settings_model" end time: Oct 15 22:57 CEST
 "tst_settings_model" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -52,7 +52,7 @@ Test Passed.
 3/4 Test: tst_stagemanager_math
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_stagemanager_math" start time: Oct 15 22:43 CEST
+"tst_stagemanager_math" start time: Oct 15 22:57 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestStageManagerMath *********
@@ -70,7 +70,7 @@ Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_stagemanager_math" end time: Oct 15 22:43 CEST
+"tst_stagemanager_math" end time: Oct 15 22:57 CEST
 "tst_stagemanager_math" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -78,7 +78,7 @@ Test Passed.
 4/4 Test: tst_finder_modes
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_finder_modes" start time: Oct 15 22:43 CEST
+"tst_finder_modes" start time: Oct 15 22:57 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestFinderModes *********
@@ -93,8 +93,8 @@ Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 20ms
 Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_finder_modes" end time: Oct 15 22:43 CEST
+"tst_finder_modes" end time: Oct 15 22:57 CEST
 "tst_finder_modes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 15 22:43 CEST
+End testing: Oct 15 22:57 CEST

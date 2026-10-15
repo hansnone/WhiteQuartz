@@ -4,10 +4,12 @@ add_executable(quartz-shell
     menubar/MenuBarController.h
     dock/DockController.cpp
     dock/DockController.h
+    resources.qrc
 )
 
 target_compile_definitions(quartz-shell PRIVATE
     QUARTZ_SHELL_QML_DIR="${CMAKE_CURRENT_SOURCE_DIR}/qml"
+    QUARTZ_SHELL_INSTALL_QML_DIR="${CMAKE_INSTALL_PREFIX}/share/quartz-shell/qml"
 )
 
 target_include_directories(quartz-shell PRIVATE

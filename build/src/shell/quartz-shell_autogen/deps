@@ -6,6 +6,7 @@ quartz-shell_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/resources.qrc \
 	/home/pedro/Proyectos/WhiteQuartz/src/style/quartzmetrics.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \

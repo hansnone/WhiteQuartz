@@ -4,7 +4,11 @@
 	"CMAKE_CURRENT_BINARY_DIR" : "/home/pedro/Proyectos/WhiteQuartz/build/src/shell",
 	"CMAKE_CURRENT_SOURCE_DIR" : "/home/pedro/Proyectos/WhiteQuartz/src/shell",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
-	"CMAKE_LIST_FILES" : [ "/home/pedro/Proyectos/WhiteQuartz/src/shell/CMakeLists.txt" ],
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/pedro/Proyectos/WhiteQuartz/src/shell/CMakeLists.txt",
+		"/home/pedro/Proyectos/WhiteQuartz/src/shell/resources.qrc"
+	],
 	"CMAKE_SOURCE_DIR" : "/home/pedro/Proyectos/WhiteQuartz",
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/deps",
@@ -38,6 +42,7 @@
 		"QT_QML_LIB",
 		"QT_QUICK_LIB",
 		"QT_WIDGETS_LIB",
+		"QUARTZ_SHELL_INSTALL_QML_DIR=\"/usr/local/share/quartz-shell/qml\"",
 		"QUARTZ_SHELL_QML_DIR=\"/home/pedro/Proyectos/WhiteQuartz/src/shell/qml\""
 	],
 	"MOC_DEPEND_FILTERS" : 

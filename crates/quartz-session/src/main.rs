@@ -87,14 +87,49 @@ impl SessionLifecycleManager {
     }
 }
 
+use std::path::{Path, PathBuf};
+use std::time::Duration;
+
+pub async fn wait_for_wayland_socket(
+    socket_path: &Path,
+    timeout_duration: Duration,
+    mut compositor: Option<&mut Child>,
+) -> Result<(), Box<dyn std::error::Error>> {
+    let start = std::time::Instant::now();
+    let poll_interval = Duration::from_millis(50);
+
+    while start.elapsed() < timeout_duration {
+        if socket_path.exists() {
+            info!("Socket Wayland detectado en {:?}", socket_path);
+            return Ok(());
+        }
+
+        if let Some(child) = compositor.as_deref_mut() {
+            if let Ok(Some(status)) = child.try_wait() {
+                return Err(format!("El compositor Wayland terminó prematuramente con estado: {}", status).into());
+            }
+        }
+
+        tokio::time::sleep(poll_interval).await;
+    }
+
+    Err(format!(
+        "Tiempo de espera agotado ({:?}) esperando el socket Wayland en {:?}",
+        timeout_duration, socket_path
+    )
+    .into())
+}
+
 struct SessionManager {
     children: Vec<Child>,
+    compositor: Option<Child>,
 }
 
 impl SessionManager {
     fn new() -> Self {
         Self {
             children: Vec::new(),
+            compositor: None,
         }
     }
 
@@ -108,6 +143,26 @@ impl SessionManager {
         env::set_var("GDK_BACKEND", "wayland");
         env::set_var("KDE_FULL_SESSION", "true");
         env::set_var("KDE_SESSION_VERSION", "6");
+    }
+
+    fn spawn_compositor(&mut self, cmd: &str, socket_name: &str) -> Result<PathBuf, Box<dyn std::error::Error>> {
+        info!("Iniciando compositor Wayland principal: {} (socket: {})", cmd, socket_name);
+        let runtime_dir = env::var("XDG_RUNTIME_DIR")
+            .map(PathBuf::from)
+            .unwrap_or_else(|_| PathBuf::from(format!("/run/user/{}", nix::unistd::getuid())));
+        let socket_path = runtime_dir.join(socket_name);
+
+        if socket_path.exists() {
+            let _ = std::fs::remove_file(&socket_path);
+        }
+
+        let child = Command::new(cmd)
+            .args(["--xwayland", "--no-lockscreen", "--socket", socket_name])
+            .spawn()
+            .map_err(|e| format!("No se pudo ejecutar el compositor '{}': {}", cmd, e))?;
+
+        self.compositor = Some(child);
+        Ok(socket_path)
     }
 
     fn spawn_service(&mut self, cmd: &str, args: &[&str]) {
@@ -126,6 +181,10 @@ impl SessionManager {
         info!("Finalizando servicios de sesión...");
         for child in &mut self.children {
             let _ = child.kill();
+        }
+        if let Some(mut comp) = self.compositor.take() {
+            info!("Finalizando compositor Wayland...");
+            let _ = comp.kill();
         }
     }
 }
@@ -149,17 +208,51 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         return Ok(());
     }
 
-    // Registrar servicio de ciclo de vida de aplicaciones en D-Bus
-    let lifecycle = SessionLifecycleManager::new();
-    let _conn = connection::Builder::session()?
-        .name("org.quartz.Session")?
-        .serve_at("/org/quartz/Session", lifecycle)?
-        .build()
-        .await?;
-    info!("Servicio D-Bus org.quartz.Session registrado para ciclo de vida de aplicaciones.");
-
     let mut session = SessionManager::new();
+
+    // 1. Asegurar compositor Wayland
+    let wayland_display = env::var("WAYLAND_DISPLAY").ok();
+    if let Some(active_display) = wayland_display {
+        info!("Sesión Wayland preexistente detectada (WAYLAND_DISPLAY={}). Omitiendo lanzamiento de compositor.", active_display);
+    } else {
+        let socket_name = "wayland-0";
+        let socket_path = session.spawn_compositor(&args.compositor, socket_name)?;
+        info!("Esperando disponibilidad del socket Wayland en {:?}...", socket_path);
+        wait_for_wayland_socket(&socket_path, Duration::from_secs(5), session.compositor.as_mut()).await?;
+        env::set_var("WAYLAND_DISPLAY", socket_name);
+        env::set_var("DISPLAY", ":0");
+        info!("Compositor Wayland inicializado y listo en {}", socket_name);
+    }
+
+    // 2. Registrar servicio de ciclo de vida de aplicaciones en D-Bus
+    let lifecycle = SessionLifecycleManager::new();
+    match connection::Builder::session() {
+        Ok(builder) => {
+            match builder
+                .name("org.quartz.Session")
+                .and_then(|b| b.serve_at("/org/quartz/Session", lifecycle))
+            {
+                Ok(b) => match b.build().await {
+                    Ok(_conn) => {
+                        info!("Servicio D-Bus org.quartz.Session registrado para ciclo de vida de aplicaciones.");
+                    }
+                    Err(e) => {
+                        warn!("No se pudo inicializar la conexión D-Bus: {}. Continuando...", e);
+                    }
+                },
+                Err(e) => {
+                    warn!("Error configurando interfaz D-Bus: {}. Continuando...", e);
+                }
+            }
+        }
+        Err(e) => {
+            warn!("No se pudo conectar al bus de sesión D-Bus: {}. Continuando...", e);
+        }
+    }
+
+    // 3. Lanzar servicios del entorno de escritorio
     session.spawn_service("quartz-quicklookd", &[]);
+    session.spawn_service("quartz-spotlight", &[]);
     session.spawn_service("quartz-shell", &[]);
 
     let mut sigterm = signal(SignalKind::terminate())?;
@@ -167,15 +260,36 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     info!("Sesión QuartzDE activa y gestionando ciclo de vida de documentos y procesos.");
 
-    tokio::select! {
-        _ = sigterm.recv() => {
-            info!("Recibida señal SIGTERM. Cerrando sesión ordenadamente...");
-        }
-        _ = sigint.recv() => {
-            info!("Recibida señal SIGINT (Ctrl+C). Cerrando sesión...");
+    let mut check_interval = tokio::time::interval(Duration::from_millis(250));
+
+    loop {
+        tokio::select! {
+            _ = sigterm.recv() => {
+                info!("Recibida señal SIGTERM. Cerrando sesión ordenadamente...");
+                break;
+            }
+            _ = sigint.recv() => {
+                info!("Recibida señal SIGINT (Ctrl+C). Cerrando sesión...");
+                break;
+            }
+            _ = check_interval.tick() => {
+                if let Some(child) = session.compositor.as_mut() {
+                    match child.try_wait() {
+                        Ok(Some(status)) => {
+                            info!("El compositor Wayland ha finalizado con estado {}. Cerrando sesión QuartzDE...", status);
+                            break;
+                        }
+                        Ok(None) => {}
+                        Err(e) => {
+                            warn!("Error al consultar estado del compositor: {}", e);
+                        }
+                    }
+                }
+            }
         }
     }
 
+    session.terminate_all();
     Ok(())
 }
 
@@ -204,5 +318,24 @@ mod tests {
         // Ctrl+Q: Salida definitiva
         manager.quit_application("quartz-finder".into()).await.unwrap();
         assert!(!manager.is_app_running("quartz-finder".into()).await.unwrap());
+    }
+
+    #[tokio::test]
+    async fn test_wait_for_wayland_socket_success() {
+        let temp_dir = std::env::temp_dir();
+        let socket_path = temp_dir.join(format!("quartz_test_socket_{}", std::process::id()));
+        let _ = std::fs::File::create(&socket_path).unwrap();
+
+        let res = wait_for_wayland_socket(&socket_path, Duration::from_millis(200), None).await;
+        let _ = std::fs::remove_file(&socket_path);
+        assert!(res.is_ok());
+    }
+
+    #[tokio::test]
+    async fn test_wait_for_wayland_socket_timeout() {
+        let temp_dir = std::env::temp_dir();
+        let socket_path = temp_dir.join(format!("quartz_non_existent_{}", std::process::id()));
+        let res = wait_for_wayland_socket(&socket_path, Duration::from_millis(100), None).await;
+        assert!(res.is_err());
     }
 }

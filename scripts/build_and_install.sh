@@ -190,7 +190,12 @@ if [[ "${MODE}" == "vm_install" ]]; then
         SUDO_PREFIX=""
         [[ ! -w "${SESSION_DIR}" ]] && SUDO_PREFIX="sudo"
         ${SUDO_PREFIX} mkdir -p "${SESSION_DIR}"
-        ${SUDO_PREFIX} install -m 644 "${PROJECT_ROOT}/data/sessions/quartz.desktop" "${SESSION_DIR}/"
+        TMP_DESKTOP=$(mktemp)
+        sed -e "s|^Exec=.*|Exec=${BIN_DIR}/startquartz|" \
+            -e "s|^TryExec=.*|TryExec=${BIN_DIR}/startquartz|" \
+            "${PROJECT_ROOT}/data/sessions/quartz.desktop" > "${TMP_DESKTOP}"
+        ${SUDO_PREFIX} install -m 644 "${TMP_DESKTOP}" "${SESSION_DIR}/quartz.desktop"
+        rm -f "${TMP_DESKTOP}"
     fi
 
     echo ""

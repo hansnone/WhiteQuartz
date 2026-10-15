@@ -4,12 +4,12 @@ import QtQuick.Layouts 1.15
 
 ApplicationWindow {
     id: shellRoot
-    width: 1280
-    height: 800
+    width: (typeof Screen !== "undefined" && Screen.desktopAvailableWidth > 0) ? Screen.desktopAvailableWidth : 1280
+    height: (typeof Screen !== "undefined" && Screen.desktopAvailableHeight > 0) ? Screen.desktopAvailableHeight : 800
     visible: true
     title: "QuartzDE Shell"
     color: "transparent"
-    flags: Qt.FramelessWindowHint
+    flags: Qt.FramelessWindowHint | Qt.WindowStaysOnBottomHint
 
     // 1. Barra de menús superior (24px fija - Ley de Fitts)
     Rectangle {
