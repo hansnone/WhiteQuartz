@@ -1,5 +1,12 @@
 # Roadmap - QuartzDE (WhiteQuartz)
 
+> **Convención de Estados:**
+> - `[x]` **Verificado**: Tests unitarios en verde + test de integración con cableado real + evidencia en VM pegada en `status.md` + build limpio.
+> - `[~]` **Implementado sin verificar en VM**: Código implementado y testeado con mocks o en local, pendiente de validación en sesión real de VM.
+> - `[ ]` **Pendiente**: Brecha técnica confirmada o tarea sin implementar.
+
+---
+
 ## Fase 1: Arquitectura Base, Workspace y Script de Despliegue para VM
 - [x] Configuración de Monorepo (Cargo Workspace + CMake)
 - [x] Script `scripts/build_and_install.sh` con protecciones para compilación local e instalación en VM
@@ -49,59 +56,120 @@
   - [x] Previsualización multimedia (imágenes, texto de 64KB, audio/video) en `quartz-quicklookd` y `QuickLookModal.qml`
   - [x] Despliegue automatizado de temas `Colloid` y `Orchis` en `scripts/build_and_install.sh` y variables de entorno de cursor/tema en `startquartz`
 
-## Fase 4: Integración Real en el Compositor KWin (`KDecoration2`/`KDecoration3`, `KWin::Effect` y Shaders GLSL)
+## Fase 4: Integración Real en el Compositor KWin (`KDecoration3`, `KWin::Effect` y Shaders GLSL)
 - [x] Plugin de Decoración de Ventanas `QuartzDecoration` (`KDecoration3::Decoration` con botones Aqua, sombras dinámicas y semáforo)
 - [x] Plugin de Efectos `StageManagerEffect` (`KWin::OffscreenEffect`) y carga de shader superelíptico `squircle.frag`
 - [x] Registro del objeto D-Bus `/org/quartz/Compositor/StageManager` en KWin para control reactivo externo
 
-## Fase 5: Gestión de Ventanas Wayland, Menú Global (`DBusMenu`) y TaskManager del Dock
-- [x] Seguimiento de ventanas activas en `DockController` y `MenuBarController` (`KF6::WindowSystem` / puente Wayland)
-- [x] Servidor `com.canonical.AppMenu.Registrar` e importador `DBusMenu` en `MenuBarController` con menús dinámicos en QML
-- [x] Stacks del Dock (`Descargas` en cuadrícula emergente) y estado reactivo de papelera (`user-trash` vs `user-trash-full`)
+## Fase 5: Gestión de Ventanas Wayland, Menú Global (`DBusMenu`) y TaskManager del Dock (Revisada)
+- [ ] Seguimiento de ventanas en producción (F1: nadie alimenta `DockController`/`MenuBarController` fuera de tests)
+- [~] Servidor `com.canonical.AppMenu.Registrar` e importador `DBusMenu` en `MenuBarController`
+- [~] Stacks del Dock (`Descargas` en cuadrícula emergente) y estado reactivo de papelera
 
-## Fase 6: Paridad Funcional 1:1 en `quartz-finder` y Estabilidad de Configuración
-- [x] **0.2.2**: Estabilidad de configuración en `libquartz`: `#[serde(default)]` en structs, respaldo `config.json.bad` ante JSON corrupto, campo `wallpaper` y test de migración
-- [x] **6.0**: Preparación del modelo asíncrono en `FinderColumnView` (`QFileSystemModel` + `QSortFilterProxyModel`) con vista previa en segundo plano
-- [x] **6.1**: Barra inferior de ruta (*Path Bar*) con migas de pan interactivas y cálculo de espacio libre (`QStorageInfo`)
-- [x] **6.2**: Motor de operaciones de archivos `FileOperations` (nueva carpeta `Ctrl+Shift+N`, cortar/copiar/pegar `Ctrl+X/C/V`, mover aquí `Ctrl+Alt+V`, duplicar `Ctrl+D`, renombrar `Return/F2`, papelera `Delete/Ctrl+Backspace`, deshacer `Ctrl+Z`, copia asíncrona sin symlinks y preservación de xattr)
-- [x] **6.3**: Pestañas independientes (`Ctrl+T`, `Ctrl+W`, `Ctrl+Tab`), etiquetas de color con `user.xdg.tags` y montaje/expulsión de volúmenes con UDisks2/QStorageInfo
+## Fase 6: Paridad Funcional 1:1 en `quartz-finder` y Estabilidad de Configuración (Revisada)
+- [x] **0.2.2**: Estabilidad de configuración en `libquartz`: `#[serde(default)]` en structs, respaldo `config.json.bad` y campo `wallpaper`
+- [~] **6.0**: Modelo asíncrono en `FinderColumnView` (`QFileSystemModel` + `QSortFilterProxyModel`)
+- [~] **6.1**: Barra inferior de ruta (*Path Bar*) interactiva y cálculo de espacio libre (`QStorageInfo`)
+- [~] **6.2**: Motor de operaciones de archivos `FileOperations` (copia asíncrona, xattr; pendiente auditoría de conflictos F21.2)
+- [~] **6.3**: Pestañas independientes, etiquetas de color (`user.xdg.tags`) y montaje de volúmenes con UDisks2
 
-## Fase 7: Subsistema de Hardware, Control Center, Notificaciones y `quartz-settings`
-- [x] **7.1**: Servidor de notificaciones `org.freedesktop.Notifications` 1.2, banners flotantes en capa LayerOverlay y panel lateral `NotificationCenter.qml`
-- [x] **7.2**: Control Center (`ControlCenterPopup.qml`) con audio (PulseAudio/PipeWire), brillo (`login1`), Wi-Fi, Bluetooth, batería y OSD
-- [x] **7.3**: Carga dinámica de los 18 paneles en `quartz-settings` con persistencia reactiva en `QuartzDesktopConfig`
+## Fase 7: Subsistema de Hardware, Control Center, Notificaciones y `quartz-settings` (Revisada)
+- [~] **7.1**: Servidor de notificaciones `org.freedesktop.Notifications` 1.2 (F13: saneado débil, sin persistencia, expiración defectuosa)
+- [ ] **7.2**: Control Center (F12: consultas vacías en brillo, pulseaudio, bluez, mpris)
+- [~] **7.3**: Carga dinámica de paneles en `quartz-settings` (pendiente verificar conexión con backends reales F21.3)
 
-## Fase 8: Atajos Globales, Bloqueo de Pantalla, Login (SDDM) y Gestión de Energía
-- [x] **8.1**: Registro de atajos globales de sesión con `KF6::GlobalAccel` y atajos de compositor (`DesktopShortcuts`)
-- [x] **8.2**: Pantalla de bloqueo Look-and-Feel para `kscreenlocker` (`data/lookandfeel/org.quartz.desktop/`) y D-Bus lock
-- [x] **8.3**: Tema QML para inicio de sesión en SDDM (`data/sddm/themes/quartz/`)
-- [x] **8.4**: Menú Apple y acciones de energía (reposo, reinicio, apagado con cuenta atrás de 60s y logind inhibitors)
+## Fase 8: Atajos Globales, Bloqueo de Pantalla, Login (SDDM) y Gestión de Energía (Revisada)
+- [ ] **8.1**: Atajos globales de sesión (F3: `GlobalShortcuts` no enlaza `KGlobalAccel` ni `QAction`)
+- [ ] **8.2**: Pantalla de bloqueo Look-and-Feel (F4: KWin lanzado con `--no-lockscreen`, `metadata.json` Plasma 5)
+- [~] **8.3**: Tema QML para inicio de sesión en SDDM (`data/sddm/themes/quartz/`)
+- [ ] **8.4**: Menú Apple y energía (F14: uso de `systemctl`/`loginctl` directos, `xkill`, sin inhibitors)
 
-## Fase 9: Dock, Barra de Menús y Escritorio Avanzados
-- [x] **9.0**: Verificación de privilegios Wayland de KWin (`X-KDE-Wayland-Interfaces`) para el seguimiento de ventanas
-- [x] **9.1**: Menú contextual de apps del Dock, persistencia de `.desktop` anclados y minimización de ventanas
-- [x] **9.2**: Cambiador de aplicaciones modal (`Alt+Tab`) con orden MRU
-- [x] **9.3**: Esquinas activas con retardo configurable
-- [x] **9.4**: Bandeja del sistema (`StatusNotifierItem` / `StatusNotifierWatcher`)
-- [x] **9.5**: Iconos en el escritorio en `WallpaperWindow` con `QFileSystemModel`
-- [x] **9.6**: Capturas de pantalla (`Ctrl+Shift+3/4/5`) mediante portales XDG o `ScreenShot2`
-- [x] **9.7**: Diálogo de forzar salida (`Ctrl+Alt+Esc`) con lista negra de protección y Acerca de este Mac
-- [x] **9.8**: Reloj personalizable y soporte de menú global auditado
+## Fase 9: Dock, Barra de Menús y Escritorio Avanzados (Revisada)
+- [ ] **9.0**: Privilegios Wayland de KWin (`X-KDE-Wayland-Interfaces` erróneo en sesión en vez de shell F23)
+- [ ] **9.1**: Menú contextual de apps del Dock y minimización real (F1: sin TaskManager real, usa `killall` F14)
+- [~] **9.2**: Cambiador de aplicaciones modal (`Alt+Tab`) con orden MRU
+- [ ] **9.3**: Esquinas activas (F10: roto en Wayland por sondeo de `QCursor::pos()`, acciones hardcodeadas)
+- [ ] **9.4**: Bandeja del sistema (F11: `IsStatusNotifierHostRegistered` falso sin host real, sin soporte de `IconPixmap`)
+- [~] **9.5**: Iconos en el escritorio en `WallpaperWindow` con `QFileSystemModel`
+- [ ] **9.6**: Capturas de pantalla (F22: dependencia externa de CLI `spectacle` en vez de portales XDG)
+- [~] **9.7**: Diálogo de forzar salida (usa `killall` en vez de `SIGTERM`/`SIGKILL` a PID F14)
+- [~] **9.8**: Reloj personalizable y menú global
 
-## Fase 10: Launchpad, Mission Control y Spaces
-- [x] **10.1**: Launchpad a pantalla completa con paginación, arrastrar para carpetas y catálogo unificado `ListApps()`
-- [x] **10.2**: Mission Control con algoritmo de reparto sin solapes, App Exposé (`Super+Down`) y Spaces virtuales (`VirtualDesktopManager`)
+## Fase 10: Launchpad, Mission Control y Spaces (Revisada)
+- [~] **10.1**: Launchpad a pantalla completa con catálogo `ListApps()`
+- [ ] **10.2**: Mission Control (F8: efecto solo conmuta `spatialMode`, F9: doble disparo D-Bus, sin rejilla en compositor)
 
-## Fase 11: Calidad Visual, Spotlight Avanzado y Robustez
-- [x] **11.1**: Desenfoque Gaussiano real (`vibrancy`) con `KWindowEffects::enableBlurBehind`
-- [x] **11.2**: Spotlight con evaluador de expresiones matemáticas reales, fuzzy matching y consultas cancelables
-- [x] **11.3**: Quick Look multimedia y visor PDF (`QtPdf`)
-- [x] **11.4**: Modo oscuro y color de acento automático sincronizado con el sistema
-- [x] **11.5**: Robustez integral del compositor KWin (guardas `nullptr` y modo seguro sin fallos)
+## Fase 11: Calidad Visual, Spotlight Avanzado y Robustez (Revisada)
+- [~] **11.1**: Desenfoque Gaussiano real (`vibrancy`) con `KF6::WindowSystem`
+- [ ] **11.2**: Spotlight avanzado (F21: sin evaluador matemático real, sin cancelación de consultas)
+- [~] **11.3**: Quick Look multimedia y visor PDF (`QtPdf`)
+- [~] **11.4**: Modo oscuro y color de acento automático sincronizado
+- [ ] **11.5**: Robustez integral del compositor (F7: shader aplicado a todas las ventanas, transformaciones sin filtro)
 
-## Fase 12: Aplicaciones del Sistema
-- [x] Integración y tematización de Terminal (Konsole), Vista Previa (PDF/imagen), Editor de texto (TextEdit) y Monitor de Actividad
+## Fase 12: Aplicaciones del Sistema (Revisada)
+- [ ] Integración y tematización de aplicaciones del sistema (F19: lanzadores a apps sin dependencias instaladas en VM)
 
-## Fase 13: Servicios del Sistema
-- [x] Integración de copias de seguridad (Time Machine sobre restic/btrfs), llavero de contraseñas e interfaz de impresoras CUPS
+## Fase 13: Servicios del Sistema (Revisada)
+- [ ] Servicios del Sistema reales (F16: Time Machine simulado, F17: llavero inseguro en memoria, F18: impresoras bloqueantes)
 
+---
+
+## Fase 14: Verificación, Honestidad y Fundamentos Correctivos
+- [x] **14.1**: Archivar especificación rectora en `docs/requirements/macos-corrective-plan-14-22.md`
+- [x] **14.2**: Reiniciar y sincronizar `docs/phases/roadmap.md` bajo estados `[x]`, `[~]`, `[ ]`
+- [x] **14.3**: Reestructurar `docs/phases/status.md` incorporando campo `Evidencia:` en cada fase
+- [x] **14.4**: Adaptar `.agents/scripts/require-review.py` para exigir `Evidencia:` no vacía para `[x]`
+- [x] **14.5**: Validar y actualizar permisos en `.agents/scripts/scope-gate.py`
+- [x] **14.6**: Actualizar `scripts/setup_vm_dependencies.sh` con dependencias de compilación y ejecución
+- [x] **14.7**: Endurecer CMake en `src/shell/CMakeLists.txt` (`LayerShellQt`, `KF6WindowSystem`, `KF6GlobalAccel` `REQUIRED`)
+- [x] **14.8**: Formalizar contratos D-Bus canónicos en `data/dbus/` (`StageManager.xml` y `WindowBridge.xml`)
+- [x] **14.9**: Implementar script de prueba de humo en VM `scripts/vm_smoke_test.sh` con 8 comprobaciones
+- [x] **14.10**: Verificación integral de compilación (`build_and_install.sh --build-only`) y test suites
+
+## Fase 15: Sesión y Arranque Limpio
+- [ ] **15.1**: Importación temprana del entorno Wayland (`dbus-update-activation-environment` y systemd)
+- [ ] **15.2**: Resolución dinámica del `DISPLAY` XWayland
+- [ ] **15.3**: Arranque de servicios acompañantes (agente polkit, portales XDG, `kglobalacceld`, `kded6`)
+- [ ] **15.4**: Supervisión de procesos en Rust con reinicio automático de `quartz-shell` y servicios
+- [ ] **15.5**: Activación de pantalla de bloqueo (`kscreenlocker`), corrección de `metadata.json` y `kscreenlockerrc`
+- [ ] **15.6**: Acciones de energía y sesión mediante `logind` con gestión de inhibitors y cuenta atrás de 60s
+- [ ] **15.7**: Verificación y pruebas de tema SDDM en `data/sddm/themes/quartz/`
+
+## Fase 16: Contrato D-Bus del Compositor y Puente de Ventanas
+- [ ] **16.1**: Reclamación del servicio `org.quartz.Compositor` y alineación PascalCase de métodos
+- [ ] **16.2**: Implementación del puente de ventanas `WindowBridge` dentro del plugin del compositor KWin
+- [ ] **16.3**: Implementación de `WindowTracker` en el shell y cableado de señales reales hacia Dock y MenuBar
+- [ ] **16.4**: Operaciones de cierre, minimización y salida en DockController usando PIDs y WindowBridge (sin `killall`)
+
+## Fase 17: Atajos Globales (`KF6::GlobalAccel`)
+- [ ] **17.1**: Integración de `KGlobalAccel` en `GlobalShortcuts` con acciones QAction vinculadas a `org.quartz.shell`
+- [ ] **17.2**: Resolución de conflictos de atajos nativos de KWin en `kglobalshortcutsrc`
+
+## Fase 18: Compositor Robusto y Mission Control Real
+- [ ] **18.1**: Robustez de `StageManagerEffect` y `QuartzDecoration` (guardas `nullptr`, contexto GL, modo seguro)
+- [ ] **18.2**: Filtrado de `drawWindow` y transformaciones para excluir superficies de shell y decoraciones
+- [ ] **18.3**: Rejilla viva de Mission Control y App Exposé en el compositor con hit-testing y animación
+- [ ] **18.4**: Reemplazo de controlador local en `MissionControlController` para delegar en el compositor sin doble disparo
+
+## Fase 19: Shell: Layer-Shell, Esquinas Activas y Bandeja del Sistema
+- [~] **19.1**: Inicialización de `LayerShellQt` en dos fases en `main.cpp` para todos los overlays (activación temprana, zona exclusiva y anclajes fijos)
+- [ ] **19.2**: Esquinas activas mediante ventanas sensor de 2x2 px (`LayerOverlay`) con retardo configurable
+- [ ] **19.3**: Implementación de `StatusNotifierHost` y modelo de bandeja del sistema con soporte de `IconPixmap`
+
+## Fase 20: Notificaciones, Control Center, Dock y Energía
+- [ ] **20.1**: Servidor de notificaciones con lista blanca HTML, límites de frecuencia y razones de cierre correctas
+- [ ] **20.2**: Backends reactivos en Control Center (PulseAudioQt, login1 brillo, NetworkManager, BlueZ, MPRIS2)
+- [ ] **20.3**: Lanzamiento de apps en Dock mediante KIO/KService y persistencia de ancladas
+- [ ] **20.4**: Menú Apple con "Forzar salida" real y diálogo "Acerca de este Mac" con telemetría del sistema
+
+## Fase 21: Spotlight, Finder, Ajustes y Capturas
+- [ ] **21.1**: Spotlight con evaluador matemático real, consultas cancelables y limitación de indexación
+- [ ] **21.2**: Auditoría y robustez en Finder (resolución de conflictos al pegar, copia asíncrona segura)
+- [ ] **21.3**: Conexión de los 18 paneles de Ajustes a backends de configuración reales
+- [ ] **21.4**: Capturas de pantalla mediante portal XDG Desktop con nombrado canónico
+
+## Fase 22: Aplicaciones del Sistema y Servicios
+- [ ] **22.1**: Descriptores `.desktop` honestos y perfiles macOS para Konsole, Kate, Okular y Monitor de Actividad
+- [ ] **22.2**: Time Machine real integrado con `restic` (inicialización, backup con progreso JSON y retención)
+- [ ] **22.3**: Integración con Secret Service (KWallet/libsecret) para credenciales
+- [ ] **22.4**: Integración asíncrona de impresoras CUPS o derivación a utilidades nativas

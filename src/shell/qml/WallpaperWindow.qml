@@ -4,7 +4,9 @@ import QtQuick.Window 2.15
 Window {
     id: wallpaperWin
     title: "QuartzDE Wallpaper"
-    visible: true
+    visible: false
+    x: 0
+    y: 0
     color: "#1B2838"
     flags: Qt.FramelessWindowHint
 

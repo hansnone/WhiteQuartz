@@ -288,6 +288,9 @@ KF6Config_DIR:PATH=/usr/lib/cmake/KF6Config
 //The directory containing a CMake configuration file for KF6CoreAddons.
 KF6CoreAddons_DIR:PATH=/usr/lib/cmake/KF6CoreAddons
 
+//The directory containing a CMake configuration file for KF6GlobalAccel.
+KF6GlobalAccel_DIR:PATH=/usr/lib/cmake/KF6GlobalAccel
+
 //The directory containing a CMake configuration file for KF6PulseAudioQt.
 KF6PulseAudioQt_DIR:PATH=/usr/lib/cmake/KF6PulseAudioQt
 
@@ -360,6 +363,10 @@ QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
 
 //Additional directories where find(Qt6 ...) components are searched
 QT_ADDITIONAL_PACKAGES_PREFIX_PATH:STRING=
+
+//Permitir compilacion del shell omitiendo dependencias criticas
+// del sistema
+QUARTZ_ALLOW_MISSING_DEPS:BOOL=OFF
 
 //The directory containing a CMake configuration file for Qt6Concurrent.
 Qt6Concurrent_DIR:PATH=/usr/lib/cmake/Qt6Concurrent
@@ -1059,6 +1066,8 @@ FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 FIND_PACKAGE_MESSAGE_DETAILS_WrapAtomic:INTERNAL=[1][v()]
 //Details about finding WrapOpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_WrapOpenGL:INTERNAL=[ON][v()]
+//Details about finding X11
+FIND_PACKAGE_MESSAGE_DETAILS_X11:INTERNAL=[/usr/include][/usr/lib/libX11.so][ ][v()]
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_freetype2
 FREETYPE_INCLUDE_DIR_freetype2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: FREETYPE_INCLUDE_DIR_ft2build

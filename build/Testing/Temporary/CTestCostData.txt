@@ -1,7 +1,7 @@
-tst_quartzstyle 39 0.00206365
-tst_settings_model 39 0.00021355
-tst_stagemanager_math 40 0.00250717
-tst_finder_modes 39 0.00262494
-tst_settingsconfig 35 0.000172458
-tst_shell_controllers 34 0.303632
+tst_quartzstyle 42 0.00209061
+tst_settings_model 42 0.000201647
+tst_stagemanager_math 43 0.00230292
+tst_finder_modes 42 0.00236467
+tst_settingsconfig 38 0.000158864
+tst_shell_controllers 37 0.287059
 ---

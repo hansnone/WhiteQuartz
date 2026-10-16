@@ -7,7 +7,7 @@
 #include <QStorageInfo>
 #include <QImageReader>
 #include <QPixmapCache>
-#include <QtConcurrent/QtConcurrent>
+#include <QtConcurrentRun>
 
 namespace Quartz::Finder {
 

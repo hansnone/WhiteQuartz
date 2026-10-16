@@ -21,6 +21,7 @@ MODE="build_only"
 INSTALL_PREFIX="${DEFAULT_PREFIX}"
 RUN_TESTS=1
 CLEAN_BUILD=0
+PARALLEL_JOBS=""
 
 # Paleta de colores ANSI
 RED='\033[0;31m'
@@ -43,6 +44,7 @@ Opciones:
   --build-only        Compila el proyecto sin instalarlo en el sistema (MODO SEGURO - Por defecto).
   --vm-install        Ejecuta la fase de instalación. SOLO USAR DENTRO DE UNA MÁQUINA VIRTUAL.
   --prefix RUTA       Directorio base de instalación (por defecto: ${DEFAULT_PREFIX}).
+  -j, --jobs N        Número de hilos de compilación simultáneos (por defecto: auto-calculado por RAM).
   --skip-tests        Omite la ejecución de las suites de pruebas unitarias.
   --clean             Limpia los directorios de compilación previos (target/ y build/).
   -h, --help          Muestra este manual de uso.
@@ -53,6 +55,9 @@ Ejemplos:
 
   2. Compilar e instalar dentro de una Máquina Virtual limpia:
      $0 --vm-install --prefix /usr
+
+  3. Forzar 1 o 2 hilos para entornos con poca memoria RAM:
+     $0 --vm-install --prefix /usr -j 1
 EOF
     exit 0
 }
@@ -70,6 +75,10 @@ while [[ $# -gt 0 ]]; do
             ;;
         --prefix)
             INSTALL_PREFIX="$2"
+            shift 2
+            ;;
+        -j|--jobs)
+            PARALLEL_JOBS="$2"
             shift 2
             ;;
         --skip-tests)
@@ -123,9 +132,45 @@ command -v cargo >/dev/null 2>&1 || { log_error "Cargo/Rust no está instalado."
 command -v cmake >/dev/null 2>&1 || { log_error "CMake no está instalado."; exit 1; }
 command -v ninja >/dev/null 2>&1 || { log_error "Ninja no está instalado."; exit 1; }
 
+# Detección inteligente de memoria y concurrencia para prevenir fallos por OOM Killer (cc1plus killed)
+TOTAL_MEM_MB=0
+SWAP_TOTAL_MB=0
+if [[ -f /proc/meminfo ]]; then
+    TOTAL_MEM_KB=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+    TOTAL_MEM_MB=$(( TOTAL_MEM_KB / 1024 ))
+    SWAP_TOTAL_KB=$(grep SwapTotal /proc/meminfo | awk '{print $2}')
+    SWAP_TOTAL_MB=$(( SWAP_TOTAL_KB / 1024 ))
+fi
+
+CPU_CORES=$(nproc 2>/dev/null || echo 1)
+
+if [[ -z "${PARALLEL_JOBS}" ]]; then
+    if [[ ${TOTAL_MEM_MB} -gt 0 ]]; then
+        # Reservar ~2048 MB por hilo de compilación C++20 pesado para evitar que el OOM Killer termine cc1plus
+        MEM_JOBS=$(( TOTAL_MEM_MB / 2048 ))
+        [[ ${MEM_JOBS} -lt 1 ]] && MEM_JOBS=1
+        if [[ ${MEM_JOBS} -lt ${CPU_CORES} ]]; then
+            PARALLEL_JOBS=${MEM_JOBS}
+        else
+            PARALLEL_JOBS=${CPU_CORES}
+        fi
+    else
+        PARALLEL_JOBS=${CPU_CORES}
+    fi
+    log_info "Concurrencia calculada automáticamente según RAM (${TOTAL_MEM_MB} MB) y CPUs (${CPU_CORES}): ${PARALLEL_JOBS} hilos"
+else
+    log_info "Concurrencia configurada manualmente: ${PARALLEL_JOBS} hilos"
+fi
+
+if [[ ${SWAP_TOTAL_MB} -eq 0 && ${TOTAL_MEM_MB} -lt 4096 ]]; then
+    log_warn "ATENCIÓN: Tu sistema tiene menos de 4GB de RAM y no tiene espacio Swap configurado."
+    log_warn "Se recomienda encarecidamente activar al menos 2GB-4GB de swap para evitar OOM Killer:"
+    log_warn "  sudo fallocate -l 4G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile"
+fi
+
 # 2. Compilación de Crates en Rust
 log_info "[1/3] Compilando workspace en Rust (Cargo)..."
-cargo build --release --workspace --manifest-path "${PROJECT_ROOT}/Cargo.toml"
+cargo build --release --workspace --manifest-path "${PROJECT_ROOT}/Cargo.toml" --jobs "${PARALLEL_JOBS}"
 log_success "Workspace de Rust compilado exitosamente."
 
 if [[ ${RUN_TESTS} -eq 1 ]]; then
@@ -150,7 +195,7 @@ cmake -B "${BUILD_DIR}" -S "${PROJECT_ROOT}" -G Ninja \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX="${INSTALL_PREFIX}"
 
-ninja -C "${BUILD_DIR}"
+ninja -C "${BUILD_DIR}" -j "${PARALLEL_JOBS}"
 log_success "Componentes C++/Qt6 compilados exitosamente."
 
 if [[ ${RUN_TESTS} -eq 1 ]]; then
@@ -165,10 +210,10 @@ if [[ "${MODE}" == "vm_install" ]]; then
 
     # Instalación de componentes C++/Qt mediante CMake
     if [[ -w "${INSTALL_PREFIX}" ]]; then
-        ninja -C "${BUILD_DIR}" install
+        ninja -C "${BUILD_DIR}" -j "${PARALLEL_JOBS}" install
     else
         log_info "Se requieren privilegios sudo para escribir en ${INSTALL_PREFIX}..."
-        sudo ninja -C "${BUILD_DIR}" install
+        sudo ninja -C "${BUILD_DIR}" -j "${PARALLEL_JOBS}" install
     fi
 
     # Instalación de binarios compilados en Rust

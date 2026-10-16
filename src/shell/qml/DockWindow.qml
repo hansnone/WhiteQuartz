@@ -8,7 +8,7 @@ Window {
     title: "QuartzDE Dock"
     height: stackPopup.visible ? 440 : 88
     width: Math.max(dockContainer.width + 64, 420)
-    visible: true
+    visible: false
     color: "transparent"
     flags: Qt.FramelessWindowHint
 

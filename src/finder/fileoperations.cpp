@@ -7,7 +7,7 @@
 #include <QClipboard>
 #include <QMimeData>
 #include <QMimeDatabase>
-#include <QtConcurrent/QtConcurrent>
+#include <QtConcurrentRun>
 #include <sys/xattr.h>
 #include <errno.h>
 

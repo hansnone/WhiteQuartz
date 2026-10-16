@@ -22,6 +22,7 @@
 
 #ifdef HAVE_LAYERSHELLQT
 #include <LayerShellQt/Window>
+#include <LayerShellQt/Shell>
 #endif
 
 #ifdef HAVE_KF6WINDOWSYSTEM
@@ -44,11 +45,19 @@ static void configureLayerShell(QObject *rootObj, const QString &type) {
         lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop) | LayerShellQt::Window::AnchorLeft | LayerShellQt::Window::AnchorRight);
         lWindow->setExclusiveZone(24);
         lWindow->setScope(QStringLiteral("menubar"));
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityNone);
     } else if (type == QStringLiteral("dock")) {
         lWindow->setLayer(LayerShellQt::Window::LayerTop);
         lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorBottom));
-        lWindow->setExclusiveZone(0);
+        lWindow->setExclusiveZone(88);
         lWindow->setScope(QStringLiteral("dock"));
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityNone);
+    } else if (type == QStringLiteral("wallpaper")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerBackground);
+        lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop) | LayerShellQt::Window::AnchorBottom | LayerShellQt::Window::AnchorLeft | LayerShellQt::Window::AnchorRight);
+        lWindow->setExclusiveZone(-1);
+        lWindow->setScope(QStringLiteral("wallpaper"));
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityNone);
     } else if (type == QStringLiteral("spotlight")) {
         lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
         lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
@@ -57,13 +66,43 @@ static void configureLayerShell(QObject *rootObj, const QString &type) {
         lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
         lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
         lWindow->setScope(QStringLiteral("quicklook"));
-    } else if (type == QStringLiteral("wallpaper")) {
-        lWindow->setLayer(LayerShellQt::Window::LayerBackground);
+    } else if (type == QStringLiteral("launchpad")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
         lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop) | LayerShellQt::Window::AnchorBottom | LayerShellQt::Window::AnchorLeft | LayerShellQt::Window::AnchorRight);
         lWindow->setExclusiveZone(-1);
-        lWindow->setScope(QStringLiteral("wallpaper"));
-    } else if (type == QStringLiteral("notification-banner") || type == QStringLiteral("controlcenter") || type == QStringLiteral("notification-center") || type == QStringLiteral("osd")) {
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityExclusive);
+        lWindow->setScope(QStringLiteral("launchpad"));
+    } else if (type == QStringLiteral("mission-control")) {
         lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
+        lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop) | LayerShellQt::Window::AnchorBottom | LayerShellQt::Window::AnchorLeft | LayerShellQt::Window::AnchorRight);
+        lWindow->setExclusiveZone(-1);
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityNone);
+        lWindow->setScope(QStringLiteral("mission-control"));
+    } else if (type == QStringLiteral("app-switcher")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
+        lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop) | LayerShellQt::Window::AnchorBottom | LayerShellQt::Window::AnchorLeft | LayerShellQt::Window::AnchorRight);
+        lWindow->setExclusiveZone(-1);
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityExclusive);
+        lWindow->setScope(QStringLiteral("app-switcher"));
+    } else if (type == QStringLiteral("force-quit")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
+        lWindow->setScope(QStringLiteral("force-quit"));
+    } else if (type == QStringLiteral("notification-banner")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
+        lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop) | LayerShellQt::Window::AnchorRight);
+        lWindow->setExclusiveZone(-1);
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityNone);
+        lWindow->setScope(QStringLiteral("notification-banner"));
+    } else if (type == QStringLiteral("osd")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
+        lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorBottom));
+        lWindow->setExclusiveZone(-1);
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityNone);
+        lWindow->setScope(QStringLiteral("osd"));
+    } else if (type == QStringLiteral("controlcenter") || type == QStringLiteral("notification-center")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
+        lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
         lWindow->setScope(type);
     }
 }
@@ -71,6 +110,15 @@ static void configureLayerShell(QObject *rootObj, const QString &type) {
 
 int main(int argc, char *argv[])
 {
+#ifdef HAVE_LAYERSHELLQT
+    // Activar soporte de protocolo layer-shell en Qt Wayland antes de inicializar la app
+    qputenv("QT_WAYLAND_SHELL_INTEGRATION", "layer-shell");
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+    LayerShellQt::Shell::useLayerShell();
+#pragma GCC diagnostic pop
+#endif
+
     QApplication app(argc, argv);
     app.setApplicationName(QStringLiteral("QuartzShell"));
     app.setOrganizationName(QStringLiteral("QuartzDE"));
@@ -137,26 +185,40 @@ int main(int argc, char *argv[])
             }
 #endif
         }
-        QObject *obj = component.create();
-        if (obj) {
-            auto *qwin = qobject_cast<QQuickWindow*>(obj);
-            if (qwin) {
-#ifdef HAVE_KF6WINDOWSYSTEM
-                if (type != QStringLiteral("wallpaper")) {
-                    KWindowEffects::enableBlurBehind(qwin, true);
-                }
-#endif
-            }
-#ifdef HAVE_LAYERSHELLQT
-            configureLayerShell(obj, type);
-#else
-            Q_UNUSED(type);
-#endif
-            return obj;
-        } else {
-            qWarning() << "No se pudo crear componente QML:" << qmlName << component.errorString();
+        if (component.isError()) {
+            qWarning() << "No se pudo preparar componente QML:" << qmlName << component.errorString();
             return nullptr;
         }
+
+        // Creación en dos fases: configurar layer-shell antes de materializar la ventana nativa
+        QObject *obj = component.beginCreate(engine.rootContext());
+        if (!obj) {
+            qWarning() << "No se pudo instanciar componente QML:" << qmlName << component.errorString();
+            return nullptr;
+        }
+
+        auto *qwin = qobject_cast<QQuickWindow*>(obj);
+        if (qwin) {
+#ifdef HAVE_LAYERSHELLQT
+            configureLayerShell(obj, type);
+#endif
+#ifdef HAVE_KF6WINDOWSYSTEM
+            if (type != QStringLiteral("wallpaper")) {
+                KWindowEffects::enableBlurBehind(qwin, true);
+            }
+#endif
+        }
+
+        component.completeCreate();
+
+        // Mostrar explícitamente las superficies permanentes del shell una vez configurado layer-shell
+        if (qwin) {
+            if (type == QStringLiteral("menubar") || type == QStringLiteral("dock") || type == QStringLiteral("wallpaper")) {
+                qwin->setVisible(true);
+            }
+        }
+
+        return obj;
     };
 
     QObject *wallpaper = loadComponent(QStringLiteral("WallpaperWindow.qml"), QStringLiteral("wallpaper"));

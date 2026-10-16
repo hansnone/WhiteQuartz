@@ -8,7 +8,9 @@ Window {
     title: "QuartzDE MenuBar"
     height: 24
     width: Screen.desktopAvailableWidth > 0 ? Screen.desktopAvailableWidth : 1280
-    visible: true
+    visible: false
+    x: 0
+    y: 0
     color: "#E6F6F6F6"
     flags: Qt.FramelessWindowHint
 

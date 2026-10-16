@@ -40,17 +40,18 @@ case "${DISTRO}" in
         sudo apt update
 
         # 2. Herramientas base de compilación
-        echo "[2/5] Instalando herramientas de compilación base..."
+        echo "[2/6] Instalando herramientas de compilación base..."
         sudo apt install -y \
             build-essential cmake ninja-build git pkg-config curl libinput-dev wayland-protocols
 
-        # 3. SDK de Qt6
-        echo "[3/5] Instalando SDK de Qt6..."
+        # 3. SDK de Qt6 y extensiones
+        echo "[3/6] Instalando SDK de Qt6..."
         sudo apt install -y \
-            qt6-base-dev qt6-declarative-dev qt6-wayland-dev libpoppler-qt6-dev
+            qt6-base-dev qt6-declarative-dev qt6-wayland-dev libpoppler-qt6-dev \
+            qt6-multimedia-dev libqt6pdf6-dev qt6-pdf-dev || true
 
         # 4. KWin y LayerShellQt (nombres oficiales en Ubuntu/Debian)
-        echo "[4/5] Instalando cabeceras de KWin y LayerShellQt..."
+        echo "[4/6] Instalando cabeceras de KWin y LayerShellQt..."
         sudo apt install -y \
             kwin-dev liblayershellqtinterface-dev || {
             echo "Aviso: No se pudo instalar kwin-dev o liblayershellqtinterface-dev directamente."
@@ -58,13 +59,23 @@ case "${DISTRO}" in
             sudo apt install -y kwin-wayland-dev || true
         }
 
-        # 5. KDE Frameworks 6 (KF6)
-        echo "[5/5] Instalando librerías de KDE Frameworks 6..."
+        # 5. KDE Frameworks 6 (KF6) Cabeceras de compilación
+        echo "[5/6] Instalando librerías de desarrollo de KDE Frameworks 6..."
         sudo apt install -y \
             libkf6kcmutils-dev libkf6solid-dev libkf6networkmanagerqt-dev \
-            libkf6bluezqt-dev libkf6pulseaudioqt-dev libkf6baloo-dev libkf6kio-dev || {
-            echo "Aviso: Algunos paquetes opcionales de KF6 no están disponibles en esta rama. Continuando..."
+            libkf6bluezqt-dev libkf6pulseaudioqt-dev libkf6baloo-dev libkf6kio-dev \
+            libkf6globalaccel-dev libkf6windowsystem-dev libkf6screen-dev || {
+            echo "Aviso: Algunos paquetes de desarrollo de KF6 se intentarán instalar de forma individual."
+            sudo apt install -y libkf6globalaccel-dev libkf6windowsystem-dev || true
         }
+
+        # 6. Servicios de tiempo de ejecución de la sesión y aplicaciones de escritorio
+        echo "[6/6] Instalando servicios de runtime de sesión y aplicaciones..."
+        sudo apt install -y \
+            kglobalacceld kscreenlocker polkit-kde-agent-1 xdg-desktop-portal \
+            xdg-desktop-portal-kde kded6 konsole kate okular spectacle \
+            plasma-systemmonitor restic sddm kde-cli-tools pipewire wireplumber \
+            pipewire-pulse upower network-manager bluez udisks2 cups || true
         ;;
 
     fedora)

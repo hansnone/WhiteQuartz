@@ -1,0 +1,28 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN"
+"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.quartz.Session">
+    <method name="LockScreen"/>
+    <method name="RequestLogout"/>
+    <method name="RequestReboot"/>
+    <method name="RequestShutdown"/>
+    <method name="IsLocked">
+      <arg name="locked" type="b" direction="out"/>
+    </method>
+    <method name="OnWindowOpened">
+      <arg name="appId" type="s" direction="in"/>
+      <arg name="windowId" type="s" direction="in"/>
+    </method>
+    <method name="OnWindowClosed">
+      <arg name="appId" type="s" direction="in"/>
+      <arg name="windowId" type="s" direction="in"/>
+    </method>
+    <method name="QuitApplication">
+      <arg name="appId" type="s" direction="in"/>
+    </method>
+    <method name="IsAppRunning">
+      <arg name="appId" type="s" direction="in"/>
+      <arg name="running" type="b" direction="out"/>
+    </method>
+  </interface>
+</node>

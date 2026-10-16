@@ -51,18 +51,40 @@ target_link_libraries(quartz-shell PRIVATE
     quartz-style
 )
 
-find_package(LayerShellQt QUIET)
+option(QUARTZ_ALLOW_MISSING_DEPS "Permitir compilacion del shell omitiendo dependencias criticas del sistema" OFF)
+
+if(QUARTZ_ALLOW_MISSING_DEPS)
+    set(_DEP_MODE "")
+    message(WARNING "QUARTZ_ALLOW_MISSING_DEPS activado: La falta de dependencias no detendra CMake, pero la sesion puede carecer de atajos o capas Wayland.")
+else()
+    set(_DEP_MODE "REQUIRED")
+endif()
+
+find_package(LayerShellQt ${_DEP_MODE})
 if(LayerShellQt_FOUND)
     message(STATUS "LayerShellQt detectado: habilitando zonas exclusivas Wayland para MenuBar y Dock")
     target_link_libraries(quartz-shell PRIVATE LayerShellQt::Interface)
     target_compile_definitions(quartz-shell PRIVATE HAVE_LAYERSHELLQT)
+else()
+    message(WARNING "LayerShellQt NO encontrado. El shell compilara sin soporte de layer-shell.")
 endif()
 
-find_package(KF6WindowSystem QUIET)
+find_package(KF6WindowSystem ${_DEP_MODE})
 if(KF6WindowSystem_FOUND)
     message(STATUS "KF6WindowSystem detectado: habilitando efecto Blur Behind (Vibrancy) en shell")
     target_link_libraries(quartz-shell PRIVATE KF6::WindowSystem)
     target_compile_definitions(quartz-shell PRIVATE HAVE_KF6WINDOWSYSTEM)
+else()
+    message(WARNING "KF6WindowSystem NO encontrado. El shell compilara sin soporte de desenfoque.")
+endif()
+
+find_package(KF6GlobalAccel ${_DEP_MODE})
+if(KF6GlobalAccel_FOUND)
+    message(STATUS "KF6GlobalAccel detectado: habilitando soporte de atajos de teclado globales")
+    target_link_libraries(quartz-shell PRIVATE KF6::GlobalAccel)
+    target_compile_definitions(quartz-shell PRIVATE HAVE_KF6GLOBALACCEL)
+else()
+    message(WARNING "KF6GlobalAccel NO encontrado. El shell compilara sin registro de atajos globales.")
 endif()
 
 install(TARGETS quartz-shell

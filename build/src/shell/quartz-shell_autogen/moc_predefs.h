@@ -146,6 +146,7 @@
 #define __MMX__ 1
 #define __FLT_HAS_DENORM__ 1
 #define __SIZEOF_LONG_DOUBLE__ 16
+#define HAVE_KF6GLOBALACCEL 1
 #define __BIGGEST_ALIGNMENT__ 16
 #define __STDC_UTF_16__ 1
 #define __FLT64_MAX_10_EXP__ 308
