@@ -30,7 +30,7 @@ public:
 
 public Q_SLOTS:
     void closePreview();
-    void onPreviewRequested(const QString &uri, const QString &fileName, const QString &summary, const QString &previewType);
+    void onPreviewRequested(const QString &uri, const QString &fileName, const QString &summary, const QString &previewType, const QString &textData = QString());
     void onPreviewClosed();
 
 Q_SIGNALS:

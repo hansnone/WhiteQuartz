@@ -23,6 +23,7 @@ pub struct FilePreviewInfo {
     pub preview_type: PreviewType,
     pub size_bytes: u64,
     pub summary: String,
+    pub text_content: String,
 }
 
 pub struct PreviewInspector;
@@ -44,7 +45,7 @@ impl PreviewInspector {
             .to_lowercase();
 
         let (preview_type, summary) = match ext.as_str() {
-            "png" | "jpg" | "jpeg" | "webp" | "svg" | "gif" => {
+            "png" | "jpg" | "jpeg" | "webp" | "svg" | "gif" | "bmp" => {
                 (PreviewType::Image, format!("Imagen ({}) - {} bytes", ext.to_uppercase(), size_bytes))
             }
             "txt" | "rs" | "cpp" | "h" | "hpp" | "qml" | "py" | "sh" | "json" | "toml" | "md" => {
@@ -59,6 +60,18 @@ impl PreviewInspector {
             _ => (PreviewType::Generic, format!("Archivo binario - {} bytes", size_bytes)),
         };
 
+        let text_content = if preview_type == PreviewType::Text {
+            match fs::read(path) {
+                Ok(bytes) => {
+                    let take_len = bytes.len().min(65536);
+                    String::from_utf8_lossy(&bytes[..take_len]).to_string()
+                }
+                Err(_) => String::new(),
+            }
+        } else {
+            String::new()
+        };
+
         FilePreviewInfo {
             uri: uri.to_string(),
             path: path_str.to_string(),
@@ -66,6 +79,7 @@ impl PreviewInspector {
             preview_type,
             size_bytes,
             summary,
+            text_content,
         }
     }
 }
@@ -103,9 +117,25 @@ impl QuickLookServer {
         let info = PreviewInspector::inspect(&file_uri);
         info!("Abriendo Quick Look para: {} [{}]", info.file_name, info.summary);
         let preview_type_str = format!("{:?}", info.preview_type);
-        let _ = Self::preview_requested(&ctxt, &info.uri, &info.file_name, &info.summary, &preview_type_str).await;
+        let _ = Self::preview_requested(&ctxt, &info.uri, &info.file_name, &info.summary, &preview_type_str, &info.text_content).await;
         *lock = Some(info);
         Ok(())
+    }
+
+    async fn get_current_preview(&self) -> zbus::fdo::Result<(String, String, String, u64, String, String)> {
+        let lock = self.current_preview.lock().await;
+        if let Some(info) = &*lock {
+            Ok((
+                info.uri.clone(),
+                info.file_name.clone(),
+                format!("{:?}", info.preview_type),
+                info.size_bytes,
+                info.summary.clone(),
+                info.text_content.clone(),
+            ))
+        } else {
+            Ok((String::new(), String::new(), "Generic".to_string(), 0, String::new(), String::new()))
+        }
     }
 
     async fn update_selection(
@@ -118,7 +148,7 @@ impl QuickLookServer {
             let info = PreviewInspector::inspect(&file_uri);
             info!("Actualizando Quick Look a: {} [{}]", info.file_name, info.summary);
             let preview_type_str = format!("{:?}", info.preview_type);
-            let _ = Self::preview_requested(&ctxt, &info.uri, &info.file_name, &info.summary, &preview_type_str).await;
+            let _ = Self::preview_requested(&ctxt, &info.uri, &info.file_name, &info.summary, &preview_type_str, &info.text_content).await;
             *lock = Some(info);
         }
         Ok(())
@@ -139,6 +169,7 @@ impl QuickLookServer {
         file_name: &str,
         summary: &str,
         preview_type: &str,
+        text_content: &str,
     ) -> zbus::Result<()>;
 
     #[zbus(signal)]
@@ -179,6 +210,7 @@ mod tests {
         assert_eq!(info.preview_type, PreviewType::Text);
         assert_eq!(info.file_name, "Cargo.toml");
         assert!(info.size_bytes > 0, "El tamaño de Cargo.toml debe ser mayor que 0");
+        assert!(info.text_content.contains("quartz-quicklookd"));
     }
 
     #[test]
@@ -186,5 +218,6 @@ mod tests {
         let info = PreviewInspector::inspect("file:///tmp/non_existent_file_test_quartz.xyz");
         assert_eq!(info.preview_type, PreviewType::Generic);
         assert_eq!(info.size_bytes, 0);
+        assert!(info.text_content.is_empty());
     }
 }

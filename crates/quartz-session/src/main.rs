@@ -287,6 +287,9 @@ impl SessionManager {
         env::set_var("GDK_BACKEND", "wayland");
         env::set_var("KDE_FULL_SESSION", "true");
         env::set_var("KDE_SESSION_VERSION", "6");
+        env::set_var("XCURSOR_THEME", "Colloid-cursors");
+        env::set_var("XCURSOR_SIZE", "24");
+        env::set_var("QT_QPA_PLATFORMTHEME", "kde");
     }
 
     fn spawn_compositor(&mut self, cmd: &str, socket_name: &str) -> Result<PathBuf, Box<dyn std::error::Error>> {
@@ -453,6 +456,9 @@ mod tests {
         SessionManager::setup_environment();
         assert_eq!(env::var("XDG_CURRENT_DESKTOP").unwrap(), "Quartz:KDE");
         assert_eq!(env::var("QT_QPA_PLATFORM").unwrap(), "wayland");
+        assert_eq!(env::var("XCURSOR_THEME").unwrap(), "Colloid-cursors");
+        assert_eq!(env::var("XCURSOR_SIZE").unwrap(), "24");
+        assert_eq!(env::var("QT_QPA_PLATFORMTHEME").unwrap(), "kde");
     }
 
     #[tokio::test]

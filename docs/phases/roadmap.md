@@ -24,7 +24,7 @@
 - [x] Finder multimodal con 4 modos (`Ctrl+1` a `Ctrl+4`) e inspector de metadatos en `src/finder/`
 - [x] Suite de pruebas unitarias ampliada (12 tests en total: 8 en Rust, 4 en C++/CTest)
 
-## Fase 3: Integración de Subsistema y Funcionalidad Real
+## Fase 3: Protocolos Wayland (`LayerShellQt`), Temas, Wallpaper e Indexación Real
 - [x] **Bloque 1: Unificación IPC y Persistencia de Configuración XDG**
   - [x] Persistencia atómica en `$XDG_CONFIG_HOME/quartz/config.json` en `libquartz::config`
   - [x] Soporte para temas locales (`theme_name`, `icon_theme`) inspirados en `themes/Orchis-kde` y `themes/Colloid-icon-theme`
@@ -43,6 +43,28 @@
   - [x] Física continua gaussiana en el Dock capturando coordenadas continuas de cursor
   - [x] Parcheo de rutas CLI y `QProcess::splitCommand` con expansión de tilde (`~`)
   - [x] Suite de tests ampliada (20 tests: 14 en Rust, 6 en C++/CTest con pruebas de física, splitCommand y modos)
-- [ ] **Bloque 4: Enlace real con KWin**
-  - [ ] Adaptación de `QuartzDecoration` a `KDecoration2::Decoration`
-  - [ ] Inyección de shaders (`squircle.frag`) en `KWin::GLShader` y pipeline de composición
+- [x] **Bloque 4: Wallpaper, Indexación Real XDG, Multimedia en QuickLook y Despliegue de Temas**
+  - [x] Superficie de fondo de pantalla `WallpaperWindow.qml` (`LayerBackground`, `exclusiveZone = -1`)
+  - [x] Indexador XDG real (.desktop), búsqueda de archivos y calculadora avanzada en `quartz-spotlight`
+  - [x] Previsualización multimedia (imágenes, texto de 64KB, audio/video) en `quartz-quicklookd` y `QuickLookModal.qml`
+  - [x] Despliegue automatizado de temas `Colloid` y `Orchis` en `scripts/build_and_install.sh` y variables de entorno de cursor/tema en `startquartz`
+
+## Fase 4: Integración Real en el Compositor KWin (`KDecoration2`/`KDecoration3`, `KWin::Effect` y Shaders GLSL)
+- [x] Plugin de Decoración de Ventanas `QuartzDecoration` (`KDecoration3::Decoration` con botones Aqua, sombras dinámicas y semáforo)
+- [x] Plugin de Efectos `StageManagerEffect` (`KWin::OffscreenEffect`) y carga de shader superelíptico `squircle.frag`
+- [x] Registro del objeto D-Bus `/org/quartz/Compositor/StageManager` en KWin para control reactivo externo
+
+## Fase 5: Gestión de Ventanas Wayland, Menú Global (`DBusMenu`) y TaskManager del Dock
+- [x] Seguimiento de ventanas activas en `DockController` y `MenuBarController` (`KF6::WindowSystem` / puente Wayland)
+- [x] Servidor `com.canonical.AppMenu.Registrar` e importador `DBusMenu` en `MenuBarController` con menús dinámicos en QML
+- [x] Stacks del Dock (`Descargas` en cuadrícula emergente) y estado reactivo de papelera (`user-trash` vs `user-trash-full`)
+
+## Fase 6: Paridad Funcional 1:1 en `quartz-finder`
+- [ ] Barra inferior de ruta (*Path Bar*) y espacio libre del volumen (`QStorageInfo`)
+- [ ] Operaciones completas de sistema de archivos (nueva carpeta `Ctrl+Shift+N`, portapapeles `Ctrl+C`/`X`/`V`, renombrar `Return`/`F2`, duplicar `Ctrl+D`, mover a papelera `Delete`)
+- [ ] Pestañas (`Ctrl+T`), etiquetas de color (Finder tags con `user.xdg.tags`) y montaje de volúmenes en el sidebar
+
+## Fase 7: Subsistema de Hardware, Control Center, Notificaciones y `quartz-settings`
+- [ ] Demonio de notificaciones (`org.freedesktop.Notifications`) y panel lateral deslizable `NotificationCenter.qml`
+- [ ] Control Center (`ControlCenterPopup.qml`) con audio (PulseAudio/PipeWire), brillo, Wi-Fi, Bluetooth y batería
+- [ ] Carga dinámica de los 18 paneles en `quartz-settings` con persistencia en `QuartzDesktopConfig`

@@ -48,12 +48,42 @@ Window {
             color: "#1C1C1E"
         }
 
-        // Menús comunes de aplicación (introspección con tecla Alt)
-        Text { text: qsTr("Archivo"); font.pixelSize: 13; color: "#1C1C1E" }
-        Text { text: qsTr("Edición"); font.pixelSize: 13; color: "#1C1C1E" }
-        Text { text: qsTr("Visualización"); font.pixelSize: 13; color: "#1C1C1E" }
-        Text { text: qsTr("Ventana"); font.pixelSize: 13; color: "#1C1C1E" }
-        Text { text: qsTr("Ayuda"); font.pixelSize: 13; color: "#1C1C1E" }
+        // Menús de la aplicación activa (AppMenu / DBusMenu con fallback dinámico)
+        Repeater {
+            model: menuBarCtrl.activeAppMenus
+            delegate: Text {
+                id: menuTopItem
+                text: modelData.label
+                font.pixelSize: 13
+                color: topMouseArea.containsMouse ? "#007AFF" : "#1C1C1E"
+
+                MouseArea {
+                    id: topMouseArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        if (subContextMenu.count > 0) {
+                            subContextMenu.open()
+                        }
+                    }
+                }
+
+                Menu {
+                    id: subContextMenu
+                    y: parent.height + 4
+                    Repeater {
+                        model: modelData.children || []
+                        delegate: MenuItem {
+                            text: modelData.shortcut && modelData.shortcut.length > 0 ? (modelData.label + "    " + modelData.shortcut) : modelData.label
+                            onTriggered: {
+                                menuBarCtrl.triggerMenuAction(modelData.id)
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         Item { Layout.fillWidth: true }
 

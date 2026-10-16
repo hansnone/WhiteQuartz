@@ -1,10 +1,10 @@
-Start testing: Oct 15 23:37 CEST
+Start testing: Oct 16 21:56 CEST
 ----------------------------------------------------------
 1/6 Testing: tst_quartzstyle
 1/6 Test: tst_quartzstyle
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_quartzstyle"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_quartzstyle" start time: Oct 15 23:37 CEST
+"tst_quartzstyle" start time: Oct 16 21:56 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestQuartzStyle *********
@@ -21,7 +21,7 @@ Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
 Test time =   0.08 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_quartzstyle" end time: Oct 15 23:37 CEST
+"tst_quartzstyle" end time: Oct 16 21:56 CEST
 "tst_quartzstyle" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -29,7 +29,7 @@ Test Passed.
 2/6 Test: tst_settings_model
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settings_model"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_settings_model" start time: Oct 15 23:37 CEST
+"tst_settings_model" start time: Oct 16 21:56 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestSettingsModel *********
@@ -44,7 +44,7 @@ Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_settings_model" end time: Oct 15 23:37 CEST
+"tst_settings_model" end time: Oct 16 21:56 CEST
 "tst_settings_model" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -52,7 +52,7 @@ Test Passed.
 3/6 Test: tst_stagemanager_math
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_stagemanager_math" start time: Oct 15 23:37 CEST
+"tst_stagemanager_math" start time: Oct 16 21:56 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestStageManagerMath *********
@@ -63,14 +63,18 @@ PASS   : TestStageManagerMath::testSpatialModes()
 PASS   : TestStageManagerMath::testSquircleDistanceFormula()
 PASS   : TestStageManagerMath::testDropShadowKeyWindowVsInactive()
 PASS   : TestStageManagerMath::testTransformMatrix()
+PASS   : TestStageManagerMath::testQuartzDecorationMetrics()
+PASS   : TestStageManagerMath::testQuartzDecorationHoverAndTiling()
+PASS   : TestStageManagerMath::testShadowImageGeneration()
+PASS   : TestStageManagerMath::testStageManagerDBusMethods()
 PASS   : TestStageManagerMath::cleanupTestCase()
-Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 0ms
+Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
 ********* Finished testing of TestStageManagerMath *********
 <end of output>
-Test time =   0.09 sec
+Test time =   0.10 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_stagemanager_math" end time: Oct 15 23:37 CEST
+"tst_stagemanager_math" end time: Oct 16 21:56 CEST
 "tst_stagemanager_math" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -78,7 +82,7 @@ Test Passed.
 4/6 Test: tst_finder_modes
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_finder_modes" start time: Oct 15 23:37 CEST
+"tst_finder_modes" start time: Oct 16 21:56 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestFinderModes *********
@@ -95,7 +99,7 @@ Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 24ms
 Test time =   0.10 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_finder_modes" end time: Oct 15 23:37 CEST
+"tst_finder_modes" end time: Oct 16 21:56 CEST
 "tst_finder_modes" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -103,7 +107,7 @@ Test Passed.
 5/6 Test: tst_settingsconfig
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settingsconfig"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_settingsconfig" start time: Oct 15 23:37 CEST
+"tst_settingsconfig" start time: Oct 16 21:56 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestSettingsConfig *********
@@ -122,7 +126,7 @@ Totals: 5 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_settingsconfig" end time: Oct 15 23:37 CEST
+"tst_settingsconfig" end time: Oct 16 21:56 CEST
 "tst_settingsconfig" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -130,7 +134,7 @@ Test Passed.
 6/6 Test: tst_shell_controllers
 Command: "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_shell_controllers"
 Directory: /home/pedro/Proyectos/WhiteQuartz/build/tests
-"tst_shell_controllers" start time: Oct 15 23:37 CEST
+"tst_shell_controllers" start time: Oct 16 21:56 CEST
 Output:
 ----------------------------------------------------------
 ********* Start testing of TestShellControllers *********
@@ -138,18 +142,23 @@ Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared
 PASS   : TestShellControllers::initTestCase()
 PASS   : TestShellControllers::testSpotlightVisibilityAndSearch()
 PASS   : TestShellControllers::testQuickLookPreviewHandling()
+PASS   : TestShellControllers::testQuickLookImageHandling()
 PASS   : TestShellControllers::testDockGaussianPhysicsAndBounce()
 PASS   : TestShellControllers::testDockCommandLineParsing()
 PASS   : TestShellControllers::testDockAppAttentionSignal()
+PASS   : TestShellControllers::testAppMenuRegistrar()
+PASS   : TestShellControllers::testMenuBarController()
+PASS   : TestShellControllers::testDockStacksAndTrashState()
+PASS   : TestShellControllers::testDockDynamicWindowTracking()
 PASS   : TestShellControllers::cleanupTestCase()
-Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 1ms
+Totals: 12 passed, 0 failed, 0 skipped, 0 blacklisted, 2ms
 ********* Finished testing of TestShellControllers *********
 <end of output>
-Test time =   0.01 sec
+Test time =   0.05 sec
 ----------------------------------------------------------
 Test Passed.
-"tst_shell_controllers" end time: Oct 15 23:37 CEST
+"tst_shell_controllers" end time: Oct 16 21:56 CEST
 "tst_shell_controllers" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 15 23:37 CEST
+End testing: Oct 16 21:56 CEST

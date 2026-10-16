@@ -198,6 +198,29 @@ if [[ "${MODE}" == "vm_install" ]]; then
         rm -f "${TMP_DESKTOP}"
     fi
 
+    # Instalación de temas visuales (Colloid y Orchis)
+    ICONS_DIR="${INSTALL_PREFIX}/share/icons"
+    COLOR_SCHEMES_DIR="${INSTALL_PREFIX}/share/color-schemes"
+    SUDO_PREFIX=""
+    [[ ! -w "${INSTALL_PREFIX}" ]] && SUDO_PREFIX="sudo"
+
+    if [[ -d "${PROJECT_ROOT}/themes/Colloid-icon-theme" ]]; then
+        log_info "Instalando cursores e iconos Colloid en ${ICONS_DIR}..."
+        ${SUDO_PREFIX} mkdir -p "${ICONS_DIR}"
+        if [[ -d "${PROJECT_ROOT}/themes/Colloid-icon-theme/cursors/dist" ]]; then
+            ${SUDO_PREFIX} cp -r "${PROJECT_ROOT}/themes/Colloid-icon-theme/cursors/dist" "${ICONS_DIR}/Colloid-cursors"
+        fi
+        if [[ -f "${PROJECT_ROOT}/themes/Colloid-icon-theme/install.sh" ]]; then
+            ${SUDO_PREFIX} bash "${PROJECT_ROOT}/themes/Colloid-icon-theme/install.sh" -d "${ICONS_DIR}" 2>/dev/null || true
+        fi
+    fi
+
+    if [[ -d "${PROJECT_ROOT}/themes/Orchis-kde/color-schemes" ]]; then
+        log_info "Instalando esquemas de color Orchis en ${COLOR_SCHEMES_DIR}..."
+        ${SUDO_PREFIX} mkdir -p "${COLOR_SCHEMES_DIR}"
+        ${SUDO_PREFIX} cp -r "${PROJECT_ROOT}/themes/Orchis-kde/color-schemes/"* "${COLOR_SCHEMES_DIR}/"
+    fi
+
     echo ""
     echo -e "${GREEN}======================================================${NC}"
     echo -e "${GREEN}      ¡Instalación completada con éxito en la VM!    ${NC}"

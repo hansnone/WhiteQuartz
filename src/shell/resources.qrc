@@ -6,5 +6,6 @@
         <file>qml/DockWindow.qml</file>
         <file>qml/SpotlightOverlay.qml</file>
         <file>qml/QuickLookModal.qml</file>
+        <file>qml/WallpaperWindow.qml</file>
     </qresource>
 </RCC>

@@ -80,6 +80,7 @@
 	"MOC_COMPILATION_FILE" : "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
+		"KCOREADDONS_LIB",
 		"QT_CORE_LIB",
 		"QT_DBUS_LIB",
 		"QT_GUI_LIB",
@@ -100,6 +101,7 @@
 	[
 		"/home/pedro/Proyectos/WhiteQuartz/src/compositor",
 		"/home/pedro/Proyectos/WhiteQuartz/src/style",
+		"/usr/include/kwin",
 		"/usr/include/qt6/QtCore",
 		"/usr/include/qt6",
 		"/usr/lib/qt6/mkspecs/linux-g++",
@@ -107,6 +109,10 @@
 		"/usr/include/qt6/QtTest",
 		"/usr/include/qt6/QtDBus",
 		"/usr/include/qt6/QtWidgets",
+		"/usr/include/KDecoration3",
+		"/usr/include/KF6/KCoreAddons",
+		"/usr/include/KF6/KConfig",
+		"/usr/include/KF6/KConfigCore",
 		"/usr/include",
 		"/usr/include/c++/16",
 		"/usr/include/c++/16/x86_64-pc-linux-gnu",

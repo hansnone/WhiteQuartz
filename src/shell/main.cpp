@@ -44,6 +44,11 @@ static void configureLayerShell(QObject *rootObj, const QString &type) {
         lWindow->setLayer(LayerShellQt::Window::LayerOverlay);
         lWindow->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
         lWindow->setScope(QStringLiteral("quicklook"));
+    } else if (type == QStringLiteral("wallpaper")) {
+        lWindow->setLayer(LayerShellQt::Window::LayerBackground);
+        lWindow->setAnchors(LayerShellQt::Window::Anchors(LayerShellQt::Window::AnchorTop) | LayerShellQt::Window::AnchorBottom | LayerShellQt::Window::AnchorLeft | LayerShellQt::Window::AnchorRight);
+        lWindow->setExclusiveZone(-1);
+        lWindow->setScope(QStringLiteral("wallpaper"));
     }
 }
 #endif
@@ -100,13 +105,14 @@ int main(int argc, char *argv[])
         }
     };
 
+    QObject *wallpaper = loadComponent(QStringLiteral("WallpaperWindow.qml"), QStringLiteral("wallpaper"));
     QObject *menuBar = loadComponent(QStringLiteral("MenuBarWindow.qml"), QStringLiteral("menubar"));
     QObject *dock = loadComponent(QStringLiteral("DockWindow.qml"), QStringLiteral("dock"));
     QObject *spotlight = loadComponent(QStringLiteral("SpotlightOverlay.qml"), QStringLiteral("spotlight"));
     QObject *quicklook = loadComponent(QStringLiteral("QuickLookModal.qml"), QStringLiteral("quicklook"));
 
     // Fallback: si no cargaron los componentes modulares, cargar ShellWindow.qml
-    if (!menuBar && !dock && !spotlight && !quicklook) {
+    if (!wallpaper && !menuBar && !dock && !spotlight && !quicklook) {
         qWarning() << "Cargando ShellWindow.qml como interfaz de respaldo...";
         engine.load(QUrl(QStringLiteral("qrc:/qml/ShellWindow.qml")));
     }

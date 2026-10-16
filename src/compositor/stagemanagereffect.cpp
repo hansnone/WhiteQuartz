@@ -1,10 +1,25 @@
 #include "stagemanagereffect.h"
+#include <QDBusConnection>
 
 namespace Quartz::Compositor {
 
 StageManagerEffect::StageManagerEffect(QObject *parent)
     : QObject(parent)
 {
+    if (QDBusConnection::sessionBus().isConnected()) {
+        QDBusConnection::sessionBus().registerObject(
+            QStringLiteral("/org/quartz/Compositor/StageManager"),
+            this,
+            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllSignals
+        );
+    }
+}
+
+StageManagerEffect::~StageManagerEffect()
+{
+    if (QDBusConnection::sessionBus().isConnected()) {
+        QDBusConnection::sessionBus().unregisterObject(QStringLiteral("/org/quartz/Compositor/StageManager"));
+    }
 }
 
 void StageManagerEffect::setEnabled(bool enabled)

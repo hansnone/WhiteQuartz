@@ -5,7 +5,13 @@ if("${CONFIG}" STREQUAL "" OR "${CONFIG}" STREQUAL "Release")
   file(REMOVE_RECURSE
   "src/compositor/CMakeFiles/quartz-compositor_autogen.dir/AutogenUsed.txt"
   "src/compositor/CMakeFiles/quartz-compositor_autogen.dir/ParseCache.txt"
+  "src/compositor/CMakeFiles/quartz-stagemanager_autogen.dir/AutogenUsed.txt"
+  "src/compositor/CMakeFiles/quartz-stagemanager_autogen.dir/ParseCache.txt"
+  "src/compositor/CMakeFiles/quartzdecoration_autogen.dir/AutogenUsed.txt"
+  "src/compositor/CMakeFiles/quartzdecoration_autogen.dir/ParseCache.txt"
   "src/compositor/quartz-compositor_autogen"
+  "src/compositor/quartz-stagemanager_autogen"
+  "src/compositor/quartzdecoration_autogen"
   "src/finder/CMakeFiles/quartz-finder_autogen.dir/AutogenUsed.txt"
   "src/finder/CMakeFiles/quartz-finder_autogen.dir/ParseCache.txt"
   "src/finder/quartz-finder_autogen"

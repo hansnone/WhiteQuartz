@@ -37,7 +37,7 @@ class StageManagerEffect : public QObject {
 
 public:
     explicit StageManagerEffect(QObject *parent = nullptr);
-    ~StageManagerEffect() override = default;
+    ~StageManagerEffect() override;
 
     bool isEnabled() const { return m_enabled; }
     SpatialMode spatialMode() const { return m_spatialMode; }

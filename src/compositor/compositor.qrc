@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/effects/quartz">
+        <file>shaders/squircle.frag</file>
+    </qresource>
+</RCC>

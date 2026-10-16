@@ -1,6 +1,7 @@
 quartz-compositor_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/quartz-compositor_autogen/moc_predefs.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/compositor/CMakeLists.txt \
+	/home/pedro/Proyectos/WhiteQuartz/src/compositor/compositor.qrc \
 	/home/pedro/Proyectos/WhiteQuartz/src/compositor/quartzdecoration.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/compositor/quartzdecoration.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/compositor/stagemanagereffect.cpp \
@@ -445,9 +446,13 @@ quartz-compositor_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qversiontagging.h \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
+	/usr/include/qt6/QtGui/QColor \
 	/usr/include/qt6/QtGui/QMatrix4x4 \
+	/usr/include/qt6/QtGui/qcolor.h \
 	/usr/include/qt6/QtGui/qgenericmatrix.h \
 	/usr/include/qt6/QtGui/qmatrix4x4.h \
+	/usr/include/qt6/QtGui/qrgb.h \
+	/usr/include/qt6/QtGui/qrgba64.h \
 	/usr/include/qt6/QtGui/qtgui-config.h \
 	/usr/include/qt6/QtGui/qtguiexports.h \
 	/usr/include/qt6/QtGui/qtguiglobal.h \
@@ -468,8 +473,22 @@ quartz-compositor_autogen/timestamp: \
 	/usr/include/time.h \
 	/usr/include/wchar.h \
 	/usr/include/wctype.h \
+	/usr/lib/cmake/KDecoration3/KDecoration3Config.cmake \
+	/usr/lib/cmake/KDecoration3/KDecoration3ConfigVersion.cmake \
+	/usr/lib/cmake/KDecoration3/KDecoration3Targets-noconfig.cmake \
+	/usr/lib/cmake/KDecoration3/KDecoration3Targets.cmake \
+	/usr/lib/cmake/KF6Config/KF6ConfigCompilerTargets.cmake \
+	/usr/lib/cmake/KF6Config/KF6ConfigConfig.cmake \
+	/usr/lib/cmake/KF6Config/KF6ConfigConfigVersion.cmake \
+	/usr/lib/cmake/KF6Config/KF6ConfigMacros.cmake \
+	/usr/lib/cmake/KF6Config/KF6ConfigTargets.cmake \
+	/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsConfig.cmake \
+	/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsConfigVersion.cmake \
+	/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsMacros.cmake \
+	/usr/lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \
+	/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
 	/usr/bin/cmake

@@ -6,6 +6,8 @@ quartz-shell_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/appmenuregistrar.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/appmenuregistrar.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/resources.qrc \
@@ -313,8 +315,11 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QDateTime \
+	/usr/include/qt6/QtCore/QFileSystemWatcher \
+	/usr/include/qt6/QtCore/QHash \
 	/usr/include/qt6/QtCore/QList \
 	/usr/include/qt6/QtCore/QObject \
+	/usr/include/qt6/QtCore/QSet \
 	/usr/include/qt6/QtCore/QString \
 	/usr/include/qt6/QtCore/QStringList \
 	/usr/include/qt6/QtCore/QTimer \
@@ -366,6 +371,7 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qdebug.h \
 	/usr/include/qt6/QtCore/qeventloop.h \
 	/usr/include/qt6/QtCore/qexceptionhandling.h \
+	/usr/include/qt6/QtCore/qfilesystemwatcher.h \
 	/usr/include/qt6/QtCore/qflags.h \
 	/usr/include/qt6/QtCore/qfloat16.h \
 	/usr/include/qt6/QtCore/qforeach.h \
@@ -451,9 +457,13 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
 	/usr/include/qt6/QtDBus/QDBusConnection \
+	/usr/include/qt6/QtDBus/QDBusContext \
 	/usr/include/qt6/QtDBus/QDBusInterface \
+	/usr/include/qt6/QtDBus/QDBusMessage \
+	/usr/include/qt6/QtDBus/QDBusObjectPath \
 	/usr/include/qt6/QtDBus/qdbusabstractinterface.h \
 	/usr/include/qt6/QtDBus/qdbusconnection.h \
+	/usr/include/qt6/QtDBus/qdbuscontext.h \
 	/usr/include/qt6/QtDBus/qdbuserror.h \
 	/usr/include/qt6/QtDBus/qdbusextratypes.h \
 	/usr/include/qt6/QtDBus/qdbusinterface.h \

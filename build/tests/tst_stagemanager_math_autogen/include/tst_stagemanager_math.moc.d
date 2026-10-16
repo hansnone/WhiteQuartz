@@ -1,6 +1,8 @@
 /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math_autogen/include/tst_stagemanager_math.moc: /home/pedro/Proyectos/WhiteQuartz/tests/tst_stagemanager_math.cpp \
   /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_stagemanager_math_autogen/moc_predefs.h \
+  /home/pedro/Proyectos/WhiteQuartz/src/compositor/quartzdecoration.h \
   /home/pedro/Proyectos/WhiteQuartz/src/compositor/stagemanagereffect.h \
+  /home/pedro/Proyectos/WhiteQuartz/src/style/quartzmetrics.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -318,11 +320,13 @@
   /usr/include/qt6/QtCore/QMargins \
   /usr/include/qt6/QtCore/QMetaEnum \
   /usr/include/qt6/QtCore/QObject \
+  /usr/include/qt6/QtCore/QPoint \
   /usr/include/qt6/QtCore/QRect \
   /usr/include/qt6/QtCore/QRectF \
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
   /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/QtMath \
   /usr/include/qt6/QtCore/q17memory.h \
@@ -467,6 +471,7 @@
   /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
   /usr/include/qt6/QtCore/qthread.h \
+  /usr/include/qt6/QtCore/qtimer.h \
   /usr/include/qt6/QtCore/qtimezone.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
@@ -488,6 +493,7 @@
   /usr/include/qt6/QtCore/qxpfunctional.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
+  /usr/include/qt6/QtGui/QColor \
   /usr/include/qt6/QtGui/QMatrix4x4 \
   /usr/include/qt6/QtGui/QTransform \
   /usr/include/qt6/QtGui/qaction.h \

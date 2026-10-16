@@ -36,7 +36,9 @@ add_executable(tst_shell_controllers
     ${CMAKE_SOURCE_DIR}/src/shell/spotlight/SpotlightController.cpp
     ${CMAKE_SOURCE_DIR}/src/shell/quicklook/QuickLookController.cpp
     ${CMAKE_SOURCE_DIR}/src/shell/dock/DockController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/menubar/MenuBarController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/menubar/appmenuregistrar.cpp
 )
 target_include_directories(tst_shell_controllers PRIVATE ${CMAKE_SOURCE_DIR}/src/shell ${CMAKE_SOURCE_DIR}/src/style)
-target_link_libraries(tst_shell_controllers PRIVATE Qt6::Core Qt6::DBus Qt6::Test)
+target_link_libraries(tst_shell_controllers PRIVATE Qt6::Core Qt6::Gui Qt6::DBus Qt6::Test)
 add_test(NAME tst_shell_controllers COMMAND tst_shell_controllers)

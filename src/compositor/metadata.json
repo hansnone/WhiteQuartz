@@ -1,0 +1,14 @@
+{
+    "KPlugin": {
+        "Id": "quartz-stagemanager",
+        "Name": "Quartz Stage Manager",
+        "Description": "macOS Sonoma 3D Stage Manager and Squircle shader compositor effect",
+        "Version": "0.1.0",
+        "Authors": [
+            {
+                "Name": "Pedro / WhiteQuartz"
+            }
+        ],
+        "Category": "Appearance"
+    }
+}

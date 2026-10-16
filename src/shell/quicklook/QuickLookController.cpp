@@ -24,7 +24,7 @@ QuickLookController::QuickLookController(QObject *parent)
         QStringLiteral("org.quartz.QuickLook"),
         QStringLiteral("preview_requested"),
         this,
-        SLOT(onPreviewRequested(QString, QString, QString, QString))
+        SLOT(onPreviewRequested(QString, QString, QString, QString, QString))
     );
 
     QDBusConnection::sessionBus().connect(
@@ -61,30 +61,34 @@ void QuickLookController::onPreviewClosed()
     }
 }
 
-void QuickLookController::onPreviewRequested(const QString &uri, const QString &fileName, const QString &summary, const QString &previewType)
+void QuickLookController::onPreviewRequested(const QString &uri, const QString &fileName, const QString &summary, const QString &previewType, const QString &textData)
 {
     m_fileUri = uri;
     m_fileName = fileName;
     m_summary = summary;
     m_previewType = previewType;
-    m_textContent.clear();
 
-    QString localPath = QUrl(uri).isLocalFile() ? QUrl(uri).toLocalFile() : uri;
-    if (localPath.startsWith(QStringLiteral("file://"))) {
-        localPath = localPath.mid(7);
-    }
+    if (!textData.isEmpty()) {
+        m_textContent = textData;
+    } else {
+        m_textContent.clear();
+        QString localPath = QUrl(uri).isLocalFile() ? QUrl(uri).toLocalFile() : uri;
+        if (localPath.startsWith(QStringLiteral("file://"))) {
+            localPath = localPath.mid(7);
+        }
 
-    if (previewType == QStringLiteral("Text") || previewType.contains(QStringLiteral("Text"))) {
-        QFile file(localPath);
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QTextStream in(&file);
-            QStringList lines;
-            int count = 0;
-            while (!in.atEnd() && count < 80) {
-                lines.append(in.readLine());
-                count++;
+        if (previewType == QStringLiteral("Text") || previewType.contains(QStringLiteral("Text"))) {
+            QFile file(localPath);
+            if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                QTextStream in(&file);
+                QStringList lines;
+                int count = 0;
+                while (!in.atEnd() && count < 80) {
+                    lines.append(in.readLine());
+                    count++;
+                }
+                m_textContent = lines.join(QStringLiteral("\n"));
             }
-            m_textContent = lines.join(QStringLiteral("\n"));
         }
     }
 

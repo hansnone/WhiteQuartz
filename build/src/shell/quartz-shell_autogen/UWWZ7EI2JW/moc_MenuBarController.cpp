@@ -45,16 +45,30 @@ template <> constexpr inline auto Quartz::Shell::MenuBarController::qt_create_me
         "altPressedChanged",
         "pressed",
         "notificationCenterToggled",
+        "activeAppMenusChanged",
         "setActiveAppTitle",
         "title",
         "triggerAppleMenuAction",
         "actionId",
         "setAltPressed",
         "toggleNotificationCenter",
+        "triggerMenuAction",
+        "id",
+        "onActiveWindowChanged",
+        "appId",
+        "dbusMenuService",
+        "dbusMenuPath",
+        "onWindowMenuRegistered",
+        "windowId",
+        "service",
+        "menuPath",
+        "onWindowMenuUnregistered",
         "updateClock",
         "formattedTime",
         "activeAppTitle",
-        "isAltPressed"
+        "isAltPressed",
+        "activeAppMenus",
+        "QVariantList"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -68,30 +82,58 @@ template <> constexpr inline auto Quartz::Shell::MenuBarController::qt_create_me
         }}),
         // Signal 'notificationCenterToggled'
         QtMocHelpers::SignalData<void()>(6, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'activeAppMenusChanged'
+        QtMocHelpers::SignalData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'setActiveAppTitle'
-        QtMocHelpers::SlotData<void(const QString &)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 8 },
+        QtMocHelpers::SlotData<void(const QString &)>(8, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 9 },
         }}),
         // Slot 'triggerAppleMenuAction'
-        QtMocHelpers::SlotData<void(const QString &)>(9, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 10 },
+        QtMocHelpers::SlotData<void(const QString &)>(10, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 11 },
         }}),
         // Slot 'setAltPressed'
-        QtMocHelpers::SlotData<void(bool)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::SlotData<void(bool)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::Bool, 5 },
         }}),
         // Slot 'toggleNotificationCenter'
-        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'triggerMenuAction'
+        QtMocHelpers::SlotData<void(int)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 15 },
+        }}),
+        // Slot 'onActiveWindowChanged'
+        QtMocHelpers::SlotData<void(const QString &, const QString &, const QString &, const QString &)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 17 }, { QMetaType::QString, 9 }, { QMetaType::QString, 18 }, { QMetaType::QString, 19 },
+        }}),
+        // Slot 'onActiveWindowChanged'
+        QtMocHelpers::SlotData<void(const QString &, const QString &, const QString &)>(16, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
+            { QMetaType::QString, 17 }, { QMetaType::QString, 9 }, { QMetaType::QString, 18 },
+        }}),
+        // Slot 'onActiveWindowChanged'
+        QtMocHelpers::SlotData<void(const QString &, const QString &)>(16, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
+            { QMetaType::QString, 17 }, { QMetaType::QString, 9 },
+        }}),
+        // Slot 'onWindowMenuRegistered'
+        QtMocHelpers::SlotData<void(uint, const QString &, const QString &)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::UInt, 21 }, { QMetaType::QString, 22 }, { QMetaType::QString, 23 },
+        }}),
+        // Slot 'onWindowMenuUnregistered'
+        QtMocHelpers::SlotData<void(uint)>(24, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::UInt, 21 },
+        }}),
         // Slot 'updateClock'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'formattedTime'
-        QtMocHelpers::PropertyData<QString>(14, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(26, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'activeAppTitle'
-        QtMocHelpers::PropertyData<QString>(15, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<QString>(27, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
         // property 'isAltPressed'
-        QtMocHelpers::PropertyData<bool>(16, QMetaType::Bool, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<bool>(28, QMetaType::Bool, QMC::DefaultPropertyFlags, 2),
+        // property 'activeAppMenus'
+        QtMocHelpers::PropertyData<QVariantList>(29, 0x80000000 | 30, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 4),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -117,11 +159,18 @@ void Quartz::Shell::MenuBarController::qt_static_metacall(QObject *_o, QMetaObje
         case 1: _t->activeAppTitleChanged(); break;
         case 2: _t->altPressedChanged((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
         case 3: _t->notificationCenterToggled(); break;
-        case 4: _t->setActiveAppTitle((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 5: _t->triggerAppleMenuAction((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 6: _t->setAltPressed((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 7: _t->toggleNotificationCenter(); break;
-        case 8: _t->updateClock(); break;
+        case 4: _t->activeAppMenusChanged(); break;
+        case 5: _t->setActiveAppTitle((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 6: _t->triggerAppleMenuAction((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 7: _t->setAltPressed((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 8: _t->toggleNotificationCenter(); break;
+        case 9: _t->triggerMenuAction((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 10: _t->onActiveWindowChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[4]))); break;
+        case 11: _t->onActiveWindowChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
+        case 12: _t->onActiveWindowChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
+        case 13: _t->onWindowMenuRegistered((*reinterpret_cast<std::add_pointer_t<uint>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
+        case 14: _t->onWindowMenuUnregistered((*reinterpret_cast<std::add_pointer_t<uint>>(_a[1]))); break;
+        case 15: _t->updateClock(); break;
         default: ;
         }
     }
@@ -134,6 +183,8 @@ void Quartz::Shell::MenuBarController::qt_static_metacall(QObject *_o, QMetaObje
             return;
         if (QtMocHelpers::indexOfMethod<void (MenuBarController::*)()>(_a, &MenuBarController::notificationCenterToggled, 3))
             return;
+        if (QtMocHelpers::indexOfMethod<void (MenuBarController::*)()>(_a, &MenuBarController::activeAppMenusChanged, 4))
+            return;
     }
     if (_c == QMetaObject::ReadProperty) {
         void *_v = _a[0];
@@ -141,6 +192,7 @@ void Quartz::Shell::MenuBarController::qt_static_metacall(QObject *_o, QMetaObje
         case 0: *reinterpret_cast<QString*>(_v) = _t->formattedTime(); break;
         case 1: *reinterpret_cast<QString*>(_v) = _t->activeAppTitle(); break;
         case 2: *reinterpret_cast<bool*>(_v) = _t->isAltPressed(); break;
+        case 3: *reinterpret_cast<QVariantList*>(_v) = _t->activeAppMenus(); break;
         default: break;
         }
     }
@@ -165,20 +217,20 @@ int Quartz::Shell::MenuBarController::qt_metacall(QMetaObject::Call _c, int _id,
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 16;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 16)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 16;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }
@@ -205,5 +257,11 @@ void Quartz::Shell::MenuBarController::altPressedChanged(bool _t1)
 void Quartz::Shell::MenuBarController::notificationCenterToggled()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
+}
+
+// SIGNAL 4
+void Quartz::Shell::MenuBarController::activeAppMenusChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 QT_WARNING_POP

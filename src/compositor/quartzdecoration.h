@@ -3,9 +3,12 @@
 #include <QObject>
 #include <QRect>
 #include <QString>
+#include <QColor>
 #include <QPoint>
 #include <QTimer>
 #include "../style/quartzmetrics.h"
+
+class QPainter;
 
 namespace Quartz::Compositor {
 
@@ -44,6 +47,10 @@ public:
     void setHoverState(TrafficLightHoverState state);
 
     bool isTilingMenuVisible() const { return m_tilingMenuVisible; }
+
+    void paintTrafficLights(QPainter *painter, const QRect &titleBarRect, TrafficLightHoverState hoverState, bool unsaved);
+    void drawTitleBar(QPainter *painter, const QRect &titleBarRect, bool active, const QString &caption, const QColor &textColor = QColor(240, 240, 240));
+    static QImage generateShadowImage(int width, int height, bool active);
 
 public Q_SLOTS:
     void applyTileMode(WindowTileMode mode);

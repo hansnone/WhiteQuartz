@@ -24727,3 +24727,1014 @@ events:
         - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
         - "/usr/lib/cmake/Qt6/3rdparty/kwin"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "src/compositor/CMakeLists.txt:8 (find_package)"
+    name: "KDecoration3"
+    configs:
+      -
+        filename: "KDecoration3.cps"
+        kind: "cps"
+      -
+        filename: "kdecoration3.cps"
+        kind: "cps"
+      -
+        filename: "KDecoration3Config.cmake"
+        kind: "cmake"
+      -
+        filename: "kdecoration3-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "KDecoration3"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/KDecoration3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/kdecoration3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/KDecoration3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/kdecoration3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/lib/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/lib/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/share/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/share/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/KDecoration3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/kdecoration3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/lib/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/lib/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/share/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/share/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/KDecoration3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/kdecoration3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/lib/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/lib/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/share/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/share/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/KDecoration3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/kdecoration3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/KDecoration3Config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/kdecoration3-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/KDecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/kdecoration3.cps"
+        mode: "cps"
+        reason: "no_exist"
+    found:
+      path: "/usr/lib/cmake/KDecoration3/KDecoration3Config.cmake"
+      mode: "config"
+      version: "6.8.0"
+    search_context:
+      ENV{PATH}:
+        - "/home/pedro/.gemini/antigravity/bin"
+        - "/home/pedro/.config/Antigravity/bin"
+        - "/home/pedro/.cargo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "/usr/lib/cmake/KWin/KWinConfig.cmake:40 (find_dependency)"
+      - "src/compositor/CMakeLists.txt:10 (find_package)"
+    name: "ECM"
+    configs:
+      -
+        filename: "ECM.cps"
+        kind: "cps"
+      -
+        filename: "ecm.cps"
+        kind: "cps"
+      -
+        filename: "ECMConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "ecm-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.30.0"
+      version_complete: "6.30.0"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "ECM"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/var/lib/flatpak/exports/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/var/lib/flatpak/exports/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/var/lib/flatpak/exports/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/var/lib/flatpak/exports/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/var/lib/flatpak/exports/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/var/lib/flatpak/exports/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/site_perl/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/vendor_perl/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/bin/core_perl/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/opt/ECMConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/ecm-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/opt/lib/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/opt/lib/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/opt/share/cps/ECM.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/opt/share/cps/ecm.cps"
+        mode: "cps"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "/home/pedro/.gemini/antigravity/bin"
+        - "/home/pedro/.config/Antigravity/bin"
+        - "/home/pedro/.cargo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/KWin"
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "src/compositor/CMakeLists.txt:10 (find_package)"
+    name: "KWin"
+    configs:
+      -
+        filename: "KWin.cps"
+        kind: "cps"
+      -
+        filename: "kwin.cps"
+        kind: "cps"
+      -
+        filename: "KWinConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "kwin-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "KWin"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/KWinConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/kwin-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/KWinConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/kwin-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/lib/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/lib/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/share/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.gemini/antigravity/share/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/KWinConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/kwin-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/lib/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/lib/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/share/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.config/Antigravity/share/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/KWinConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/kwin-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/lib/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/lib/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/share/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/.cargo/share/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/KWinConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/kwin-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/lib/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/local/share/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/KWinConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/kwin-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/KWin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/share/cps/kwin.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cmake/KWinDBusInterface/KWinConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cmake/KWinDBusInterface/kwin-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/usr/lib/cmake/KWin/KWinConfig.cmake"
+      mode: "config"
+      version: "6.8.0"
+    search_context:
+      ENV{PATH}:
+        - "/home/pedro/.gemini/antigravity/bin"
+        - "/home/pedro/.config/Antigravity/bin"
+        - "/home/pedro/.cargo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/KWin"
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "src/compositor/CMakeLists.txt:11 (find_library)"
+    mode: "library"
+    variable: "KWIN_LIBRARY"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "kwin"
+    candidate_directories:
+      - "/home/pedro/.gemini/antigravity/bin/"
+      - "/home/pedro/.config/Antigravity/bin/"
+      - "/home/pedro/.cargo/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+      - "/usr/lib/"
+      - "/usr/"
+      - "/lib/"
+      - "/usr/X11R6/lib/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/lib/"
+      - "/usr/pkg/"
+      - "/opt/lib/"
+      - "/opt/"
+      - "/usr/lib/X11/"
+    searched_directories:
+      - "/home/pedro/.gemini/antigravity/bin/"
+      - "/home/pedro/.config/Antigravity/bin/"
+      - "/home/pedro/.cargo/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/lib/"
+      - "/usr/local/"
+    found: "/usr/lib/libkwin.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/pedro/.gemini/antigravity/bin"
+        - "/home/pedro/.config/Antigravity/bin"
+        - "/home/pedro/.cargo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "src/compositor/CMakeLists.txt:12 (find_path)"
+    mode: "path"
+    variable: "KWIN_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "kwin/effect/effect.h"
+    candidate_directories:
+      - "/home/pedro/.gemini/antigravity/bin/kwin/"
+      - "/home/pedro/.gemini/antigravity/bin/"
+      - "/home/pedro/.config/Antigravity/bin/kwin/"
+      - "/home/pedro/.config/Antigravity/bin/"
+      - "/home/pedro/.cargo/bin/kwin/"
+      - "/home/pedro/.cargo/bin/"
+      - "/usr/local/bin/kwin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/kwin/"
+      - "/usr/bin/"
+      - "/bin/kwin/"
+      - "/bin/"
+      - "/usr/local/sbin/kwin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/kwin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/bin/site_perl/kwin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/kwin/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/kwin/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/include/kwin/"
+      - "/usr/local/include/"
+      - "/usr/local/kwin/"
+      - "/usr/local/"
+      - "/usr/include/kwin/"
+      - "/usr/include/"
+      - "/usr/kwin/"
+      - "/usr/"
+      - "/include/kwin/"
+      - "/include/"
+      - "/usr/X11R6/include/kwin/"
+      - "/usr/X11R6/include/"
+      - "/usr/X11R6/kwin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/include/kwin/"
+      - "/usr/pkg/include/"
+      - "/usr/pkg/kwin/"
+      - "/usr/pkg/"
+      - "/opt/include/kwin/"
+      - "/opt/include/"
+      - "/opt/kwin/"
+      - "/opt/"
+      - "/usr/include/X11/kwin/"
+      - "/usr/include/X11/"
+    searched_directories:
+      - "/home/pedro/.gemini/antigravity/bin/kwin/kwin/effect/effect.h"
+      - "/home/pedro/.gemini/antigravity/bin/kwin/effect/effect.h"
+      - "/home/pedro/.config/Antigravity/bin/kwin/kwin/effect/effect.h"
+      - "/home/pedro/.config/Antigravity/bin/kwin/effect/effect.h"
+      - "/home/pedro/.cargo/bin/kwin/kwin/effect/effect.h"
+      - "/home/pedro/.cargo/bin/kwin/effect/effect.h"
+      - "/usr/local/bin/kwin/kwin/effect/effect.h"
+      - "/usr/local/bin/kwin/effect/effect.h"
+      - "/usr/bin/kwin/kwin/effect/effect.h"
+      - "/usr/bin/kwin/effect/effect.h"
+      - "/bin/kwin/kwin/effect/effect.h"
+      - "/bin/kwin/effect/effect.h"
+      - "/usr/local/sbin/kwin/kwin/effect/effect.h"
+      - "/usr/local/sbin/kwin/effect/effect.h"
+      - "/var/lib/flatpak/exports/bin/kwin/kwin/effect/effect.h"
+      - "/var/lib/flatpak/exports/bin/kwin/effect/effect.h"
+      - "/usr/bin/site_perl/kwin/kwin/effect/effect.h"
+      - "/usr/bin/site_perl/kwin/effect/effect.h"
+      - "/usr/bin/vendor_perl/kwin/kwin/effect/effect.h"
+      - "/usr/bin/vendor_perl/kwin/effect/effect.h"
+      - "/usr/bin/core_perl/kwin/kwin/effect/effect.h"
+      - "/usr/bin/core_perl/kwin/effect/effect.h"
+      - "/usr/local/include/kwin/kwin/effect/effect.h"
+      - "/usr/local/include/kwin/effect/effect.h"
+      - "/usr/local/kwin/kwin/effect/effect.h"
+      - "/usr/local/kwin/effect/effect.h"
+      - "/usr/include/kwin/kwin/effect/effect.h"
+    found: "/usr/include/"
+    search_context:
+      ENV{PATH}:
+        - "/home/pedro/.gemini/antigravity/bin"
+        - "/home/pedro/.config/Antigravity/bin"
+        - "/home/pedro/.cargo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...

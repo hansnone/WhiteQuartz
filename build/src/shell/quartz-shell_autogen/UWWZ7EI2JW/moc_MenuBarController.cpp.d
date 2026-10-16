@@ -1,5 +1,6 @@
 /home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/UWWZ7EI2JW/moc_MenuBarController.cpp: /home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.h \
   /home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/moc_predefs.h \
+  /home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/appmenuregistrar.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -301,9 +302,13 @@
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDateTime \
+  /usr/include/qt6/QtCore/QHash \
+  /usr/include/qt6/QtCore/QList \
   /usr/include/qt6/QtCore/QObject \
   /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QTimer \
+  /usr/include/qt6/QtCore/QVariant \
+  /usr/include/qt6/QtCore/QVariantList \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20bit.h \
   /usr/include/qt6/QtCore/q20functional.h \
@@ -428,10 +433,20 @@
   /usr/include/qt6/QtCore/qtypes.h \
   /usr/include/qt6/QtCore/qutf8stringview.h \
   /usr/include/qt6/QtCore/qvariant.h \
+  /usr/include/qt6/QtCore/qvariantlist.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
+  /usr/include/qt6/QtDBus/QDBusContext \
+  /usr/include/qt6/QtDBus/QDBusMessage \
+  /usr/include/qt6/QtDBus/QDBusObjectPath \
+  /usr/include/qt6/QtDBus/qdbuscontext.h \
+  /usr/include/qt6/QtDBus/qdbuserror.h \
+  /usr/include/qt6/QtDBus/qdbusextratypes.h \
+  /usr/include/qt6/QtDBus/qdbusmessage.h \
+  /usr/include/qt6/QtDBus/qtdbusexports.h \
+  /usr/include/qt6/QtDBus/qtdbusglobal.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \

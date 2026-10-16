@@ -2,6 +2,8 @@ add_executable(quartz-shell
     main.cpp
     menubar/MenuBarController.cpp
     menubar/MenuBarController.h
+    menubar/appmenuregistrar.cpp
+    menubar/appmenuregistrar.h
     dock/DockController.cpp
     dock/DockController.h
     spotlight/SpotlightController.cpp

@@ -3,6 +3,9 @@
 #include <QDBusReply>
 #include <QDBusArgument>
 #include <QProcess>
+#include <QFileInfo>
+#include <QDesktopServices>
+#include <QUrl>
 #include <QDebug>
 
 namespace Quartz::Shell {
@@ -80,13 +83,17 @@ void SpotlightController::search(const QString &query)
                     arg.beginStructure();
                     QString title;
                     QString subtitle;
+                    QString category;
+                    QString iconName;
                     QString payload;
-                    arg >> title >> subtitle >> payload;
+                    arg >> title >> subtitle >> category >> iconName >> payload;
                     arg.endStructure();
 
                     QVariantMap item;
                     item[QStringLiteral("title")] = title;
                     item[QStringLiteral("subtitle")] = subtitle;
+                    item[QStringLiteral("category")] = category;
+                    item[QStringLiteral("icon_name")] = iconName;
                     item[QStringLiteral("payload")] = payload;
                     m_results.append(item);
                 }
@@ -103,6 +110,8 @@ void SpotlightController::search(const QString &query)
         QVariantMap calcItem;
         calcItem[QStringLiteral("title")] = QStringLiteral("Cálculo");
         calcItem[QStringLiteral("subtitle")] = trimmed;
+        calcItem[QStringLiteral("category")] = QStringLiteral("Calculation");
+        calcItem[QStringLiteral("icon_name")] = QStringLiteral("accessories-calculator");
         calcItem[QStringLiteral("payload")] = trimmed;
         m_results.append(calcItem);
     }
@@ -118,6 +127,8 @@ void SpotlightController::search(const QString &query)
             QVariantMap appItem;
             appItem[QStringLiteral("title")] = app.first;
             appItem[QStringLiteral("subtitle")] = QStringLiteral("Aplicación del sistema");
+            appItem[QStringLiteral("category")] = QStringLiteral("App");
+            appItem[QStringLiteral("icon_name")] = QStringLiteral("application-x-executable");
             appItem[QStringLiteral("payload")] = app.second;
             m_results.append(appItem);
         }
@@ -128,13 +139,25 @@ void SpotlightController::search(const QString &query)
 
 void SpotlightController::launchPayload(const QString &payload)
 {
-    if (!payload.isEmpty()) {
-        setVisible(false);
-        QStringList parts = QProcess::splitCommand(payload);
-        if (!parts.isEmpty()) {
-            QString program = parts.takeFirst();
-            QProcess::startDetached(program, parts);
+    if (payload.trimmed().isEmpty()) {
+        return;
+    }
+    setVisible(false);
+
+    QFileInfo fi(payload);
+    if (fi.exists()) {
+        if (fi.isDir()) {
+            QProcess::startDetached(QStringLiteral("quartz-finder"), { fi.canonicalFilePath() });
+        } else {
+            QDesktopServices::openUrl(QUrl::fromLocalFile(fi.canonicalFilePath()));
         }
+        return;
+    }
+
+    QStringList parts = QProcess::splitCommand(payload);
+    if (!parts.isEmpty()) {
+        QString program = parts.takeFirst();
+        QProcess::startDetached(program, parts);
     }
 }
 

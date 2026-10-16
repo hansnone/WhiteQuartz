@@ -15,4 +15,4 @@ set_tests_properties("tst_finder_modes" PROPERTIES  _BACKTRACE_TRIPLES "/home/pe
 add_test("tst_settingsconfig" "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_settingsconfig")
 set_tests_properties("tst_settingsconfig" PROPERTIES  _BACKTRACE_TRIPLES "/home/pedro/Proyectos/WhiteQuartz/tests/CMakeLists.txt;31;add_test;/home/pedro/Proyectos/WhiteQuartz/tests/CMakeLists.txt;0;")
 add_test("tst_shell_controllers" "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_shell_controllers")
-set_tests_properties("tst_shell_controllers" PROPERTIES  _BACKTRACE_TRIPLES "/home/pedro/Proyectos/WhiteQuartz/tests/CMakeLists.txt;42;add_test;/home/pedro/Proyectos/WhiteQuartz/tests/CMakeLists.txt;0;")
+set_tests_properties("tst_shell_controllers" PROPERTIES  _BACKTRACE_TRIPLES "/home/pedro/Proyectos/WhiteQuartz/tests/CMakeLists.txt;44;add_test;/home/pedro/Proyectos/WhiteQuartz/tests/CMakeLists.txt;0;")

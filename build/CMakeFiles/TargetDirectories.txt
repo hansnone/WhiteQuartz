@@ -16,6 +16,8 @@
 /home/pedro/Proyectos/WhiteQuartz/build/src/style/CMakeFiles/quartz-style_autogen_timestamp_deps.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/style/CMakeFiles/quartz-style_autogen.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-compositor.dir
+/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartzdecoration.dir
+/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-stagemanager.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/test.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/edit_cache.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/rebuild_cache.dir
@@ -25,6 +27,10 @@
 /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/install/strip.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-compositor_autogen_timestamp_deps.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-compositor_autogen.dir
+/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartzdecoration_autogen_timestamp_deps.dir
+/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartzdecoration_autogen.dir
+/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-stagemanager_autogen_timestamp_deps.dir
+/home/pedro/Proyectos/WhiteQuartz/build/src/compositor/CMakeFiles/quartz-stagemanager_autogen.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/settings/CMakeFiles/quartz-settings.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/settings/CMakeFiles/test.dir
 /home/pedro/Proyectos/WhiteQuartz/build/src/settings/CMakeFiles/edit_cache.dir

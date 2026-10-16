@@ -9,7 +9,7 @@ args = tool.get("args", {})
 ALLOWED = [
     "src/", "tests/", "docs/", "crates/", "scripts/", 
     "data/", "Cargo.toml", "Cargo.lock", "CMakeLists.txt",
-    "README.md", ".agents/", ".gitignore"
+    "README.md", ".agents/", ".gitignore", "themes/"
 ]
 
 target = args.get("TargetFile") or args.get("path") or ""

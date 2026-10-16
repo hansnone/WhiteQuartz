@@ -33,6 +33,12 @@
 			null
 		],
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/appmenuregistrar.h",
+			"MU",
+			"UWWZ7EI2JW/moc_appmenuregistrar.cpp",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.h",
 			"MU",
 			"OHMANK7QA7/moc_QuickLookController.cpp",
@@ -138,6 +144,11 @@
 		[ "/home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp", "MU", null ],
 		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/appmenuregistrar.cpp",
 			"MU",
 			null
 		],

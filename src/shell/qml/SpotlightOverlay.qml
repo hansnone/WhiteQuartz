@@ -113,12 +113,13 @@ Window {
                             width: 28
                             height: 28
                             radius: 6
-                            color: itemMouseArea.containsMouse ? "#FFFFFF" : "#007AFF"
+                            color: itemMouseArea.containsMouse ? "#FFFFFF" : (modelData.category === "Calculation" ? "#FF9500" : (modelData.category === "File" ? "#34C759" : "#007AFF"))
                             Text {
                                 anchors.centerIn: parent
-                                text: modelData.title.charAt(0)
-                                color: itemMouseArea.containsMouse ? "#007AFF" : "#FFFFFF"
+                                text: modelData.category === "Calculation" ? "=" : (modelData.category === "File" ? "📄" : (modelData.title ? modelData.title.charAt(0) : "A"))
+                                color: itemMouseArea.containsMouse ? (modelData.category === "Calculation" ? "#FF9500" : (modelData.category === "File" ? "#34C759" : "#007AFF")) : "#FFFFFF"
                                 font.bold: true
+                                font.pixelSize: 14
                             }
                         }
 
@@ -134,8 +135,16 @@ Window {
                             Text {
                                 text: modelData.subtitle
                                 font.pixelSize: 11
+                                Layout.fillWidth: true
+                                elide: Text.ElideMiddle
                                 color: itemMouseArea.containsMouse ? "#E5E5EA" : "#8E8E93"
                             }
+                        }
+
+                        Text {
+                            text: modelData.category === "Calculation" ? qsTr("Cálculo") : (modelData.category === "File" ? qsTr("Archivo") : qsTr("App"))
+                            font.pixelSize: 11
+                            color: itemMouseArea.containsMouse ? "#E5E5EA" : "#8E8E93"
                         }
                     }
 

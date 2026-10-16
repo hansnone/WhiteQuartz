@@ -42,6 +42,15 @@ template <> constexpr inline auto Quartz::Shell::DockController::qt_create_metao
         "appBouncingRequested",
         "",
         "cmd",
+        "appsChanged",
+        "trashIconChanged",
+        "icon",
+        "onWindowAdded",
+        "appId",
+        "title",
+        "active",
+        "onWindowRemoved",
+        "onActiveWindowChanged",
         "calculateGaussianMagnification",
         "itemCenterDistance",
         "sigma",
@@ -53,8 +62,13 @@ template <> constexpr inline auto Quartz::Shell::DockController::qt_create_metao
         "parseCommandLine",
         "launchApp",
         "requestAppAttention",
+        "listStackDirectory",
+        "dirPath",
+        "updateTrashState",
         "baseIconSize",
-        "maxMagnifiedSize"
+        "maxMagnifiedSize",
+        "apps",
+        "trashIcon"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -62,42 +76,70 @@ template <> constexpr inline auto Quartz::Shell::DockController::qt_create_metao
         QtMocHelpers::SignalData<void(const QString &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 3 },
         }}),
-        // Method 'calculateGaussianMagnification'
-        QtMocHelpers::MethodData<qreal(qreal, qreal) const>(4, 2, QMC::AccessPublic, QMetaType::QReal, {{
-            { QMetaType::QReal, 5 }, { QMetaType::QReal, 6 },
+        // Signal 'appsChanged'
+        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'trashIconChanged'
+        QtMocHelpers::SignalData<void(const QString &)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 6 },
+        }}),
+        // Slot 'onWindowAdded'
+        QtMocHelpers::SlotData<void(const QString &, const QString &, const QString &, bool)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 8 }, { QMetaType::QString, 9 }, { QMetaType::QString, 6 }, { QMetaType::Bool, 10 },
+        }}),
+        // Slot 'onWindowRemoved'
+        QtMocHelpers::SlotData<void(const QString &)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 8 },
+        }}),
+        // Slot 'onActiveWindowChanged'
+        QtMocHelpers::SlotData<void(const QString &, const QString &)>(12, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 8 }, { QMetaType::QString, 9 },
         }}),
         // Method 'calculateGaussianMagnification'
-        QtMocHelpers::MethodData<qreal(qreal) const>(4, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::QReal, {{
-            { QMetaType::QReal, 5 },
+        QtMocHelpers::MethodData<qreal(qreal, qreal) const>(13, 2, QMC::AccessPublic, QMetaType::QReal, {{
+            { QMetaType::QReal, 14 }, { QMetaType::QReal, 15 },
+        }}),
+        // Method 'calculateGaussianMagnification'
+        QtMocHelpers::MethodData<qreal(qreal) const>(13, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::QReal, {{
+            { QMetaType::QReal, 14 },
         }}),
         // Method 'calculateParabolicBounce'
-        QtMocHelpers::MethodData<qreal(qreal, qreal) const>(7, 2, QMC::AccessPublic, QMetaType::QReal, {{
-            { QMetaType::QReal, 8 }, { QMetaType::QReal, 9 },
+        QtMocHelpers::MethodData<qreal(qreal, qreal) const>(16, 2, QMC::AccessPublic, QMetaType::QReal, {{
+            { QMetaType::QReal, 17 }, { QMetaType::QReal, 18 },
         }}),
         // Method 'calculateParabolicBounce'
-        QtMocHelpers::MethodData<qreal(qreal) const>(7, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::QReal, {{
-            { QMetaType::QReal, 8 },
+        QtMocHelpers::MethodData<qreal(qreal) const>(16, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::QReal, {{
+            { QMetaType::QReal, 17 },
         }}),
         // Method 'defaultApps'
-        QtMocHelpers::MethodData<QVariantList() const>(10, 2, QMC::AccessPublic, 0x80000000 | 11),
+        QtMocHelpers::MethodData<QVariantList() const>(19, 2, QMC::AccessPublic, 0x80000000 | 20),
         // Method 'parseCommandLine'
-        QtMocHelpers::MethodData<QStringList(const QString &) const>(12, 2, QMC::AccessPublic, QMetaType::QStringList, {{
+        QtMocHelpers::MethodData<QStringList(const QString &) const>(21, 2, QMC::AccessPublic, QMetaType::QStringList, {{
             { QMetaType::QString, 3 },
         }}),
         // Method 'launchApp'
-        QtMocHelpers::MethodData<void(const QString &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::MethodData<void(const QString &)>(22, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 3 },
         }}),
         // Method 'requestAppAttention'
-        QtMocHelpers::MethodData<void(const QString &)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+        QtMocHelpers::MethodData<void(const QString &)>(23, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 3 },
         }}),
+        // Method 'listStackDirectory'
+        QtMocHelpers::MethodData<QVariantList(const QString &) const>(24, 2, QMC::AccessPublic, 0x80000000 | 20, {{
+            { QMetaType::QString, 25 },
+        }}),
+        // Method 'updateTrashState'
+        QtMocHelpers::MethodData<void()>(26, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'baseIconSize'
-        QtMocHelpers::PropertyData<int>(15, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<int>(27, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
         // property 'maxMagnifiedSize'
-        QtMocHelpers::PropertyData<int>(16, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<int>(28, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
+        // property 'apps'
+        QtMocHelpers::PropertyData<QVariantList>(29, 0x80000000 | 20, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 1),
+        // property 'trashIcon'
+        QtMocHelpers::PropertyData<QString>(30, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -120,25 +162,37 @@ void Quartz::Shell::DockController::qt_static_metacall(QObject *_o, QMetaObject:
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->appBouncingRequested((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 1: { qreal _r = _t->calculateGaussianMagnification((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<qreal>>(_a[2])));
+        case 1: _t->appsChanged(); break;
+        case 2: _t->trashIconChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->onWindowAdded((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[4]))); break;
+        case 4: _t->onWindowRemoved((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 5: _t->onActiveWindowChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
+        case 6: { qreal _r = _t->calculateGaussianMagnification((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<qreal>>(_a[2])));
             if (_a[0]) *reinterpret_cast<qreal*>(_a[0]) = std::move(_r); }  break;
-        case 2: { qreal _r = _t->calculateGaussianMagnification((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])));
+        case 7: { qreal _r = _t->calculateGaussianMagnification((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])));
             if (_a[0]) *reinterpret_cast<qreal*>(_a[0]) = std::move(_r); }  break;
-        case 3: { qreal _r = _t->calculateParabolicBounce((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<qreal>>(_a[2])));
+        case 8: { qreal _r = _t->calculateParabolicBounce((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<qreal>>(_a[2])));
             if (_a[0]) *reinterpret_cast<qreal*>(_a[0]) = std::move(_r); }  break;
-        case 4: { qreal _r = _t->calculateParabolicBounce((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])));
+        case 9: { qreal _r = _t->calculateParabolicBounce((*reinterpret_cast<std::add_pointer_t<qreal>>(_a[1])));
             if (_a[0]) *reinterpret_cast<qreal*>(_a[0]) = std::move(_r); }  break;
-        case 5: { QVariantList _r = _t->defaultApps();
+        case 10: { QVariantList _r = _t->defaultApps();
             if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 6: { QStringList _r = _t->parseCommandLine((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 11: { QStringList _r = _t->parseCommandLine((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QStringList*>(_a[0]) = std::move(_r); }  break;
-        case 7: _t->launchApp((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 8: _t->requestAppAttention((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 12: _t->launchApp((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 13: _t->requestAppAttention((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 14: { QVariantList _r = _t->listStackDirectory((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+            if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
+        case 15: _t->updateTrashState(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (DockController::*)(const QString & )>(_a, &DockController::appBouncingRequested, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (DockController::*)()>(_a, &DockController::appsChanged, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (DockController::*)(const QString & )>(_a, &DockController::trashIconChanged, 2))
             return;
     }
     if (_c == QMetaObject::ReadProperty) {
@@ -146,6 +200,8 @@ void Quartz::Shell::DockController::qt_static_metacall(QObject *_o, QMetaObject:
         switch (_id) {
         case 0: *reinterpret_cast<int*>(_v) = _t->baseIconSize(); break;
         case 1: *reinterpret_cast<int*>(_v) = _t->maxMagnifiedSize(); break;
+        case 2: *reinterpret_cast<QVariantList*>(_v) = _t->apps(); break;
+        case 3: *reinterpret_cast<QString*>(_v) = _t->trashIcon(); break;
         default: break;
         }
     }
@@ -170,20 +226,20 @@ int Quartz::Shell::DockController::qt_metacall(QMetaObject::Call _c, int _id, vo
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 16;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 16)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 16;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }
@@ -192,5 +248,17 @@ int Quartz::Shell::DockController::qt_metacall(QMetaObject::Call _c, int _id, vo
 void Quartz::Shell::DockController::appBouncingRequested(const QString & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
+}
+
+// SIGNAL 1
+void Quartz::Shell::DockController::appsChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+
+// SIGNAL 2
+void Quartz::Shell::DockController::trashIconChanged(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
 }
 QT_WARNING_POP

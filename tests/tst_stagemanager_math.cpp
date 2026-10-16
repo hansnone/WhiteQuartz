@@ -1,5 +1,6 @@
 #include <QTest>
 #include "../src/compositor/stagemanagereffect.h"
+#include "../src/compositor/quartzdecoration.h"
 
 class TestStageManagerMath : public QObject {
     Q_OBJECT
@@ -70,7 +71,68 @@ private Q_SLOTS:
         mat.inverted(&invertible);
         QVERIFY(invertible);
     }
+
+    void testQuartzDecorationMetrics() {
+        Quartz::Compositor::QuartzDecoration deco;
+        QCOMPARE(deco.titleBarHeight(), 28);
+
+        deco.setUnifiedToolbar(true);
+        QCOMPARE(deco.titleBarHeight(), 52);
+
+        QRect closeR = deco.closeButtonRect();
+        QRect minR = deco.minimizeButtonRect();
+        QRect maxR = deco.maximizeButtonRect();
+
+        QCOMPARE(closeR.left(), 14);
+        QCOMPARE(closeR.width(), 12);
+        QCOMPARE(closeR.height(), 12);
+
+        QCOMPARE(minR.left(), 34);
+        QCOMPARE(maxR.left(), 54);
+    }
+
+    void testQuartzDecorationHoverAndTiling() {
+        Quartz::Compositor::QuartzDecoration deco;
+        QCOMPARE(static_cast<int>(deco.hoverState()), static_cast<int>(Quartz::Compositor::TrafficLightHoverState::None));
+
+        deco.setHoverState(Quartz::Compositor::TrafficLightHoverState::CloseHovered);
+        QCOMPARE(static_cast<int>(deco.hoverState()), static_cast<int>(Quartz::Compositor::TrafficLightHoverState::CloseHovered));
+
+        QCOMPARE(deco.documentHasUnsavedChanges(), false);
+        deco.setDocumentHasUnsavedChanges(true);
+        QCOMPARE(deco.documentHasUnsavedChanges(), true);
+
+        deco.onZoomHoverEntered(QPoint(50, 10));
+        QCOMPARE(static_cast<int>(deco.hoverState()), static_cast<int>(Quartz::Compositor::TrafficLightHoverState::ZoomHovered));
+
+        deco.onZoomHoverLeft();
+        QCOMPARE(static_cast<int>(deco.hoverState()), static_cast<int>(Quartz::Compositor::TrafficLightHoverState::None));
+        QCOMPARE(deco.isTilingMenuVisible(), false);
+    }
+
+    void testShadowImageGeneration() {
+        QImage activeShadow = Quartz::Compositor::QuartzDecoration::generateShadowImage(200, 150, true);
+        QImage inactiveShadow = Quartz::Compositor::QuartzDecoration::generateShadowImage(200, 150, false);
+
+        QVERIFY(!activeShadow.isNull());
+        QVERIFY(!inactiveShadow.isNull());
+        QVERIFY(activeShadow.width() >= 200);
+        QVERIFY(activeShadow.height() >= 150);
+    }
+
+    void testStageManagerDBusMethods() {
+        Quartz::Compositor::StageManagerEffect effect;
+        QCOMPARE(effect.isEnabledSlot(), false);
+
+        effect.addWindowToCurrentStage(QStringLiteral("win-101"));
+        QCOMPARE(effect.activeStageCount(), 1);
+
+        effect.activateStageGroup(QStringLiteral("group_1"));
+        effect.setEnabled(true);
+        QCOMPARE(effect.isEnabledSlot(), true);
+    }
 };
+
 
 QTEST_MAIN(TestStageManagerMath)
 #include "tst_stagemanager_math.moc"
