@@ -5,6 +5,7 @@
 #include <QFileInfoList>
 #include <QStandardPaths>
 #include <QDBusConnection>
+#include <QDBusMessage>
 
 namespace Quartz::Shell {
 
@@ -267,6 +268,37 @@ void DockController::launchApp(const QString &cmd)
 void DockController::requestAppAttention(const QString &cmd)
 {
     Q_EMIT appBouncingRequested(cmd);
+}
+
+void DockController::quitApp(const QString &cmd)
+{
+    QStringList parts = parseCommandLine(cmd);
+    if (parts.isEmpty()) return;
+    QString binary = parts.first();
+
+    QDBusMessage msg = QDBusMessage::createMethodCall(
+        QStringLiteral("org.quartz.Session"),
+        QStringLiteral("/org/quartz/Session"),
+        QStringLiteral("org.quartz.Session"),
+        QStringLiteral("quit_application")
+    );
+    msg << binary;
+    QDBusConnection::sessionBus().send(msg);
+
+    QProcess::startDetached(QStringLiteral("killall"), { binary });
+}
+
+void DockController::forceQuitApp(const QString &cmd)
+{
+    QStringList parts = parseCommandLine(cmd);
+    if (parts.isEmpty()) return;
+    QString binary = parts.first();
+    QProcess::startDetached(QStringLiteral("killall"), { QStringLiteral("-9"), binary });
+}
+
+void DockController::toggleKeepInDock(const QString &cmd)
+{
+    Q_UNUSED(cmd);
 }
 
 } // namespace Quartz::Shell

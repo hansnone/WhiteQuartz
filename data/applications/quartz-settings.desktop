@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Ajustes del Sistema
+GenericName=Configuración del Sistema
+Comment=Panel centralizado de ajustes y preferencias de QuartzDE
+Exec=quartz-settings
+Icon=preferences-system
+Terminal=false
+Categories=Settings;
+StartupNotify=true

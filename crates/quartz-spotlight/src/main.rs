@@ -199,34 +199,250 @@ impl SpotlightEngine {
     }
 
     pub fn evaluate_math(input: &str) -> Option<f64> {
-        let clean = input.trim().replace(' ', "");
-        if clean.is_empty() || !clean.chars().all(|c| c.is_ascii_digit() || "+-*/.".contains(c)) {
+        let clean = input.trim();
+        if clean.is_empty() {
             return None;
         }
 
-        // Evaluador aritmético seguro y sencillo para sumas, restas, multiplicaciones y divisiones
-        if let Some((left, right)) = clean.split_once('+') {
-            let l = left.parse::<f64>().ok()?;
-            let r = right.parse::<f64>().ok()?;
-            return Some(l + r);
-        } else if let Some((left, right)) = clean.split_once('-') {
-            let l = left.parse::<f64>().ok()?;
-            let r = right.parse::<f64>().ok()?;
-            return Some(l - r);
-        } else if let Some((left, right)) = clean.split_once('*') {
-            let l = left.parse::<f64>().ok()?;
-            let r = right.parse::<f64>().ok()?;
-            return Some(l * r);
-        } else if let Some((left, right)) = clean.split_once('/') {
-            let l = left.parse::<f64>().ok()?;
-            let r = right.parse::<f64>().ok()?;
-            if r.abs() < f64::EPSILON {
-                return None;
-            }
-            return Some(l / r);
+        struct Parser<'a> {
+            chars: std::iter::Peekable<std::str::Chars<'a>>,
         }
 
-        None
+        impl<'a> Parser<'a> {
+            fn new(s: &'a str) -> Self {
+                Self {
+                    chars: s.chars().peekable(),
+                }
+            }
+
+            fn skip_whitespace(&mut self) {
+                while let Some(&c) = self.chars.peek() {
+                    if c.is_whitespace() {
+                        self.chars.next();
+                    } else {
+                        break;
+                    }
+                }
+            }
+
+            fn parse_expr(&mut self) -> Option<f64> {
+                let mut val = self.parse_term()?;
+                loop {
+                    self.skip_whitespace();
+                    match self.chars.peek() {
+                        Some('+') => {
+                            self.chars.next();
+                            let rhs = self.parse_term()?;
+                            val += rhs;
+                        }
+                        Some('-') => {
+                            self.chars.next();
+                            let rhs = self.parse_term()?;
+                            val -= rhs;
+                        }
+                        _ => break,
+                    }
+                }
+                Some(val)
+            }
+
+            fn parse_term(&mut self) -> Option<f64> {
+                let mut val = self.parse_factor()?;
+                loop {
+                    self.skip_whitespace();
+                    match self.chars.peek() {
+                        Some('*') => {
+                            self.chars.next();
+                            let rhs = self.parse_factor()?;
+                            val *= rhs;
+                        }
+                        Some('/') => {
+                            self.chars.next();
+                            let rhs = self.parse_factor()?;
+                            if rhs.abs() < f64::EPSILON {
+                                return None;
+                            }
+                            val /= rhs;
+                        }
+                        Some('%') => {
+                            self.chars.next();
+                            let rhs = self.parse_factor()?;
+                            if rhs.abs() < f64::EPSILON {
+                                return None;
+                            }
+                            val %= rhs;
+                        }
+                        _ => break,
+                    }
+                }
+                Some(val)
+            }
+
+            fn parse_factor(&mut self) -> Option<f64> {
+                let base = self.parse_unary()?;
+                self.skip_whitespace();
+                if let Some('^') = self.chars.peek() {
+                    self.chars.next();
+                    let exp = self.parse_factor()?;
+                    Some(base.powf(exp))
+                } else {
+                    Some(base)
+                }
+            }
+
+            fn parse_unary(&mut self) -> Option<f64> {
+                self.skip_whitespace();
+                match self.chars.peek() {
+                    Some('+') => {
+                        self.chars.next();
+                        self.parse_unary()
+                    }
+                    Some('-') => {
+                        self.chars.next();
+                        Some(-self.parse_unary()?)
+                    }
+                    _ => self.parse_primary(),
+                }
+            }
+
+            fn parse_primary(&mut self) -> Option<f64> {
+                self.skip_whitespace();
+                match self.chars.peek() {
+                    Some('(') => {
+                        self.chars.next();
+                        let val = self.parse_expr()?;
+                        self.skip_whitespace();
+                        if self.chars.next() == Some(')') {
+                            Some(val)
+                        } else {
+                            None
+                        }
+                    }
+                    Some(c) if c.is_ascii_digit() || *c == '.' => {
+                        let mut num_str = String::new();
+                        let mut seen_dot = false;
+                        while let Some(&ch) = self.chars.peek() {
+                            if ch.is_ascii_digit() {
+                                num_str.push(ch);
+                                self.chars.next();
+                            } else if ch == '.' && !seen_dot {
+                                seen_dot = true;
+                                num_str.push(ch);
+                                self.chars.next();
+                            } else {
+                                break;
+                            }
+                        }
+                        num_str.parse::<f64>().ok()
+                    }
+                    Some(c) if c.is_alphabetic() => {
+                        let mut ident = String::new();
+                        while let Some(&ch) = self.chars.peek() {
+                            if ch.is_alphabetic() {
+                                ident.push(ch);
+                                self.chars.next();
+                            } else {
+                                break;
+                            }
+                        }
+                        let ident_lower = ident.to_lowercase();
+                        match ident_lower.as_str() {
+                            "pi" => Some(std::f64::consts::PI),
+                            "e" => Some(std::f64::consts::E),
+                            "sqrt" => {
+                                self.skip_whitespace();
+                                if self.chars.next() == Some('(') {
+                                    let arg = self.parse_expr()?;
+                                    self.skip_whitespace();
+                                    if self.chars.next() == Some(')') && arg >= 0.0 {
+                                        Some(arg.sqrt())
+                                    } else {
+                                        None
+                                    }
+                                } else {
+                                    None
+                                }
+                            }
+                            "abs" => {
+                                self.skip_whitespace();
+                                if self.chars.next() == Some('(') {
+                                    let arg = self.parse_expr()?;
+                                    self.skip_whitespace();
+                                    if self.chars.next() == Some(')') {
+                                        Some(arg.abs())
+                                    } else {
+                                        None
+                                    }
+                                } else {
+                                    None
+                                }
+                            }
+                            "sin" => {
+                                self.skip_whitespace();
+                                if self.chars.next() == Some('(') {
+                                    let arg = self.parse_expr()?;
+                                    self.skip_whitespace();
+                                    if self.chars.next() == Some(')') {
+                                        Some(arg.sin())
+                                    } else {
+                                        None
+                                    }
+                                } else {
+                                    None
+                                }
+                            }
+                            "cos" => {
+                                self.skip_whitespace();
+                                if self.chars.next() == Some('(') {
+                                    let arg = self.parse_expr()?;
+                                    self.skip_whitespace();
+                                    if self.chars.next() == Some(')') {
+                                        Some(arg.cos())
+                                    } else {
+                                        None
+                                    }
+                                } else {
+                                    None
+                                }
+                            }
+                            _ => None,
+                        }
+                    }
+                    _ => None,
+                }
+            }
+        }
+
+        let mut parser = Parser::new(clean);
+        let result = parser.parse_expr()?;
+        parser.skip_whitespace();
+        if parser.chars.next().is_none() {
+            Some(result)
+        } else {
+            None
+        }
+    }
+
+    pub fn fuzzy_match(pattern: &str, text: &str) -> bool {
+        let p_lower = pattern.to_lowercase();
+        let t_lower = text.to_lowercase();
+        if t_lower.contains(&p_lower) {
+            return true;
+        }
+        let mut p_iter = p_lower.chars();
+        let mut target_char = match p_iter.next() {
+            Some(c) => c,
+            None => return true,
+        };
+        for ch in t_lower.chars() {
+            if ch == target_char {
+                match p_iter.next() {
+                    Some(next_c) => target_char = next_c,
+                    None => return true,
+                }
+            }
+        }
+        false
     }
 
     pub fn query(text: &str) -> Vec<SearchResultItem> {
@@ -250,31 +466,10 @@ impl SpotlightEngine {
 
         let query_lower = trimmed.to_lowercase();
 
-        // 2. Coincidencia con aplicaciones escaneadas del sistema
-        let apps = Self::get_apps();
-        for app in apps {
-            if app.name.to_lowercase().contains(&query_lower)
-                || app.generic_name.to_lowercase().contains(&query_lower)
-                || app.comment.to_lowercase().contains(&query_lower)
-            {
-                let subtitle = if !app.comment.is_empty() {
-                    app.comment.clone()
-                } else if !app.generic_name.is_empty() {
-                    app.generic_name.clone()
-                } else {
-                    app.exec.clone()
-                };
-                results.push(SearchResultItem {
-                    title: app.name.clone(),
-                    subtitle,
-                    category: SearchResultCategory::Application,
-                    icon_name: app.icon.clone(),
-                    action_payload: app.exec.clone(),
-                });
-            }
-        }
+        // 2. Coincidencia difusa y por relevancia con aplicaciones
+        let mut app_matches: Vec<(u32, SearchResultItem)> = Vec::new();
 
-        // Aplicaciones Quartz integradas (fallback y garantías de paridad)
+        // Aplicaciones Quartz integradas (prioridad alta de paridad de sistema)
         let built_in_apps = [
             ("Ajustes del Sistema", "quartz-settings", "Configuración y preferencias de QuartzDE", "preferences-system"),
             ("Finder", "quartz-finder", "Gestor de archivos nativo", "system-file-manager"),
@@ -283,18 +478,68 @@ impl SpotlightEngine {
         ];
 
         for (name, exec, desc, icon) in built_in_apps {
-            if name.to_lowercase().contains(&query_lower) {
-                // Evitar duplicar si ya vino de /usr/share/applications
-                if !results.iter().any(|r| r.title.eq_ignore_ascii_case(name)) {
-                    results.push(SearchResultItem {
-                        title: name.to_string(),
-                        subtitle: desc.to_string(),
+            let n_lower = name.to_lowercase();
+            if n_lower.starts_with(&query_lower) {
+                app_matches.push((120, SearchResultItem {
+                    title: name.to_string(),
+                    subtitle: desc.to_string(),
+                    category: SearchResultCategory::Application,
+                    icon_name: icon.to_string(),
+                    action_payload: exec.to_string(),
+                }));
+            } else if n_lower.contains(&query_lower) || Self::fuzzy_match(&query_lower, name) {
+                app_matches.push((90, SearchResultItem {
+                    title: name.to_string(),
+                    subtitle: desc.to_string(),
+                    category: SearchResultCategory::Application,
+                    icon_name: icon.to_string(),
+                    action_payload: exec.to_string(),
+                }));
+            }
+        }
+
+        let apps = Self::get_apps();
+        for app in apps {
+            let n_lower = app.name.to_lowercase();
+            let score = if n_lower.starts_with(&query_lower) {
+                100
+            } else if n_lower.contains(&query_lower) {
+                80
+            } else if app.generic_name.to_lowercase().contains(&query_lower) {
+                60
+            } else if Self::fuzzy_match(&query_lower, &app.name) {
+                40
+            } else if Self::fuzzy_match(&query_lower, &app.comment) {
+                20
+            } else {
+                0
+            };
+
+            if score > 0 {
+                // Evitar duplicados con apps built-in
+                if !app_matches.iter().any(|(_, r)| r.title.eq_ignore_ascii_case(&app.name)) {
+                    let subtitle = if !app.comment.is_empty() {
+                        app.comment.clone()
+                    } else if !app.generic_name.is_empty() {
+                        app.generic_name.clone()
+                    } else {
+                        app.exec.clone()
+                    };
+                    app_matches.push((score, SearchResultItem {
+                        title: app.name.clone(),
+                        subtitle,
                         category: SearchResultCategory::Application,
-                        icon_name: icon.to_string(),
-                        action_payload: exec.to_string(),
-                    });
+                        icon_name: app.icon.clone(),
+                        action_payload: app.exec.clone(),
+                    }));
                 }
             }
+        }
+
+        // Ordenar por score descendente
+        app_matches.sort_by(|a, b| b.0.cmp(&a.0));
+        for (_, item) in app_matches {
+            results.push(item);
         }
 
         // 3. Búsqueda de archivos en $HOME (si la consulta tiene al menos 2 caracteres)
@@ -350,6 +595,15 @@ impl SpotlightServer {
         Ok(res.is_ok())
     }
 
+    async fn list_apps(&self) -> zbus::fdo::Result<Vec<(String, String, String, String)>> {
+        let apps = SpotlightEngine::get_apps();
+        let serializable = apps
+            .iter()
+            .map(|a| (a.name.clone(), a.generic_name.clone(), a.icon.clone(), a.exec.clone()))
+            .collect();
+        Ok(serializable)
+    }
+
     #[zbus(signal)]
     async fn toggled(ctxt: &zbus::SignalContext<'_>) -> zbus::Result<()>;
 }
@@ -392,7 +646,19 @@ mod tests {
         assert_eq!(SpotlightEngine::evaluate_math("10 * 5"), Some(50.0));
         assert_eq!(SpotlightEngine::evaluate_math("100 / 4"), Some(25.0));
         assert_eq!(SpotlightEngine::evaluate_math("80 - 30"), Some(50.0));
+        assert_eq!(SpotlightEngine::evaluate_math("2 + 3 * 4"), Some(14.0));
+        assert_eq!(SpotlightEngine::evaluate_math("(10 - 2) * 5"), Some(40.0));
+        assert_eq!(SpotlightEngine::evaluate_math("2 ^ 3"), Some(8.0));
+        assert_eq!(SpotlightEngine::evaluate_math("sqrt(16)"), Some(4.0));
         assert_eq!(SpotlightEngine::evaluate_math("invalid"), None);
+    }
+
+    #[test]
+    fn test_fuzzy_matching() {
+        assert!(SpotlightEngine::fuzzy_match("term", "Terminal"));
+        assert!(SpotlightEngine::fuzzy_match("fnd", "Finder"));
+        assert!(SpotlightEngine::fuzzy_match("calc", "accessories-calculator"));
+        assert!(!SpotlightEngine::fuzzy_match("xyz", "Terminal"));
     }
 
     #[test]

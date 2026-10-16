@@ -64,6 +64,7 @@ void StageManagerKWinPlugin::apply(KWin::EffectWindow *window, int mask, KWin::W
 }
 
 
+#ifdef KWIN_OFFSCREEN_DRAW_RETURNS_BOOL
 bool StageManagerKWinPlugin::drawWindow(const KWin::RenderTarget &renderTarget,
                                        const KWin::RenderViewport &viewport,
                                        KWin::EffectWindow *window,
@@ -82,6 +83,26 @@ bool StageManagerKWinPlugin::drawWindow(const KWin::RenderTarget &renderTarget,
 
     return KWin::OffscreenEffect::drawWindow(renderTarget, viewport, window, mask, deviceRegion, data);
 }
+#else
+void StageManagerKWinPlugin::drawWindow(const KWin::RenderTarget &renderTarget,
+                                       const KWin::RenderViewport &viewport,
+                                       KWin::EffectWindow *window,
+                                       int mask,
+                                       const KWin::Region &deviceRegion,
+                                       KWin::WindowPaintData &data)
+{
+    if (m_squircleShader && window) {
+        m_squircleShader->setUniform("uWindowSize", QVector2D(static_cast<float>(window->width()), static_cast<float>(window->height())));
+        m_squircleShader->setUniform("uCornerRadius", 11.0f);
+        m_squircleShader->setUniform("uPower", 4.5f);
+        m_squircleShader->setUniform("uBorderColor", QVector4D(1.0f, 1.0f, 1.0f, 0.15f));
+
+        setShader(window, m_squircleShader.get());
+    }
+
+    KWin::OffscreenEffect::drawWindow(renderTarget, viewport, window, mask, deviceRegion, data);
+}
+#endif
 
 } // namespace Quartz::Compositor
 

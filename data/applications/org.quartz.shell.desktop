@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Quartz Shell
+Comment=Quartz Desktop Environment Shell
+Exec=quartz-shell
+Icon=preferences-system-windows
+Type=Application
+Categories=System;Core;
+NoDisplay=true
+X-KDE-Wayland-Interfaces=org_kde_plasma_window_management;

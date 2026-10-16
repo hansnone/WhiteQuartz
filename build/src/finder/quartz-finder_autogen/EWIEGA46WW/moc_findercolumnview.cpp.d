@@ -304,6 +304,8 @@
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDir \
   /usr/include/qt6/QtCore/QFileInfo \
+  /usr/include/qt6/QtCore/QFileSystemWatcher \
+  /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20bit.h \
   /usr/include/qt6/QtCore/q20functional.h \
@@ -313,6 +315,7 @@
   /usr/include/qt6/QtCore/q20utility.h \
   /usr/include/qt6/QtCore/q23type_traits.h \
   /usr/include/qt6/QtCore/q23utility.h \
+  /usr/include/qt6/QtCore/qabstracteventdispatcher.h \
   /usr/include/qt6/QtCore/qabstractitemmodel.h \
   /usr/include/qt6/QtCore/qalgorithms.h \
   /usr/include/qt6/QtCore/qalloc.h \
@@ -324,6 +327,7 @@
   /usr/include/qt6/QtCore/qatomic.h \
   /usr/include/qt6/QtCore/qatomic_cxx11.h \
   /usr/include/qt6/QtCore/qbasicatomic.h \
+  /usr/include/qt6/QtCore/qbasictimer.h \
   /usr/include/qt6/QtCore/qbindingstorage.h \
   /usr/include/qt6/QtCore/qbitarray.h \
   /usr/include/qt6/QtCore/qbytearray.h \
@@ -346,14 +350,17 @@
   /usr/include/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/qt6/QtCore/qdatastream.h \
   /usr/include/qt6/QtCore/qdatetime.h \
+  /usr/include/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/qt6/QtCore/qdebug.h \
   /usr/include/qt6/QtCore/qdir.h \
   /usr/include/qt6/QtCore/qdirlisting.h \
   /usr/include/qt6/QtCore/qendian.h \
+  /usr/include/qt6/QtCore/qeventloop.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
   /usr/include/qt6/QtCore/qfile.h \
   /usr/include/qt6/QtCore/qfiledevice.h \
   /usr/include/qt6/QtCore/qfileinfo.h \
+  /usr/include/qt6/QtCore/qfilesystemwatcher.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
   /usr/include/qt6/QtCore/qforeach.h \
@@ -429,6 +436,7 @@
   /usr/include/qt6/QtCore/qtenvironmentvariables.h \
   /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
+  /usr/include/qt6/QtCore/qtimer.h \
   /usr/include/qt6/QtCore/qtimezone.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
@@ -480,9 +488,11 @@
   /usr/include/qt6/QtWidgets/QListWidget \
   /usr/include/qt6/QtWidgets/QScrollArea \
   /usr/include/qt6/QtWidgets/QStackedWidget \
+  /usr/include/qt6/QtWidgets/QToolButton \
   /usr/include/qt6/QtWidgets/QTreeWidget \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
+  /usr/include/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
   /usr/include/qt6/QtWidgets/qabstractitemview.h \
   /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
@@ -505,6 +515,7 @@
   /usr/include/qt6/QtWidgets/qstyleoption.h \
   /usr/include/qt6/QtWidgets/qtabbar.h \
   /usr/include/qt6/QtWidgets/qtabwidget.h \
+  /usr/include/qt6/QtWidgets/qtoolbutton.h \
   /usr/include/qt6/QtWidgets/qtreeview.h \
   /usr/include/qt6/QtWidgets/qtreewidget.h \
   /usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \

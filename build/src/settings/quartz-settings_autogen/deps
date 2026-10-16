@@ -2,6 +2,7 @@ quartz-settings_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/build/src/settings/quartz-settings_autogen/moc_predefs.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/CMakeLists.txt \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/main.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/settings/resources.qrc \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsconfigcontroller.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsconfigcontroller.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/settings/settingsmodel.cpp \

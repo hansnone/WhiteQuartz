@@ -21,7 +21,11 @@ public:
     void apply(KWin::EffectWindow *window, int mask, KWin::WindowPaintData &data, KWin::WindowQuadList &quads) override;
 
 protected:
+#ifdef KWIN_OFFSCREEN_DRAW_RETURNS_BOOL
     bool drawWindow(const KWin::RenderTarget &renderTarget, const KWin::RenderViewport &viewport, KWin::EffectWindow *window, int mask, const KWin::Region &deviceRegion, KWin::WindowPaintData &data) override;
+#else
+    void drawWindow(const KWin::RenderTarget &renderTarget, const KWin::RenderViewport &viewport, KWin::EffectWindow *window, int mask, const KWin::Region &deviceRegion, KWin::WindowPaintData &data) override;
+#endif
 
 private:
     void initShader();

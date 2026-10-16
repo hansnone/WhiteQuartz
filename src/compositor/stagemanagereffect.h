@@ -45,6 +45,8 @@ public:
     qreal scaleFactor() const { return m_scaleFactor; }
 
     QMatrix4x4 calculateStageTransform(const QRectF &windowGeo, int stageIndex) const;
+    QMatrix4x4 calculateMissionControlTransform(const QRectF &windowGeo, int windowIndex, int totalWindows, const QRectF &screenGeo) const;
+    QMatrix4x4 calculateAppExposeTransform(const QRectF &windowGeo, int windowIndex, int totalWindows, const QRectF &screenGeo) const;
     static qreal calculateSquircleDistance(qreal x, qreal y, qreal radius, qreal power = 4.5);
     static DropShadowParams shadowForWindow(bool isKeyWindow);
 

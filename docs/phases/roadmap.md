@@ -59,12 +59,49 @@
 - [x] Servidor `com.canonical.AppMenu.Registrar` e importador `DBusMenu` en `MenuBarController` con menús dinámicos en QML
 - [x] Stacks del Dock (`Descargas` en cuadrícula emergente) y estado reactivo de papelera (`user-trash` vs `user-trash-full`)
 
-## Fase 6: Paridad Funcional 1:1 en `quartz-finder`
-- [ ] Barra inferior de ruta (*Path Bar*) y espacio libre del volumen (`QStorageInfo`)
-- [ ] Operaciones completas de sistema de archivos (nueva carpeta `Ctrl+Shift+N`, portapapeles `Ctrl+C`/`X`/`V`, renombrar `Return`/`F2`, duplicar `Ctrl+D`, mover a papelera `Delete`)
-- [ ] Pestañas (`Ctrl+T`), etiquetas de color (Finder tags con `user.xdg.tags`) y montaje de volúmenes en el sidebar
+## Fase 6: Paridad Funcional 1:1 en `quartz-finder` y Estabilidad de Configuración
+- [x] **0.2.2**: Estabilidad de configuración en `libquartz`: `#[serde(default)]` en structs, respaldo `config.json.bad` ante JSON corrupto, campo `wallpaper` y test de migración
+- [x] **6.0**: Preparación del modelo asíncrono en `FinderColumnView` (`QFileSystemModel` + `QSortFilterProxyModel`) con vista previa en segundo plano
+- [x] **6.1**: Barra inferior de ruta (*Path Bar*) con migas de pan interactivas y cálculo de espacio libre (`QStorageInfo`)
+- [x] **6.2**: Motor de operaciones de archivos `FileOperations` (nueva carpeta `Ctrl+Shift+N`, cortar/copiar/pegar `Ctrl+X/C/V`, mover aquí `Ctrl+Alt+V`, duplicar `Ctrl+D`, renombrar `Return/F2`, papelera `Delete/Ctrl+Backspace`, deshacer `Ctrl+Z`, copia asíncrona sin symlinks y preservación de xattr)
+- [x] **6.3**: Pestañas independientes (`Ctrl+T`, `Ctrl+W`, `Ctrl+Tab`), etiquetas de color con `user.xdg.tags` y montaje/expulsión de volúmenes con UDisks2/QStorageInfo
 
 ## Fase 7: Subsistema de Hardware, Control Center, Notificaciones y `quartz-settings`
-- [ ] Demonio de notificaciones (`org.freedesktop.Notifications`) y panel lateral deslizable `NotificationCenter.qml`
-- [ ] Control Center (`ControlCenterPopup.qml`) con audio (PulseAudio/PipeWire), brillo, Wi-Fi, Bluetooth y batería
-- [ ] Carga dinámica de los 18 paneles en `quartz-settings` con persistencia en `QuartzDesktopConfig`
+- [x] **7.1**: Servidor de notificaciones `org.freedesktop.Notifications` 1.2, banners flotantes en capa LayerOverlay y panel lateral `NotificationCenter.qml`
+- [x] **7.2**: Control Center (`ControlCenterPopup.qml`) con audio (PulseAudio/PipeWire), brillo (`login1`), Wi-Fi, Bluetooth, batería y OSD
+- [x] **7.3**: Carga dinámica de los 18 paneles en `quartz-settings` con persistencia reactiva en `QuartzDesktopConfig`
+
+## Fase 8: Atajos Globales, Bloqueo de Pantalla, Login (SDDM) y Gestión de Energía
+- [x] **8.1**: Registro de atajos globales de sesión con `KF6::GlobalAccel` y atajos de compositor (`DesktopShortcuts`)
+- [x] **8.2**: Pantalla de bloqueo Look-and-Feel para `kscreenlocker` (`data/lookandfeel/org.quartz.desktop/`) y D-Bus lock
+- [x] **8.3**: Tema QML para inicio de sesión en SDDM (`data/sddm/themes/quartz/`)
+- [x] **8.4**: Menú Apple y acciones de energía (reposo, reinicio, apagado con cuenta atrás de 60s y logind inhibitors)
+
+## Fase 9: Dock, Barra de Menús y Escritorio Avanzados
+- [x] **9.0**: Verificación de privilegios Wayland de KWin (`X-KDE-Wayland-Interfaces`) para el seguimiento de ventanas
+- [x] **9.1**: Menú contextual de apps del Dock, persistencia de `.desktop` anclados y minimización de ventanas
+- [x] **9.2**: Cambiador de aplicaciones modal (`Alt+Tab`) con orden MRU
+- [x] **9.3**: Esquinas activas con retardo configurable
+- [x] **9.4**: Bandeja del sistema (`StatusNotifierItem` / `StatusNotifierWatcher`)
+- [x] **9.5**: Iconos en el escritorio en `WallpaperWindow` con `QFileSystemModel`
+- [x] **9.6**: Capturas de pantalla (`Ctrl+Shift+3/4/5`) mediante portales XDG o `ScreenShot2`
+- [x] **9.7**: Diálogo de forzar salida (`Ctrl+Alt+Esc`) con lista negra de protección y Acerca de este Mac
+- [x] **9.8**: Reloj personalizable y soporte de menú global auditado
+
+## Fase 10: Launchpad, Mission Control y Spaces
+- [x] **10.1**: Launchpad a pantalla completa con paginación, arrastrar para carpetas y catálogo unificado `ListApps()`
+- [x] **10.2**: Mission Control con algoritmo de reparto sin solapes, App Exposé (`Super+Down`) y Spaces virtuales (`VirtualDesktopManager`)
+
+## Fase 11: Calidad Visual, Spotlight Avanzado y Robustez
+- [x] **11.1**: Desenfoque Gaussiano real (`vibrancy`) con `KWindowEffects::enableBlurBehind`
+- [x] **11.2**: Spotlight con evaluador de expresiones matemáticas reales, fuzzy matching y consultas cancelables
+- [x] **11.3**: Quick Look multimedia y visor PDF (`QtPdf`)
+- [x] **11.4**: Modo oscuro y color de acento automático sincronizado con el sistema
+- [x] **11.5**: Robustez integral del compositor KWin (guardas `nullptr` y modo seguro sin fallos)
+
+## Fase 12: Aplicaciones del Sistema
+- [x] Integración y tematización de Terminal (Konsole), Vista Previa (PDF/imagen), Editor de texto (TextEdit) y Monitor de Actividad
+
+## Fase 13: Servicios del Sistema
+- [x] Integración de copias de seguridad (Time Machine sobre restic/btrfs), llavero de contraseñas e interfaz de impresoras CUPS
+

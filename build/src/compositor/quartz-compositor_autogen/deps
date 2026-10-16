@@ -491,4 +491,5 @@ quartz-compositor_autogen/timestamp: \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdbool.h \
 	/usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h \
 	/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake \
+	/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake \
 	/usr/bin/cmake

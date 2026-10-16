@@ -1,11 +1,15 @@
 quartz-finder_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/moc_predefs.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/finder/CMakeLists.txt \
+	/home/pedro/Proyectos/WhiteQuartz/src/finder/fileoperations.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/finder/fileoperations.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/finder/main.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/finder/quicklookclient.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/finder/quicklookclient.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/finder/tagcircledelegate.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/finder/tagcircledelegate.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \
@@ -310,9 +314,13 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QDir \
 	/usr/include/qt6/QtCore/QFileInfo \
+	/usr/include/qt6/QtCore/QFileSystemWatcher \
 	/usr/include/qt6/QtCore/QObject \
 	/usr/include/qt6/QtCore/QRect \
 	/usr/include/qt6/QtCore/QString \
+	/usr/include/qt6/QtCore/QStringList \
+	/usr/include/qt6/QtCore/QTimer \
+	/usr/include/qt6/QtCore/QUrl \
 	/usr/include/qt6/QtCore/q17memory.h \
 	/usr/include/qt6/QtCore/q20bit.h \
 	/usr/include/qt6/QtCore/q20functional.h \
@@ -322,6 +330,7 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtCore/q20utility.h \
 	/usr/include/qt6/QtCore/q23type_traits.h \
 	/usr/include/qt6/QtCore/q23utility.h \
+	/usr/include/qt6/QtCore/qabstracteventdispatcher.h \
 	/usr/include/qt6/QtCore/qabstractitemmodel.h \
 	/usr/include/qt6/QtCore/qalgorithms.h \
 	/usr/include/qt6/QtCore/qalloc.h \
@@ -333,6 +342,7 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qatomic.h \
 	/usr/include/qt6/QtCore/qatomic_cxx11.h \
 	/usr/include/qt6/QtCore/qbasicatomic.h \
+	/usr/include/qt6/QtCore/qbasictimer.h \
 	/usr/include/qt6/QtCore/qbindingstorage.h \
 	/usr/include/qt6/QtCore/qbitarray.h \
 	/usr/include/qt6/QtCore/qbytearray.h \
@@ -355,14 +365,17 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qdarwinhelpers.h \
 	/usr/include/qt6/QtCore/qdatastream.h \
 	/usr/include/qt6/QtCore/qdatetime.h \
+	/usr/include/qt6/QtCore/qdeadlinetimer.h \
 	/usr/include/qt6/QtCore/qdebug.h \
 	/usr/include/qt6/QtCore/qdir.h \
 	/usr/include/qt6/QtCore/qdirlisting.h \
 	/usr/include/qt6/QtCore/qendian.h \
+	/usr/include/qt6/QtCore/qeventloop.h \
 	/usr/include/qt6/QtCore/qexceptionhandling.h \
 	/usr/include/qt6/QtCore/qfile.h \
 	/usr/include/qt6/QtCore/qfiledevice.h \
 	/usr/include/qt6/QtCore/qfileinfo.h \
+	/usr/include/qt6/QtCore/qfilesystemwatcher.h \
 	/usr/include/qt6/QtCore/qflags.h \
 	/usr/include/qt6/QtCore/qfloat16.h \
 	/usr/include/qt6/QtCore/qforeach.h \
@@ -438,6 +451,7 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qtenvironmentvariables.h \
 	/usr/include/qt6/QtCore/qtextstream.h \
 	/usr/include/qt6/QtCore/qtformat_impl.h \
+	/usr/include/qt6/QtCore/qtimer.h \
 	/usr/include/qt6/QtCore/qtimezone.h \
 	/usr/include/qt6/QtCore/qtmetamacros.h \
 	/usr/include/qt6/QtCore/qtnoop.h \
@@ -466,6 +480,9 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtDBus/qdbuspendingcall.h \
 	/usr/include/qt6/QtDBus/qtdbusexports.h \
 	/usr/include/qt6/QtDBus/qtdbusglobal.h \
+	/usr/include/qt6/QtGui/QColor \
+	/usr/include/qt6/QtGui/QUndoCommand \
+	/usr/include/qt6/QtGui/QUndoStack \
 	/usr/include/qt6/QtGui/qaction.h \
 	/usr/include/qt6/QtGui/qbitmap.h \
 	/usr/include/qt6/QtGui/qbrush.h \
@@ -492,6 +509,7 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qtguiexports.h \
 	/usr/include/qt6/QtGui/qtguiglobal.h \
 	/usr/include/qt6/QtGui/qtransform.h \
+	/usr/include/qt6/QtGui/qundostack.h \
 	/usr/include/qt6/QtGui/qvalidator.h \
 	/usr/include/qt6/QtGui/qwindowdefs.h \
 	/usr/include/qt6/QtWidgets/QHBoxLayout \
@@ -499,9 +517,12 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/QListWidget \
 	/usr/include/qt6/QtWidgets/QScrollArea \
 	/usr/include/qt6/QtWidgets/QStackedWidget \
+	/usr/include/qt6/QtWidgets/QStyledItemDelegate \
+	/usr/include/qt6/QtWidgets/QToolButton \
 	/usr/include/qt6/QtWidgets/QTreeWidget \
 	/usr/include/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/qt6/QtWidgets/QWidget \
+	/usr/include/qt6/QtWidgets/qabstractbutton.h \
 	/usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
 	/usr/include/qt6/QtWidgets/qabstractitemview.h \
 	/usr/include/qt6/QtWidgets/qabstractscrollarea.h \
@@ -521,9 +542,11 @@ quartz-finder_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/qslider.h \
 	/usr/include/qt6/QtWidgets/qstackedwidget.h \
 	/usr/include/qt6/QtWidgets/qstyle.h \
+	/usr/include/qt6/QtWidgets/qstyleditemdelegate.h \
 	/usr/include/qt6/QtWidgets/qstyleoption.h \
 	/usr/include/qt6/QtWidgets/qtabbar.h \
 	/usr/include/qt6/QtWidgets/qtabwidget.h \
+	/usr/include/qt6/QtWidgets/qtoolbutton.h \
 	/usr/include/qt6/QtWidgets/qtreeview.h \
 	/usr/include/qt6/QtWidgets/qtreewidget.h \
 	/usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \

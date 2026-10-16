@@ -93,6 +93,36 @@ if(KWIN_LIBRARY AND TARGET KF6::CoreAddons AND TARGET KF6::ConfigCore)
     set_target_properties(quartz-stagemanager PROPERTIES
         AUTOMOC_MACRO_NAMES "Q_OBJECT;KWIN_EFFECT_FACTORY;KWIN_EFFECT_FACTORY_SUPPORTED_ENABLED"
     )
+
+    unset(KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL CACHE)
+    include(CheckCXXSourceCompiles)
+    set(CMAKE_REQUIRED_FLAGS "-std=c++20")
+    set(CMAKE_REQUIRED_INCLUDES
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/src/style
+        ${KWIN_INCLUDE_DIR}
+        ${KWIN_INCLUDE_DIR}/kwin
+        /usr/include/kwin
+    )
+    set(CMAKE_REQUIRED_LIBRARIES
+        ${KWIN_LIBRARY}
+        KF6::CoreAddons
+        KF6::ConfigCore
+        Qt6::Core
+        Qt6::Gui
+    )
+    check_cxx_source_compiles("
+    #include <kwin/effect/offscreeneffect.h>
+    struct TestEffect : public KWin::OffscreenEffect {
+        bool drawWindow(const KWin::RenderTarget&, const KWin::RenderViewport&, KWin::EffectWindow*, int, const KWin::Region&, KWin::WindowPaintData&) override { return true; }
+    };
+    int main() { return 0; }
+    " KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL)
+
+    if(KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL)
+        target_compile_definitions(quartz-stagemanager PRIVATE KWIN_OFFSCREEN_DRAW_RETURNS_BOOL=1)
+    endif()
+
     install(TARGETS quartz-stagemanager
         DESTINATION lib/qt6/plugins/kwin/effects/plugins
     )

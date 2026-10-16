@@ -1,16 +1,34 @@
 quartz-shell_autogen/timestamp: \
 	/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/moc_predefs.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/CMakeLists.txt \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/controlcenter/SystemHardwareController.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/controlcenter/SystemHardwareController.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/corners/HotCornersController.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/corners/HotCornersController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/dock/DockController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/dock/DockController.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/launchpad/LaunchpadController.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/launchpad/LaunchpadController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/main.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/MenuBarController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/appmenuregistrar.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/menubar/appmenuregistrar.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/missioncontrol/MissionControlController.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/missioncontrol/MissionControlController.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationModel.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationModel.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationServer.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationServer.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/resources.qrc \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/services/QuartzServices.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/services/QuartzServices.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/shortcuts/GlobalShortcuts.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/shortcuts/GlobalShortcuts.h \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/sni/StatusNotifierWatcher.cpp \
+	/home/pedro/Proyectos/WhiteQuartz/src/shell/sni/StatusNotifierWatcher.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/spotlight/SpotlightController.cpp \
 	/home/pedro/Proyectos/WhiteQuartz/src/shell/spotlight/SpotlightController.h \
 	/home/pedro/Proyectos/WhiteQuartz/src/style/quartzmetrics.h \
@@ -213,6 +231,7 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/c++/16/bits/utility.h \
 	/usr/include/c++/16/bits/vector.tcc \
 	/usr/include/c++/16/bits/version.h \
+	/usr/include/c++/16/cassert \
 	/usr/include/c++/16/cctype \
 	/usr/include/c++/16/cerrno \
 	/usr/include/c++/16/charconv \
@@ -318,17 +337,24 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/QFileSystemWatcher \
 	/usr/include/qt6/QtCore/QHash \
 	/usr/include/qt6/QtCore/QList \
+	/usr/include/qt6/QtCore/QMap \
 	/usr/include/qt6/QtCore/QObject \
+	/usr/include/qt6/QtCore/QProcess \
+	/usr/include/qt6/QtCore/QRect \
 	/usr/include/qt6/QtCore/QSet \
+	/usr/include/qt6/QtCore/QSize \
+	/usr/include/qt6/QtCore/QSizeF \
 	/usr/include/qt6/QtCore/QString \
 	/usr/include/qt6/QtCore/QStringList \
 	/usr/include/qt6/QtCore/QTimer \
 	/usr/include/qt6/QtCore/QVariant \
 	/usr/include/qt6/QtCore/QVariantList \
+	/usr/include/qt6/QtCore/QVariantMap \
 	/usr/include/qt6/QtCore/QtMath \
 	/usr/include/qt6/QtCore/q17memory.h \
 	/usr/include/qt6/QtCore/q20bit.h \
 	/usr/include/qt6/QtCore/q20functional.h \
+	/usr/include/qt6/QtCore/q20iterator.h \
 	/usr/include/qt6/QtCore/q20memory.h \
 	/usr/include/qt6/QtCore/q20type_traits.h \
 	/usr/include/qt6/QtCore/q20utility.h \
@@ -354,6 +380,7 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qbytearrayview.h \
 	/usr/include/qt6/QtCore/qcalendar.h \
 	/usr/include/qt6/QtCore/qchar.h \
+	/usr/include/qt6/QtCore/qcheckedint_impl.h \
 	/usr/include/qt6/QtCore/qcompare.h \
 	/usr/include/qt6/QtCore/qcompare_impl.h \
 	/usr/include/qt6/QtCore/qcomparehelpers.h \
@@ -364,6 +391,9 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qcontainerinfo.h \
 	/usr/include/qt6/QtCore/qcontainertools_impl.h \
 	/usr/include/qt6/QtCore/qcontiguouscache.h \
+	/usr/include/qt6/QtCore/qcoreapplication.h \
+	/usr/include/qt6/QtCore/qcoreapplication_platform.h \
+	/usr/include/qt6/QtCore/qcoreevent.h \
 	/usr/include/qt6/QtCore/qdarwinhelpers.h \
 	/usr/include/qt6/QtCore/qdatastream.h \
 	/usr/include/qt6/QtCore/qdatetime.h \
@@ -382,20 +412,24 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qglobalstatic.h \
 	/usr/include/qt6/QtCore/qhash.h \
 	/usr/include/qt6/QtCore/qhashfunctions.h \
+	/usr/include/qt6/QtCore/qiodevice.h \
 	/usr/include/qt6/QtCore/qiodevicebase.h \
 	/usr/include/qt6/QtCore/qiterable.h \
 	/usr/include/qt6/QtCore/qiterator.h \
 	/usr/include/qt6/QtCore/qlatin1stringview.h \
+	/usr/include/qt6/QtCore/qline.h \
 	/usr/include/qt6/QtCore/qlist.h \
 	/usr/include/qt6/QtCore/qlocale.h \
 	/usr/include/qt6/QtCore/qlogging.h \
 	/usr/include/qt6/QtCore/qmalloc.h \
 	/usr/include/qt6/QtCore/qmap.h \
+	/usr/include/qt6/QtCore/qmargins.h \
 	/usr/include/qt6/QtCore/qmath.h \
 	/usr/include/qt6/QtCore/qmetacontainer.h \
 	/usr/include/qt6/QtCore/qmetatype.h \
 	/usr/include/qt6/QtCore/qminmax.h \
 	/usr/include/qt6/QtCore/qnamespace.h \
+	/usr/include/qt6/QtCore/qnativeinterface.h \
 	/usr/include/qt6/QtCore/qnumeric.h \
 	/usr/include/qt6/QtCore/qobject.h \
 	/usr/include/qt6/QtCore/qobject_impl.h \
@@ -403,7 +437,10 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qobjectdefs_impl.h \
 	/usr/include/qt6/QtCore/qoverload.h \
 	/usr/include/qt6/QtCore/qpair.h \
+	/usr/include/qt6/QtCore/qpoint.h \
+	/usr/include/qt6/QtCore/qprocess.h \
 	/usr/include/qt6/QtCore/qprocessordetection.h \
+	/usr/include/qt6/QtCore/qrect.h \
 	/usr/include/qt6/QtCore/qrefcount.h \
 	/usr/include/qt6/QtCore/qscopedpointer.h \
 	/usr/include/qt6/QtCore/qscopeguard.h \
@@ -412,6 +449,8 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qshareddata_impl.h \
 	/usr/include/qt6/QtCore/qsharedpointer.h \
 	/usr/include/qt6/QtCore/qsharedpointer_impl.h \
+	/usr/include/qt6/QtCore/qsize.h \
+	/usr/include/qt6/QtCore/qspan.h \
 	/usr/include/qt6/QtCore/qstdlibdetection.h \
 	/usr/include/qt6/QtCore/qstring.h \
 	/usr/include/qt6/QtCore/qstringalgorithms.h \
@@ -452,15 +491,18 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qutf8stringview.h \
 	/usr/include/qt6/QtCore/qvariant.h \
 	/usr/include/qt6/QtCore/qvariantlist.h \
+	/usr/include/qt6/QtCore/qvariantmap.h \
 	/usr/include/qt6/QtCore/qvarlengtharray.h \
 	/usr/include/qt6/QtCore/qversiontagging.h \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
+	/usr/include/qt6/QtDBus/QDBusAbstractAdaptor \
 	/usr/include/qt6/QtDBus/QDBusConnection \
 	/usr/include/qt6/QtDBus/QDBusContext \
 	/usr/include/qt6/QtDBus/QDBusInterface \
 	/usr/include/qt6/QtDBus/QDBusMessage \
 	/usr/include/qt6/QtDBus/QDBusObjectPath \
+	/usr/include/qt6/QtDBus/qdbusabstractadaptor.h \
 	/usr/include/qt6/QtDBus/qdbusabstractinterface.h \
 	/usr/include/qt6/QtDBus/qdbusconnection.h \
 	/usr/include/qt6/QtDBus/qdbuscontext.h \
@@ -471,6 +513,31 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/qt6/QtDBus/qdbuspendingcall.h \
 	/usr/include/qt6/QtDBus/qtdbusexports.h \
 	/usr/include/qt6/QtDBus/qtdbusglobal.h \
+	/usr/include/qt6/QtGui/QCursor \
+	/usr/include/qt6/QtGui/QGuiApplication \
+	/usr/include/qt6/QtGui/QScreen \
+	/usr/include/qt6/QtGui/QTransform \
+	/usr/include/qt6/QtGui/qbitmap.h \
+	/usr/include/qt6/QtGui/qcolor.h \
+	/usr/include/qt6/QtGui/qcursor.h \
+	/usr/include/qt6/QtGui/qguiapplication.h \
+	/usr/include/qt6/QtGui/qguiapplication_platform.h \
+	/usr/include/qt6/QtGui/qimage.h \
+	/usr/include/qt6/QtGui/qinputmethod.h \
+	/usr/include/qt6/QtGui/qpaintdevice.h \
+	/usr/include/qt6/QtGui/qpixelformat.h \
+	/usr/include/qt6/QtGui/qpixmap.h \
+	/usr/include/qt6/QtGui/qpolygon.h \
+	/usr/include/qt6/QtGui/qregion.h \
+	/usr/include/qt6/QtGui/qrgb.h \
+	/usr/include/qt6/QtGui/qrgba64.h \
+	/usr/include/qt6/QtGui/qscreen.h \
+	/usr/include/qt6/QtGui/qscreen_platform.h \
+	/usr/include/qt6/QtGui/qtgui-config.h \
+	/usr/include/qt6/QtGui/qtguiexports.h \
+	/usr/include/qt6/QtGui/qtguiglobal.h \
+	/usr/include/qt6/QtGui/qtransform.h \
+	/usr/include/qt6/QtGui/qwindowdefs.h \
 	/usr/include/sched.h \
 	/usr/include/stdc-predef.h \
 	/usr/include/stdint.h \
@@ -485,6 +552,9 @@ quartz-shell_autogen/timestamp: \
 	/usr/include/time.h \
 	/usr/include/wchar.h \
 	/usr/include/wctype.h \
+	/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake \
+	/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfigVersion.cmake \
+	/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemTargets.cmake \
 	/usr/lib/cmake/LayerShellQt/LayerShellQtConfig.cmake \
 	/usr/lib/cmake/LayerShellQt/LayerShellQtConfigVersion.cmake \
 	/usr/lib/cmake/LayerShellQt/LayerShellQtTargets-noconfig.cmake \

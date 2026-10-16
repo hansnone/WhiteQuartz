@@ -198,6 +198,24 @@ if [[ "${MODE}" == "vm_install" ]]; then
         rm -f "${TMP_DESKTOP}"
     fi
 
+    # Instalación de lanzadores y descriptores de aplicaciones privilegiadas
+    APPS_DIR="${INSTALL_PREFIX}/share/applications"
+    if [[ -d "${PROJECT_ROOT}/data/applications" ]]; then
+        SUDO_PREFIX=""
+        [[ ! -w "${APPS_DIR}" ]] && SUDO_PREFIX="sudo"
+        ${SUDO_PREFIX} mkdir -p "${APPS_DIR}"
+        ${SUDO_PREFIX} cp -r "${PROJECT_ROOT}/data/applications/"* "${APPS_DIR}/"
+    fi
+
+    # Instalación de perfiles y esquemas de color de Terminal (Konsole)
+    KONSOLE_DIR="${INSTALL_PREFIX}/share/konsole"
+    if [[ -d "${PROJECT_ROOT}/data/terminal" ]]; then
+        SUDO_PREFIX=""
+        [[ ! -w "${KONSOLE_DIR}" ]] && SUDO_PREFIX="sudo"
+        ${SUDO_PREFIX} mkdir -p "${KONSOLE_DIR}"
+        ${SUDO_PREFIX} cp -r "${PROJECT_ROOT}/data/terminal/"* "${KONSOLE_DIR}/"
+    fi
+
     # Instalación de temas visuales (Colloid y Orchis)
     ICONS_DIR="${INSTALL_PREFIX}/share/icons"
     COLOR_SCHEMES_DIR="${INSTALL_PREFIX}/share/color-schemes"
@@ -219,6 +237,22 @@ if [[ "${MODE}" == "vm_install" ]]; then
         log_info "Instalando esquemas de color Orchis en ${COLOR_SCHEMES_DIR}..."
         ${SUDO_PREFIX} mkdir -p "${COLOR_SCHEMES_DIR}"
         ${SUDO_PREFIX} cp -r "${PROJECT_ROOT}/themes/Orchis-kde/color-schemes/"* "${COLOR_SCHEMES_DIR}/"
+    fi
+
+    # Instalación de paquete Look-and-Feel (kscreenlocker) y tema SDDM
+    LOOKANDFEEL_DIR="${INSTALL_PREFIX}/share/plasma/look-and-feel"
+    SDDM_THEMES_DIR="${INSTALL_PREFIX}/share/sddm/themes"
+
+    if [[ -d "${PROJECT_ROOT}/data/lookandfeel/org.quartz.desktop" ]]; then
+        log_info "Instalando paquete Look-and-Feel de bloqueo en ${LOOKANDFEEL_DIR}..."
+        ${SUDO_PREFIX} mkdir -p "${LOOKANDFEEL_DIR}"
+        ${SUDO_PREFIX} cp -r "${PROJECT_ROOT}/data/lookandfeel/org.quartz.desktop" "${LOOKANDFEEL_DIR}/"
+    fi
+
+    if [[ -d "${PROJECT_ROOT}/data/sddm/themes/quartz" ]]; then
+        log_info "Instalando tema de inicio de sesión SDDM en ${SDDM_THEMES_DIR}..."
+        ${SUDO_PREFIX} mkdir -p "${SDDM_THEMES_DIR}"
+        ${SUDO_PREFIX} cp -r "${PROJECT_ROOT}/data/sddm/themes/quartz" "${SDDM_THEMES_DIR}/"
     fi
 
     echo ""

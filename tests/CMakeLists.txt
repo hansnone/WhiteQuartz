@@ -19,9 +19,14 @@ target_link_libraries(tst_stagemanager_math PRIVATE Qt6::Core Qt6::Gui Qt6::Test
 add_test(NAME tst_stagemanager_math COMMAND tst_stagemanager_math)
 
 # Test 4: Conmutación de los 4 Modos de Finder
-add_executable(tst_finder_modes tst_finder_modes.cpp ${CMAKE_SOURCE_DIR}/src/finder/findercolumnview.cpp)
+add_executable(tst_finder_modes
+    tst_finder_modes.cpp
+    ${CMAKE_SOURCE_DIR}/src/finder/findercolumnview.cpp
+    ${CMAKE_SOURCE_DIR}/src/finder/fileoperations.cpp
+    ${CMAKE_SOURCE_DIR}/src/finder/tagcircledelegate.cpp
+)
 target_include_directories(tst_finder_modes PRIVATE ${CMAKE_SOURCE_DIR}/src/finder ${CMAKE_SOURCE_DIR}/src/style)
-target_link_libraries(tst_finder_modes PRIVATE Qt6::Core Qt6::Widgets Qt6::Test quartz-style)
+target_link_libraries(tst_finder_modes PRIVATE Qt6::Core Qt6::Widgets Qt6::Concurrent Qt6::Test quartz-style)
 add_test(NAME tst_finder_modes COMMAND tst_finder_modes)
 
 # Test 5: Controlador de Ajustes D-Bus y Configuración
@@ -38,6 +43,15 @@ add_executable(tst_shell_controllers
     ${CMAKE_SOURCE_DIR}/src/shell/dock/DockController.cpp
     ${CMAKE_SOURCE_DIR}/src/shell/menubar/MenuBarController.cpp
     ${CMAKE_SOURCE_DIR}/src/shell/menubar/appmenuregistrar.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/notifications/NotificationServer.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/notifications/NotificationModel.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/controlcenter/SystemHardwareController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/shortcuts/GlobalShortcuts.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/launchpad/LaunchpadController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/missioncontrol/MissionControlController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/corners/HotCornersController.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/sni/StatusNotifierWatcher.cpp
+    ${CMAKE_SOURCE_DIR}/src/shell/services/QuartzServices.cpp
 )
 target_include_directories(tst_shell_controllers PRIVATE ${CMAKE_SOURCE_DIR}/src/shell ${CMAKE_SOURCE_DIR}/src/style)
 target_link_libraries(tst_shell_controllers PRIVATE Qt6::Core Qt6::Gui Qt6::DBus Qt6::Test)

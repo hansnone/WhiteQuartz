@@ -25738,3 +25738,611 @@ events:
       CMAKE_SYSTEM_INCLUDE_PATH:
         - "/usr/include/X11"
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:111 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-SenHkB"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-SenHkB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-SenHkB'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_80605
+        [1/2] /usr/bin/c++ -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_80605.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-SenHkB/src.cxx
+        FAILED: [code=1] CMakeFiles/cmTC_80605.dir/src.cxx.o 
+        /usr/bin/c++ -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_80605.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-SenHkB/src.cxx
+        In file included from /usr/include/kwin/effect/offscreeneffect.h:9,
+                         from /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-SenHkB/src.cxx:2:
+        /usr/include/kwin/effect/effect.h:15:10: fatal error: KPluginFactory: No existe el fichero o el directorio
+           15 | #include <KPluginFactory>
+              |          ^~~~~~~~~~~~~~~~
+        compilation terminated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hhZhoD"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hhZhoD"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hhZhoD'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_79523
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_79523.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hhZhoD/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_79523.dir/src.cxx.o -o cmTC_79523  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-oNm1uJ"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-oNm1uJ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-oNm1uJ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_e082d
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_e082d.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-oNm1uJ/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_e082d.dir/src.cxx.o -o cmTC_e082d  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-vfkGGX"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-vfkGGX"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-vfkGGX'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_dc13b
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_dc13b.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-vfkGGX/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_dc13b.dir/src.cxx.o -o cmTC_dc13b  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-heD1AP"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-heD1AP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-heD1AP'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_a093a
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_a093a.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-heD1AP/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_a093a.dir/src.cxx.o -o cmTC_a093a  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/Qt6Config.cmake:267 (find_package)"
+      - "CMakeLists.txt:20 (find_package)"
+    name: "Qt6Concurrent"
+    configs:
+      -
+        filename: "Qt6Concurrent.cps"
+        kind: "cps"
+      -
+        filename: "qt6concurrent.cps"
+        kind: "cps"
+      -
+        filename: "Qt6ConcurrentConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "qt6concurrent-config.cmake"
+        kind: "cmake"
+    version_request:
+      version: "6.5"
+      version_complete: "6.5"
+      exact: false
+    settings:
+      required: "optional"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Qt6Concurrent"
+      search_paths:
+        - "/usr/lib/cmake"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: false
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/Qt6ConcurrentConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/qt6concurrent-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/Qt6Concurrent.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/lib/cps/qt6concurrent.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/Qt6Concurrent.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/pkgRedirects/share/cps/qt6concurrent.cps"
+        mode: "cps"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cmake/Qt6ConcurrentConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "/usr/lib/cmake/qt6concurrent-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found:
+      path: "/usr/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake"
+      mode: "config"
+      version: "6.12.0"
+    search_context:
+      ENV{PATH}:
+        - "/home/pedro/.gemini/antigravity/bin"
+        - "/home/pedro/.config/Antigravity/bin"
+        - "/home/pedro/.cargo/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-uNUk0L"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-uNUk0L"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-uNUk0L'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_41751
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_41751.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-uNUk0L/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_41751.dir/src.cxx.o -o cmTC_41751  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-mhGLNN"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-mhGLNN"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-mhGLNN'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_61579
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_61579.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-mhGLNN/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_61579.dir/src.cxx.o -o cmTC_61579  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-kDeqDJ"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-kDeqDJ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-kDeqDJ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_b92f4
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_b92f4.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-kDeqDJ/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_b92f4.dir/src.cxx.o -o cmTC_b92f4  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hFgUCx"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hFgUCx"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hFgUCx'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_dc192
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_dc192.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-hFgUCx/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_dc192.dir/src.cxx.o -o cmTC_dc192  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-DlNDRa"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-DlNDRa"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-DlNDRa'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_9cf03
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_9cf03.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-DlNDRa/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_9cf03.dir/src.cxx.o -o cmTC_9cf03  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-9O37vA"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-9O37vA"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-9O37vA'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_1f38f
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_1f38f.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-9O37vA/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_1f38f.dir/src.cxx.o -o cmTC_1f38f  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-bfLDGE"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-bfLDGE"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-bfLDGE'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_7423c
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_7423c.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-bfLDGE/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_7423c.dir/src.cxx.o -o cmTC_7423c  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-QZQMgK"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-QZQMgK"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-QZQMgK'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_befb9
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_befb9.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-QZQMgK/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_befb9.dir/src.cxx.o -o cmTC_befb9  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-au9shh"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-au9shh"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-au9shh'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_69a92
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_69a92.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-au9shh/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_69a92.dir/src.cxx.o -o cmTC_69a92  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:81 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "src/compositor/CMakeLists.txt:114 (check_cxx_source_compiles)"
+    checks:
+      - "Performing Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+    directories:
+      source: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-nOo21a"
+      binary: "/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-nOo21a"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/usr/lib/cmake/Qt6;/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/usr/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-nOo21a'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_5f1d3
+        [1/2] /usr/bin/c++ -DKCOREADDONS_LIB -DKWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -I/home/pedro/Proyectos/WhiteQuartz/src/compositor -I/home/pedro/Proyectos/WhiteQuartz/src/style -I/usr/include/kwin -isystem /usr/include/KF6/KCoreAddons -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/KF6/KConfig -isystem /usr/include/KF6/KConfigCore -isystem /usr/include/qt6/QtGui -std=c++20 -std=gnu++20 -fPIE -mno-direct-extern-access -o CMakeFiles/cmTC_5f1d3.dir/src.cxx.o -c /home/pedro/Proyectos/WhiteQuartz/build/CMakeFiles/CMakeScratch/TryCompile-nOo21a/src.cxx
+        [2/2] : && /usr/bin/c++ -std=c++20  CMakeFiles/cmTC_5f1d3.dir/src.cxx.o -o cmTC_5f1d3  /usr/lib/libkwin.so  /usr/lib/libKF6CoreAddons.so.6.31.0  /usr/lib/libKF6ConfigCore.so.6.31.0  /usr/lib/libQt6Gui.so.6.12.0  /usr/lib/libGLX.so  /usr/lib/libOpenGL.so  /usr/lib/libQt6Core.so.6.12.0 && :
+        
+      exitCode: 0
+...

@@ -37,6 +37,11 @@ public:
     Q_INVOKABLE QVariantList listStackDirectory(const QString &dirPath) const;
     Q_INVOKABLE void updateTrashState();
 
+    // Gestión contextual y ciclo de vida
+    Q_INVOKABLE void quitApp(const QString &cmd);
+    Q_INVOKABLE void forceQuitApp(const QString &cmd);
+    Q_INVOKABLE void toggleKeepInDock(const QString &cmd);
+
 public Q_SLOTS:
     void onWindowAdded(const QString &appId, const QString &title, const QString &icon, bool active);
     void onWindowRemoved(const QString &appId);

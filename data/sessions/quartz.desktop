@@ -6,3 +6,5 @@ TryExec=startquartz
 Type=Application
 DesktopNames=Quartz:KDE
 X-KDE-PluginInfo-Version=0.1.0
+X-KDE-Wayland-Interfaces=org_kde_plasma_window_management;
+

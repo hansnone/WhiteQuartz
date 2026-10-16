@@ -137,134 +137,27 @@ ApplicationWindow {
             color: "#D1D1D6"
         }
 
-        // Panel de contenido derecho (Inset Grouped Cards)
+        // Panel de contenido derecho (Carga dinámica de los 18 paneles macOS)
         ScrollView {
             Layout.fillWidth: true
             Layout.fillHeight: true
             clip: true
 
             ColumnLayout {
-                width: parent.width - 40
+                width: parent.width - 48
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 16
 
-                Item { height: 10 }
+                Item { height: 12 }
 
-                Text {
-                    text: panesListView.currentItem ? panesListView.model.data(panesListView.model.index(panesListView.currentIndex, 0), 258) : qsTr("Ajustes")
-                    font.bold: true
-                    font.pixelSize: 22
-                    color: "#1C1C1E"
-                }
-
-                // Tarjeta Inset Grouped
-                Rectangle {
+                Loader {
+                    id: paneLoader
                     Layout.fillWidth: true
-                    Layout.preferredHeight: contentCol.implicitHeight + 32
-                    radius: 10
-                    color: "#FFFFFF"
-                    border.color: "#E5E5EA"
-                    border.width: 1
-
-                    ColumnLayout {
-                        id: contentCol
-                        anchors.fill: parent
-                        anchors.margins: 16
-                        spacing: 12
-
-                        RowLayout {
-                            Layout.fillWidth: true
-                            Text {
-                                Layout.fillWidth: true
-                                text: qsTr("Activar Stage Manager")
-                                font.pixelSize: 14
-                                color: "#1C1C1E"
-                            }
-                            Switch {
-                                id: stageManagerSwitch
-                                checked: typeof settingsConfigCtrl !== "undefined" ? settingsConfigCtrl.stageManagerEnabled : false
-                                onToggled: {
-                                    if (typeof settingsConfigCtrl !== "undefined") {
-                                        settingsConfigCtrl.stageManagerEnabled = checked
-                                    }
-                                }
-                            }
-                        }
-
-                        Rectangle {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 1
-                            color: "#E5E5EA"
-                        }
-
-                        RowLayout {
-                            Layout.fillWidth: true
-                            Text {
-                                Layout.fillWidth: true
-                                text: qsTr("Modo de Apariencia Automático")
-                                font.pixelSize: 14
-                                color: "#1C1C1E"
-                            }
-                            Switch {
-                                id: appearanceSwitch
-                                checked: typeof settingsConfigCtrl !== "undefined" ? (settingsConfigCtrl.appearanceMode === "Auto") : true
-                                onToggled: {
-                                    if (typeof settingsConfigCtrl !== "undefined") {
-                                        settingsConfigCtrl.appearanceMode = checked ? "Auto" : "Light"
-                                    }
-                                }
-                            }
-                        }
-
-                        Rectangle {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 1
-                            color: "#E5E5EA"
-                        }
-
-                        RowLayout {
-                            Layout.fillWidth: true
-                            Text {
-                                Layout.fillWidth: true
-                                text: qsTr("Tema del Sistema")
-                                font.pixelSize: 14
-                                color: "#1C1C1E"
-                            }
-                            ComboBox {
-                                model: ["Aqua", "Orchis", "Orchis-Dark"]
-                                currentIndex: typeof settingsConfigCtrl !== "undefined" ? Math.max(0, model.indexOf(settingsConfigCtrl.themeName)) : 0
-                                onActivated: {
-                                    if (typeof settingsConfigCtrl !== "undefined") {
-                                        settingsConfigCtrl.themeName = currentText
-                                    }
-                                }
-                            }
-                        }
-
-                        Rectangle {
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 1
-                            color: "#E5E5EA"
-                        }
-
-                        RowLayout {
-                            Layout.fillWidth: true
-                            Text {
-                                Layout.fillWidth: true
-                                text: qsTr("Tema de Iconos")
-                                font.pixelSize: 14
-                                color: "#1C1C1E"
-                            }
-                            ComboBox {
-                                model: ["Colloid", "Colloid-dark"]
-                                currentIndex: typeof settingsConfigCtrl !== "undefined" ? Math.max(0, model.indexOf(settingsConfigCtrl.iconTheme)) : 0
-                                onActivated: {
-                                    if (typeof settingsConfigCtrl !== "undefined") {
-                                        settingsConfigCtrl.iconTheme = currentText
-                                    }
-                                }
-                            }
-                        }
+                    Layout.fillHeight: true
+                    source: {
+                        if (!panesListView.currentItem || !panesListView.model) return "qrc:/qml/panes/GeneralPane.qml"
+                        var path = panesListView.model.data(panesListView.model.index(panesListView.currentIndex, 0), 261)
+                        return path || "qrc:/qml/panes/GeneralPane.qml"
                     }
                 }
 

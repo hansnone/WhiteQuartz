@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Vista Previa
+GenericName=Visor de Documentos e Imágenes
+Comment=Visor nativo de documentos PDF e imágenes de QuartzDE
+Exec=okular %U
+Icon=document-viewer
+Terminal=false
+Categories=Graphics;Viewer;Office;
+MimeType=application/pdf;image/png;image/jpeg;image/webp;image/svg+xml;
+StartupNotify=true

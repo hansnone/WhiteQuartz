@@ -131,6 +131,67 @@ private Q_SLOTS:
         effect.setEnabled(true);
         QCOMPARE(effect.isEnabledSlot(), true);
     }
+
+    void testMissionControlLayout() {
+        Quartz::Compositor::StageManagerEffect effect;
+        QRectF screen(0, 0, 1920, 1080);
+        QRectF winGeo(100, 100, 800, 600);
+
+        int totalWindows = 4;
+        QVector<QRectF> targetRects;
+
+        for (int i = 0; i < totalWindows; ++i) {
+            QMatrix4x4 mat = effect.calculateMissionControlTransform(winGeo, i, totalWindows, screen);
+            QVERIFY(!mat.isIdentity());
+
+            bool invertible = false;
+            mat.inverted(&invertible);
+            QVERIFY(invertible);
+
+            // Mapear el rectángulo de la ventana según la matriz
+            QPointF topLeft = mat.map(winGeo.topLeft());
+            QPointF bottomRight = mat.map(winGeo.bottomRight());
+            QRectF mapped(topLeft, bottomRight);
+
+            // Debe estar completamente dentro de la pantalla
+            QVERIFY(screen.contains(mapped));
+            targetRects.append(mapped);
+        }
+
+        // Ninguna ventana debe solapar con otra
+        for (int i = 0; i < totalWindows; ++i) {
+            for (int j = i + 1; j < totalWindows; ++j) {
+                QVERIFY(!targetRects[i].intersects(targetRects[j]));
+            }
+        }
+    }
+
+    void testAppExposeLayout() {
+        Quartz::Compositor::StageManagerEffect effect;
+        QRectF screen(0, 0, 1920, 1080);
+        QRectF winGeo(50, 50, 1024, 768);
+
+        int totalWindows = 3;
+        QVector<QRectF> targetRects;
+
+        for (int i = 0; i < totalWindows; ++i) {
+            QMatrix4x4 mat = effect.calculateAppExposeTransform(winGeo, i, totalWindows, screen);
+            QVERIFY(!mat.isIdentity());
+
+            QPointF topLeft = mat.map(winGeo.topLeft());
+            QPointF bottomRight = mat.map(winGeo.bottomRight());
+            QRectF mapped(topLeft, bottomRight);
+
+            QVERIFY(screen.contains(mapped));
+            targetRects.append(mapped);
+        }
+
+        for (int i = 0; i < totalWindows; ++i) {
+            for (int j = i + 1; j < totalWindows; ++j) {
+                QVERIFY(!targetRects[i].intersects(targetRects[j]));
+            }
+        }
+    }
 };
 
 

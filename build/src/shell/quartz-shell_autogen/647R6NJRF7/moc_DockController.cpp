@@ -65,6 +65,9 @@ template <> constexpr inline auto Quartz::Shell::DockController::qt_create_metao
         "listStackDirectory",
         "dirPath",
         "updateTrashState",
+        "quitApp",
+        "forceQuitApp",
+        "toggleKeepInDock",
         "baseIconSize",
         "maxMagnifiedSize",
         "apps",
@@ -130,16 +133,28 @@ template <> constexpr inline auto Quartz::Shell::DockController::qt_create_metao
         }}),
         // Method 'updateTrashState'
         QtMocHelpers::MethodData<void()>(26, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'quitApp'
+        QtMocHelpers::MethodData<void(const QString &)>(27, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 },
+        }}),
+        // Method 'forceQuitApp'
+        QtMocHelpers::MethodData<void(const QString &)>(28, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 },
+        }}),
+        // Method 'toggleKeepInDock'
+        QtMocHelpers::MethodData<void(const QString &)>(29, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'baseIconSize'
-        QtMocHelpers::PropertyData<int>(27, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<int>(30, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
         // property 'maxMagnifiedSize'
-        QtMocHelpers::PropertyData<int>(28, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
+        QtMocHelpers::PropertyData<int>(31, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Constant),
         // property 'apps'
-        QtMocHelpers::PropertyData<QVariantList>(29, 0x80000000 | 20, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 1),
+        QtMocHelpers::PropertyData<QVariantList>(32, 0x80000000 | 20, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 1),
         // property 'trashIcon'
-        QtMocHelpers::PropertyData<QString>(30, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<QString>(33, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -184,6 +199,9 @@ void Quartz::Shell::DockController::qt_static_metacall(QObject *_o, QMetaObject:
         case 14: { QVariantList _r = _t->listStackDirectory((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
         case 15: _t->updateTrashState(); break;
+        case 16: _t->quitApp((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 17: _t->forceQuitApp((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 18: _t->toggleKeepInDock((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     }
@@ -226,14 +244,14 @@ int Quartz::Shell::DockController::qt_metacall(QMetaObject::Call _c, int _id, vo
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 19;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 19)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 16;
+        _id -= 19;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

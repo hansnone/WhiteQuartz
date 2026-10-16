@@ -35,6 +35,7 @@ impl Default for AccentColor {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
 pub struct DockConfig {
     pub base_size: u32,
     pub magnification: bool,
@@ -58,6 +59,7 @@ impl Default for DockConfig {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
 pub struct StageManagerConfig {
     pub enabled: bool,
     pub perspective_angle_y: f64,
@@ -94,6 +96,7 @@ pub fn get_config_path() -> PathBuf {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(default)]
 pub struct QuartzDesktopConfig {
     pub appearance: AppearanceMode,
     pub accent_color: AccentColor,
@@ -101,6 +104,7 @@ pub struct QuartzDesktopConfig {
     pub stage_manager: StageManagerConfig,
     pub theme_name: String,
     pub icon_theme: String,
+    pub wallpaper: String,
 }
 
 impl Default for QuartzDesktopConfig {
@@ -112,6 +116,7 @@ impl Default for QuartzDesktopConfig {
             stage_manager: StageManagerConfig::default(),
             theme_name: "Aqua".to_string(),
             icon_theme: "Colloid".to_string(),
+            wallpaper: "/usr/share/backgrounds/quartz.png".to_string(),
         }
     }
 }
@@ -129,8 +134,12 @@ impl QuartzDesktopConfig {
         let path = get_config_path();
         if path.exists() {
             if let Ok(content) = fs::read_to_string(&path) {
-                if let Ok(cfg) = Self::from_json(&content) {
-                    return cfg;
+                match Self::from_json(&content) {
+                    Ok(cfg) => return cfg,
+                    Err(_) => {
+                        let bad_path = path.with_extension("json.bad");
+                        let _ = fs::rename(&path, bad_path);
+                    }
                 }
             }
         }

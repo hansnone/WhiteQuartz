@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=QuartzDE
+Description=macOS Sonoma/Sequoia style theme for SDDM
+Author=QuartzDE Team
+Copyright=(c) 2026 QuartzDE
+License=GPL-3.0
+Type=sddm-theme
+Version=0.1.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=quartz
+Theme-API=2.0

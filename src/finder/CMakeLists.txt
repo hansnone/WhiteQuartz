@@ -2,6 +2,10 @@ add_executable(quartz-finder
     main.cpp
     findercolumnview.cpp
     findercolumnview.h
+    fileoperations.cpp
+    fileoperations.h
+    tagcircledelegate.cpp
+    tagcircledelegate.h
     quicklookclient.cpp
     quicklookclient.h
 )
@@ -15,6 +19,7 @@ target_link_libraries(quartz-finder PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Widgets
+    Qt6::Concurrent
     Qt6::DBus
     quartz-style
 )

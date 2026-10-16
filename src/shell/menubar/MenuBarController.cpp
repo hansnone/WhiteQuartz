@@ -70,6 +70,27 @@ void MenuBarController::triggerAppleMenuAction(const QString &actionId)
         QProcess::startDetached(QStringLiteral("systemctl"), { QStringLiteral("reboot") });
     } else if (actionId == QStringLiteral("shutdown")) {
         QProcess::startDetached(QStringLiteral("systemctl"), { QStringLiteral("poweroff") });
+    } else if (actionId == QStringLiteral("lock")) {
+        QDBusMessage msg = QDBusMessage::createMethodCall(
+            QStringLiteral("org.quartz.Session"),
+            QStringLiteral("/org/quartz/Session"),
+            QStringLiteral("org.quartz.Session"),
+            QStringLiteral("lock_screen")
+        );
+        QDBusConnection::sessionBus().send(msg);
+        QProcess::startDetached(QStringLiteral("loginctl"), { QStringLiteral("lock-session") });
+    } else if (actionId == QStringLiteral("logout")) {
+        QDBusMessage msg = QDBusMessage::createMethodCall(
+            QStringLiteral("org.quartz.Session"),
+            QStringLiteral("/org/quartz/Session"),
+            QStringLiteral("org.quartz.Session"),
+            QStringLiteral("request_logout")
+        );
+        QDBusConnection::sessionBus().send(msg);
+        QProcess::startDetached(QStringLiteral("loginctl"), { QStringLiteral("terminate-session"), QStringLiteral("") });
+    } else if (actionId == QStringLiteral("forcequit")) {
+        // Lanzar diálogo de forzar salida de aplicaciones
+        QProcess::startDetached(QStringLiteral("xkill"), {});
     }
 }
 

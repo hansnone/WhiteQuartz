@@ -77,9 +77,21 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/fileoperations.h",
+			"MU",
+			"ZHZIO7PPPT/moc_fileoperations.cpp",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.h",
 			"MU",
 			"ZHZIO7PPPT/moc_findercolumnview.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/tagcircledelegate.h",
+			"MU",
+			"ZHZIO7PPPT/moc_tagcircledelegate.cpp",
 			null
 		]
 	],
@@ -88,6 +100,7 @@
 	"MOC_COMPILATION_FILE" : "/home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
+		"QT_CONCURRENT_LIB",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
 		"QT_NO_DEBUG",
@@ -112,6 +125,7 @@
 		"/usr/lib/qt6/mkspecs/linux-g++",
 		"/usr/include/qt6/QtWidgets",
 		"/usr/include/qt6/QtGui",
+		"/usr/include/qt6/QtConcurrent",
 		"/usr/include/qt6/QtTest",
 		"/usr/include",
 		"/usr/include/c++/16",
@@ -163,7 +177,17 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/fileoperations.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/tagcircledelegate.cpp",
 			"MU",
 			null
 		],

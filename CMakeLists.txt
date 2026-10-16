@@ -24,6 +24,7 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS
     Quick
     Qml
     DBus
+    Concurrent
 )
 
 # Dependencias KDE Frameworks 6 opcionales/condicionales si están disponibles

@@ -10,6 +10,24 @@ add_executable(quartz-shell
     spotlight/SpotlightController.h
     quicklook/QuickLookController.cpp
     quicklook/QuickLookController.h
+    notifications/NotificationServer.cpp
+    notifications/NotificationServer.h
+    notifications/NotificationModel.cpp
+    notifications/NotificationModel.h
+    controlcenter/SystemHardwareController.cpp
+    controlcenter/SystemHardwareController.h
+    shortcuts/GlobalShortcuts.cpp
+    shortcuts/GlobalShortcuts.h
+    launchpad/LaunchpadController.cpp
+    launchpad/LaunchpadController.h
+    missioncontrol/MissionControlController.cpp
+    missioncontrol/MissionControlController.h
+    corners/HotCornersController.cpp
+    corners/HotCornersController.h
+    sni/StatusNotifierWatcher.cpp
+    sni/StatusNotifierWatcher.h
+    services/QuartzServices.cpp
+    services/QuartzServices.h
     resources.qrc
 )
 
@@ -38,6 +56,13 @@ if(LayerShellQt_FOUND)
     message(STATUS "LayerShellQt detectado: habilitando zonas exclusivas Wayland para MenuBar y Dock")
     target_link_libraries(quartz-shell PRIVATE LayerShellQt::Interface)
     target_compile_definitions(quartz-shell PRIVATE HAVE_LAYERSHELLQT)
+endif()
+
+find_package(KF6WindowSystem QUIET)
+if(KF6WindowSystem_FOUND)
+    message(STATUS "KF6WindowSystem detectado: habilitando efecto Blur Behind (Vibrancy) en shell")
+    target_link_libraries(quartz-shell PRIVATE KF6::WindowSystem)
+    target_compile_definitions(quartz-shell PRIVATE HAVE_KF6WINDOWSYSTEM)
 endif()
 
 install(TARGETS quartz-shell

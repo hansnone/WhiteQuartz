@@ -23,6 +23,7 @@
 		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 		"/usr/lib/cmake/KDecoration3/KDecoration3Targets.cmake",
 		"/usr/lib/cmake/KDecoration3/KDecoration3Targets-noconfig.cmake",
+		"/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake",
 		"/home/pedro/Proyectos/WhiteQuartz/src/compositor/compositor.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/pedro/Proyectos/WhiteQuartz",

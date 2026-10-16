@@ -12,6 +12,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/fileoperations.h",
+			"MU",
+			"EWIEGA46WW/moc_fileoperations.cpp",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.h",
 			"MU",
 			"EWIEGA46WW/moc_findercolumnview.cpp",
@@ -22,6 +28,12 @@
 			"MU",
 			"EWIEGA46WW/moc_quicklookclient.cpp",
 			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/tagcircledelegate.h",
+			"MU",
+			"EWIEGA46WW/moc_tagcircledelegate.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -29,6 +41,7 @@
 	"MOC_COMPILATION_FILE" : "/home/pedro/Proyectos/WhiteQuartz/build/src/finder/quartz-finder_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
+		"QT_CONCURRENT_LIB",
 		"QT_CORE_LIB",
 		"QT_DBUS_LIB",
 		"QT_GUI_LIB",
@@ -51,6 +64,7 @@
 		"/usr/lib/qt6/mkspecs/linux-g++",
 		"/usr/include/qt6/QtGui",
 		"/usr/include/qt6/QtWidgets",
+		"/usr/include/qt6/QtConcurrent",
 		"/usr/include/qt6/QtDBus",
 		"/usr/include",
 		"/usr/include/c++/16",
@@ -97,6 +111,11 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/fileoperations.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.cpp",
 			"MU",
 			null
@@ -104,6 +123,11 @@
 		[ "/home/pedro/Proyectos/WhiteQuartz/src/finder/main.cpp", "MU", null ],
 		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/finder/quicklookclient.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/finder/tagcircledelegate.cpp",
 			"MU",
 			null
 		]

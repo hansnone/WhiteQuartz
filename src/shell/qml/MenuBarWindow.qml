@@ -31,12 +31,17 @@ Window {
 
             Menu {
                 id: appleMenu
-                MenuItem { text: qsTr("Acerca de este equipo"); onTriggered: menuBarCtrl.triggerAppleMenuAction("about") }
+                MenuItem { text: qsTr("Acerca de este Mac"); onTriggered: menuBarCtrl.triggerAppleMenuAction("about") }
                 MenuItem { text: qsTr("Ajustes del Sistema..."); onTriggered: menuBarCtrl.triggerAppleMenuAction("settings") }
+                MenuSeparator {}
+                MenuItem { text: qsTr("Forzar salida...    Ctrl+Alt+Esc"); onTriggered: menuBarCtrl.triggerAppleMenuAction("forcequit") }
                 MenuSeparator {}
                 MenuItem { text: qsTr("Reposo"); onTriggered: menuBarCtrl.triggerAppleMenuAction("sleep") }
                 MenuItem { text: qsTr("Reiniciar..."); onTriggered: menuBarCtrl.triggerAppleMenuAction("reboot") }
                 MenuItem { text: qsTr("Apagar equipo..."); onTriggered: menuBarCtrl.triggerAppleMenuAction("shutdown") }
+                MenuSeparator {}
+                MenuItem { text: qsTr("Bloquear pantalla    Super+L"); onTriggered: menuBarCtrl.triggerAppleMenuAction("lock") }
+                MenuItem { text: qsTr("Cerrar sesión Pedro...    Ctrl+Shift+Q"); onTriggered: menuBarCtrl.triggerAppleMenuAction("logout") }
             }
         }
 
@@ -102,13 +107,50 @@ Window {
             }
         }
 
-        // Iconos de estado a la derecha y Reloj (invoca Centro de Notificaciones)
-        Text {
-            text: "􀊫  􀙇  􀕒"
-            font.pixelSize: 13
-            color: "#1C1C1E"
+        // Iconos de estado a la derecha: Batería, Wi-Fi y Control Center
+        RowLayout {
+            spacing: 10
+
+            Text {
+                text: (typeof hardwareCtrl !== "undefined" && hardwareCtrl.wifiEnabled) ? "📶" : "❌"
+                font.pixelSize: 12
+                color: "#1C1C1E"
+            }
+
+            Text {
+                text: (typeof hardwareCtrl !== "undefined" && hardwareCtrl.hasBattery) ? (hardwareCtrl.batteryPercentage + "%") : "100%"
+                font.pixelSize: 11
+                color: "#1C1C1E"
+            }
+
+            // Icono de Centro de Control (toggles/interruptores estilo macOS)
+            Rectangle {
+                width: 22
+                height: 18
+                radius: 4
+                color: ccMouse.containsMouse ? "#22000000" : "transparent"
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "🎛️"
+                    font.pixelSize: 13
+                }
+
+                MouseArea {
+                    id: ccMouse
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        if (typeof hardwareCtrl !== "undefined") {
+                            hardwareCtrl.toggleControlCenter()
+                        }
+                    }
+                }
+            }
         }
 
+        // Reloj (invoca Centro de Notificaciones)
         Text {
             text: menuBarCtrl.formattedTime
             font.pixelSize: 13
@@ -116,7 +158,13 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 cursorShape: Qt.PointingHandCursor
-                onClicked: menuBarCtrl.toggleNotificationCenter()
+                onClicked: {
+                    if (typeof notificationModel !== "undefined") {
+                        notificationModel.toggleCenter()
+                    } else {
+                        menuBarCtrl.toggleNotificationCenter()
+                    }
+                }
             }
         }
     }

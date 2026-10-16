@@ -1,0 +1,24 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>qml/SettingsMainWindow.qml</file>
+        <file>qml/panes/ProfilePane.qml</file>
+        <file>qml/panes/WifiPane.qml</file>
+        <file>qml/panes/BluetoothPane.qml</file>
+        <file>qml/panes/NetworkPane.qml</file>
+        <file>qml/panes/NotificationsPane.qml</file>
+        <file>qml/panes/SoundPane.qml</file>
+        <file>qml/panes/FocusPane.qml</file>
+        <file>qml/panes/GeneralPane.qml</file>
+        <file>qml/panes/AppearancePane.qml</file>
+        <file>qml/panes/AccessibilityPane.qml</file>
+        <file>qml/panes/ControlCenterPane.qml</file>
+        <file>qml/panes/DockPane.qml</file>
+        <file>qml/panes/DisplaysPane.qml</file>
+        <file>qml/panes/WallpaperPane.qml</file>
+        <file>qml/panes/LockScreenPane.qml</file>
+        <file>qml/panes/UsersPane.qml</file>
+        <file>qml/panes/KeyboardPane.qml</file>
+        <file>qml/panes/TrackpadPane.qml</file>
+    </qresource>
+</RCC>

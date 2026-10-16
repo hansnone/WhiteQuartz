@@ -117,6 +117,108 @@ QMatrix4x4 StageManagerEffect::calculateStageTransform(const QRectF &windowGeo, 
     return mat;
 }
 
+QMatrix4x4 StageManagerEffect::calculateMissionControlTransform(const QRectF &windowGeo, int windowIndex, int totalWindows, const QRectF &screenGeo) const
+{
+    QMatrix4x4 mat;
+    if (totalWindows <= 0 || windowIndex < 0 || windowIndex >= totalWindows || windowGeo.isEmpty() || screenGeo.isEmpty()) {
+        return mat;
+    }
+
+    int cols = qCeil(qSqrt(totalWindows));
+    int rows = qCeil(static_cast<qreal>(totalWindows) / cols);
+
+    qreal marginX = 40.0;
+    qreal marginTop = 120.0;
+    qreal marginBottom = 80.0;
+
+    qreal usableW = qMax(100.0, screenGeo.width() - 2 * marginX);
+    qreal usableH = qMax(100.0, screenGeo.height() - marginTop - marginBottom);
+
+    qreal cellW = usableW / cols;
+    qreal cellH = usableH / rows;
+
+    int r = windowIndex / cols;
+    int c = windowIndex % cols;
+
+    int itemsInThisRow = (r == rows - 1) ? (totalWindows - r * cols) : cols;
+    qreal rowStartX = screenGeo.x() + marginX + (usableW - itemsInThisRow * cellW) / 2.0;
+
+    qreal cellX = rowStartX + c * cellW;
+    qreal cellY = screenGeo.y() + marginTop + r * cellH;
+
+    qreal padding = 16.0;
+    qreal maxW = qMax(10.0, cellW - 2 * padding);
+    qreal maxH = qMax(10.0, cellH - 2 * padding);
+
+    qreal scaleX = maxW / windowGeo.width();
+    qreal scaleY = maxH / windowGeo.height();
+    qreal scale = qMin(scaleX, scaleY);
+    scale = qMin(scale, 0.85);
+
+    qreal scaledW = windowGeo.width() * scale;
+    qreal scaledH = windowGeo.height() * scale;
+
+    qreal targetX = cellX + (cellW - scaledW) / 2.0;
+    qreal targetY = cellY + (cellH - scaledH) / 2.0;
+
+    mat.translate(targetX, targetY, 0.0);
+    mat.scale(scale, scale, 1.0);
+    mat.translate(-windowGeo.x(), -windowGeo.y(), 0.0);
+
+    return mat;
+}
+
+QMatrix4x4 StageManagerEffect::calculateAppExposeTransform(const QRectF &windowGeo, int windowIndex, int totalWindows, const QRectF &screenGeo) const
+{
+    QMatrix4x4 mat;
+    if (totalWindows <= 0 || windowIndex < 0 || windowIndex >= totalWindows || windowGeo.isEmpty() || screenGeo.isEmpty()) {
+        return mat;
+    }
+
+    int cols = qCeil(qSqrt(totalWindows));
+    int rows = qCeil(static_cast<qreal>(totalWindows) / cols);
+
+    qreal marginX = 60.0;
+    qreal marginTop = 80.0;
+    qreal marginBottom = 80.0;
+
+    qreal usableW = qMax(100.0, screenGeo.width() - 2 * marginX);
+    qreal usableH = qMax(100.0, screenGeo.height() - marginTop - marginBottom);
+
+    qreal cellW = usableW / cols;
+    qreal cellH = usableH / rows;
+
+    int r = windowIndex / cols;
+    int c = windowIndex % cols;
+
+    int itemsInThisRow = (r == rows - 1) ? (totalWindows - r * cols) : cols;
+    qreal rowStartX = screenGeo.x() + marginX + (usableW - itemsInThisRow * cellW) / 2.0;
+
+    qreal cellX = rowStartX + c * cellW;
+    qreal cellY = screenGeo.y() + marginTop + r * cellH;
+
+    qreal padding = 20.0;
+    qreal maxW = qMax(10.0, cellW - 2 * padding);
+    qreal maxH = qMax(10.0, cellH - 2 * padding);
+
+    qreal scaleX = maxW / windowGeo.width();
+    qreal scaleY = maxH / windowGeo.height();
+    qreal scale = qMin(scaleX, scaleY);
+    scale = qMin(scale, 0.90);
+
+    qreal scaledW = windowGeo.width() * scale;
+    qreal scaledH = windowGeo.height() * scale;
+
+    qreal targetX = cellX + (cellW - scaledW) / 2.0;
+    qreal targetY = cellY + (cellH - scaledH) / 2.0;
+
+    mat.translate(targetX, targetY, 0.0);
+    mat.scale(scale, scale, 1.0);
+    mat.translate(-windowGeo.x(), -windowGeo.y(), 0.0);
+
+    return mat;
+}
+
 qreal StageManagerEffect::calculateSquircleDistance(qreal x, qreal y, qreal radius, qreal power)
 {
     if (radius <= 0.0) {

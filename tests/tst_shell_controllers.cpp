@@ -7,6 +7,15 @@
 #include "dock/DockController.h"
 #include "menubar/MenuBarController.h"
 #include "menubar/appmenuregistrar.h"
+#include "notifications/NotificationServer.h"
+#include "notifications/NotificationModel.h"
+#include "controlcenter/SystemHardwareController.h"
+#include "shortcuts/GlobalShortcuts.h"
+#include "corners/HotCornersController.h"
+#include "sni/StatusNotifierWatcher.h"
+#include "launchpad/LaunchpadController.h"
+#include "missioncontrol/MissionControlController.h"
+#include "services/QuartzServices.h"
 
 class TestShellControllers : public QObject {
     Q_OBJECT
@@ -83,6 +92,22 @@ private Q_SLOTS:
         QCOMPARE(ql.visible(), true);
         QCOMPARE(ql.fileName(), QStringLiteral("quartz.png"));
         QCOMPARE(ql.previewType(), QStringLiteral("Image"));
+
+        ql.onPreviewRequested(
+            QStringLiteral("file:///home/user/document.pdf"),
+            QStringLiteral("document.pdf"),
+            QStringLiteral("Documento PDF - 524288 bytes"),
+            QStringLiteral("Pdf")
+        );
+        QCOMPARE(ql.previewType(), QStringLiteral("Pdf"));
+
+        ql.onPreviewRequested(
+            QStringLiteral("file:///home/user/song.mp3"),
+            QStringLiteral("song.mp3"),
+            QStringLiteral("Audio (MP3) - 3145728 bytes"),
+            QStringLiteral("Audio")
+        );
+        QCOMPARE(ql.previewType(), QStringLiteral("Audio"));
     }
 
     void testDockGaussianPhysicsAndBounce() {
@@ -309,6 +334,235 @@ private Q_SLOTS:
             }
         }
         QCOMPARE(finderNowRunning, true);
+    }
+
+    void testNotificationServerAndModel() {
+        Quartz::Shell::NotificationServer server;
+        QCOMPARE(server.GetCapabilities().contains(QStringLiteral("body")), true);
+
+        QString vendor, version, spec;
+        QString name = server.GetServerInformation(vendor, version, spec);
+        QCOMPARE(name, QStringLiteral("Quartz Notification Server"));
+        QCOMPARE(spec, QStringLiteral("1.2"));
+
+        Quartz::Shell::NotificationModel model(&server);
+        QCOMPARE(model.activeBanners().size(), 0);
+        QCOMPARE(model.unreadCount(), 0);
+
+        QSignalSpy spyAdded(&model, &Quartz::Shell::NotificationModel::activeBannersChanged);
+        QSignalSpy spyClosed(&server, &Quartz::Shell::NotificationServer::NotificationClosed);
+
+        // Enviar notificación con intento de inyección de script para comprobar saneamiento
+        uint id = server.Notify(
+            QStringLiteral("TestApp"),
+            0,
+            QStringLiteral("dialog-information"),
+            QStringLiteral("Alerta del Sistema"),
+            QStringLiteral("Texto seguro <script>alert('xss');</script> y contenido"),
+            QStringList{QStringLiteral("default"), QStringLiteral("Abrir")},
+            QVariantMap{},
+            10000
+        );
+
+        QVERIFY(id > 0);
+        QCOMPARE(spyAdded.count(), 1);
+        QCOMPARE(model.activeBanners().size(), 1);
+        QCOMPARE(model.history().size(), 1);
+        QCOMPARE(model.unreadCount(), 1);
+
+        QVariantMap notif = model.activeBanners().first().toMap();
+        QCOMPARE(notif[QStringLiteral("appName")].toString(), QStringLiteral("TestApp"));
+        QCOMPARE(notif[QStringLiteral("summary")].toString(), QStringLiteral("Alerta del Sistema"));
+        // Comprobar saneamiento: el script ha debido ser eliminado
+        QVERIFY(!notif[QStringLiteral("body")].toString().contains(QStringLiteral("<script>")));
+
+        // Cerrar notificación
+        model.dismiss(id);
+        QCOMPARE(model.activeBanners().size(), 0);
+        QCOMPARE(spyClosed.count(), 1);
+
+        // Centro de notificaciones: abrirlo marca como leídas
+        QCOMPARE(model.centerVisible(), false);
+        model.toggleCenter();
+        QCOMPARE(model.centerVisible(), true);
+        QCOMPARE(model.unreadCount(), 0);
+
+        model.clearAll();
+        QCOMPARE(model.history().size(), 0);
+    }
+
+    void testSystemHardwareController() {
+        Quartz::Shell::SystemHardwareController hw;
+
+        QSignalSpy volSpy(&hw, &Quartz::Shell::SystemHardwareController::volumeChanged);
+        QSignalSpy muteSpy(&hw, &Quartz::Shell::SystemHardwareController::isMutedChanged);
+        QSignalSpy brightSpy(&hw, &Quartz::Shell::SystemHardwareController::brightnessChanged);
+        QSignalSpy osdSpy(&hw, &Quartz::Shell::SystemHardwareController::osdTriggered);
+
+        // Probar ajuste y límites de volumen
+        hw.setVolume(50);
+        QCOMPARE(hw.volume(), 50);
+        QCOMPARE(volSpy.count(), 1);
+        QVERIFY(osdSpy.count() >= 1);
+
+        hw.setVolume(150); // Clamping a 100
+        QCOMPARE(hw.volume(), 100);
+
+        hw.setVolume(-20); // Clamping a 0 (y auto mute)
+        QCOMPARE(hw.volume(), 0);
+        QCOMPARE(hw.isMuted(), true);
+
+        // Probar alternancia de mute
+        hw.setIsMuted(false);
+        QCOMPARE(hw.isMuted(), false);
+
+        // Probar brillo y límites
+        hw.setBrightness(45);
+        QCOMPARE(hw.brightness(), 45);
+        QCOMPARE(brightSpy.count(), 1);
+
+        hw.setBrightness(200); // Clamping a 100
+        QCOMPARE(hw.brightness(), 100);
+
+        // Probar No Molestar
+        QCOMPARE(hw.doNotDisturb(), false);
+        hw.setDoNotDisturb(true);
+        QCOMPARE(hw.doNotDisturb(), true);
+
+        // Probar visibilidad de Centro de Control
+        QCOMPARE(hw.visible(), false);
+        hw.toggleControlCenter();
+        QCOMPARE(hw.visible(), true);
+    }
+
+    void testGlobalShortcuts() {
+        Quartz::Shell::SpotlightController spotlight;
+        Quartz::Shell::MenuBarController menubar;
+        Quartz::Shell::DockController dock;
+
+        Quartz::Shell::GlobalShortcuts shortcuts(&spotlight, &menubar, &dock);
+        QSignalSpy spyScreen(&shortcuts, &Quartz::Shell::GlobalShortcuts::screenshotRequested);
+
+        // Probar trigger Spotlight
+        QCOMPARE(spotlight.visible(), false);
+        shortcuts.TriggerSpotlight();
+        QCOMPARE(spotlight.visible(), true);
+
+        // Probar captura de pantalla completa
+        shortcuts.TriggerScreenshot(1);
+        QCOMPARE(spyScreen.count(), 1);
+        QCOMPARE(spyScreen.first().first().toInt(), 1);
+    }
+
+    void testHotCornersAndSNI() {
+        // Probar HotCornersController
+        Quartz::Shell::HotCornersController corners;
+        QCOMPARE(corners.enabled(), true);
+        corners.setEnabled(false);
+        QCOMPARE(corners.enabled(), false);
+        corners.setEnabled(true);
+        QCOMPARE(corners.enabled(), true);
+
+        // Probar StatusNotifierWatcher
+        Quartz::Shell::StatusNotifierWatcher sni;
+        QCOMPARE(sni.isHostRegistered(), true);
+        QCOMPARE(sni.protocolVersion(), 0);
+        QCOMPARE(sni.registeredItems().size(), 0);
+
+        QSignalSpy spyItem(&sni, &Quartz::Shell::StatusNotifierWatcher::StatusNotifierItemRegistered);
+        sni.RegisterStatusNotifierItem(QStringLiteral("org.kde.testitem/StatusNotifierItem"));
+        QCOMPARE(spyItem.count(), 1);
+        QCOMPARE(sni.registeredItems().size(), 1);
+        QCOMPARE(sni.registeredItems().first(), QStringLiteral("org.kde.testitem/StatusNotifierItem"));
+
+        // Probar dock contextual app actions (quitApp, forceQuitApp, toggleKeepInDock)
+        Quartz::Shell::DockController dock;
+        dock.quitApp(QStringLiteral("test-dummy-app"));
+        dock.forceQuitApp(QStringLiteral("test-dummy-app"));
+        dock.toggleKeepInDock(QStringLiteral("test-dummy-app"));
+    }
+
+    void testLaunchpadAndMissionControl() {
+        // Probar LaunchpadController
+        Quartz::Shell::LaunchpadController launchpad;
+        QCOMPARE(launchpad.visible(), false);
+
+        launchpad.toggle();
+        QCOMPARE(launchpad.visible(), true);
+
+        QVERIFY(launchpad.apps().size() > 0);
+        QVERIFY(launchpad.pageCount() >= 1);
+
+        launchpad.setFilterText(QStringLiteral("Finder"));
+        QVERIFY(launchpad.apps().size() >= 1);
+        QCOMPARE(launchpad.apps().first().toMap().value(QStringLiteral("name")).toString(), QStringLiteral("Finder"));
+
+        launchpad.setVisible(false);
+        QCOMPARE(launchpad.visible(), false);
+        QCOMPARE(launchpad.filterText().isEmpty(), true);
+
+        // Probar MissionControlController
+        Quartz::Shell::MissionControlController mc;
+        QCOMPARE(mc.active(), false);
+
+        mc.toggle();
+        QCOMPARE(mc.active(), true);
+
+        int initialSpaces = mc.spaces().size();
+        QVERIFY(initialSpaces >= 1);
+
+        mc.addSpace();
+        QCOMPARE(mc.spaces().size(), initialSpaces + 1);
+
+        mc.switchToSpace(1);
+        QCOMPARE(mc.currentSpaceIndex(), 1);
+        QCOMPARE(mc.active(), false); // Cambiar de espacio oculta Mission Control
+
+        mc.removeSpace(initialSpaces);
+        QCOMPARE(mc.spaces().size(), initialSpaces);
+
+        // Probar GlobalShortcuts con Launchpad y Mission Control
+        Quartz::Shell::SpotlightController spotlight;
+        Quartz::Shell::MenuBarController menubar;
+        Quartz::Shell::DockController dock;
+        Quartz::Shell::GlobalShortcuts shortcuts(&spotlight, &menubar, &dock, &launchpad, &mc);
+
+        shortcuts.TriggerLaunchpad();
+        QCOMPARE(launchpad.visible(), true);
+        shortcuts.TriggerLaunchpad();
+        QCOMPARE(launchpad.visible(), false);
+
+        shortcuts.TriggerMissionControl();
+        QCOMPARE(mc.active(), true);
+        shortcuts.TriggerMissionControl();
+        QCOMPARE(mc.active(), false);
+    }
+
+    void testQuartzSystemServices() {
+        // 1. Time Machine
+        Quartz::Shell::TimeMachineService tm;
+        QCOMPARE(tm.status(), QStringLiteral("Inactivo"));
+        QVERIFY(tm.snapshots().size() >= 1);
+
+        tm.startBackup();
+        QCOMPARE(tm.status(), QStringLiteral("Completado"));
+        QCOMPARE(tm.progress(), 100);
+        QVERIFY(!tm.lastBackupTime().isEmpty());
+        QVERIFY(tm.snapshots().size() >= 2);
+
+        // 2. Keychain (Llavero)
+        Quartz::Shell::KeychainService kc;
+        kc.storeSecret(QStringLiteral("com.quartz.test"), QStringLiteral("admin"), QStringLiteral("secret123"));
+        QCOMPARE(kc.lookupSecret(QStringLiteral("com.quartz.test"), QStringLiteral("admin")), QStringLiteral("secret123"));
+        QCOMPARE(kc.listKeys().size(), 1);
+        QVERIFY(kc.deleteSecret(QStringLiteral("com.quartz.test"), QStringLiteral("admin")));
+        QCOMPARE(kc.lookupSecret(QStringLiteral("com.quartz.test"), QStringLiteral("admin")), QString());
+
+        // 3. PrintService (CUPS / Impresoras)
+        Quartz::Shell::PrintService ps;
+        QVERIFY(ps.printers().size() >= 1);
+        QCOMPARE(ps.cancelJob(QString()), false);
+        QCOMPARE(ps.cancelJob(QStringLiteral("job-101")), true);
     }
 };
 

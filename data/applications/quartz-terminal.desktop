@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal
+GenericName=Emulador de Terminal
+Comment=Línea de comandos y consola de QuartzDE
+Exec=x-terminal-emulator
+Icon=utilities-terminal
+Terminal=false
+Categories=System;TerminalEmulator;
+StartupNotify=true

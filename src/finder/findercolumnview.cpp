@@ -1,6 +1,13 @@
 #include "findercolumnview.h"
+#include "fileoperations.h"
+#include "tagcircledelegate.h"
+#include <QFileSystemModel>
 #include <QScrollBar>
 #include <QHeaderView>
+#include <QStorageInfo>
+#include <QImageReader>
+#include <QPixmapCache>
+#include <QtConcurrent/QtConcurrent>
 
 namespace Quartz::Finder {
 
@@ -9,16 +16,25 @@ FinderColumnView::FinderColumnView(QWidget *parent)
 {
     auto *mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setSpacing(0);
 
     m_viewStack = new QStackedWidget(this);
-    mainLayout->addWidget(m_viewStack);
+    mainLayout->addWidget(m_viewStack, 1);
 
     setupIconsView();
     setupListView();
     setupColumnsView();
     setupGalleryView();
+    setupPathBar();
+
+    mainLayout->addWidget(m_pathBar, 0);
 
     setViewMode(FinderViewMode::Columns);
+
+    connect(&m_watcher, &QFileSystemWatcher::directoryChanged, this, &FinderColumnView::reloadCurrentDirectory);
+
+    connect(&m_storageTimer, &QTimer::timeout, this, &FinderColumnView::updateStorageStatus);
+    m_storageTimer.start(30000);
 }
 
 void FinderColumnView::setupIconsView()
@@ -30,6 +46,7 @@ void FinderColumnView::setupIconsView()
     m_iconsList->setResizeMode(QListWidget::Adjust);
     m_iconsList->setMovement(QListView::Static);
     m_iconsList->setSpacing(12);
+    m_iconsList->setSelectionMode(QAbstractItemView::ExtendedSelection);
     m_iconsList->setStyleSheet(QStringLiteral("QListWidget { background: #FFFFFF; border: none; }"));
 
     connect(m_iconsList, &QListWidget::itemClicked, this, &FinderColumnView::onIconItemClicked);
@@ -38,6 +55,7 @@ void FinderColumnView::setupIconsView()
             Q_EMIT fileDoubleClicked(item->data(Qt::UserRole).toString());
         }
     });
+    connect(m_iconsList, &QListWidget::itemSelectionChanged, this, &FinderColumnView::updateStorageStatus);
     m_viewStack->addWidget(m_iconsList);
 }
 
@@ -48,7 +66,9 @@ void FinderColumnView::setupListView()
     m_listTree->setHeaderLabels({ QStringLiteral("Nombre"), QStringLiteral("Fecha de modificación"), QStringLiteral("Tamaño") });
     m_listTree->header()->setSectionResizeMode(0, QHeaderView::Stretch);
     m_listTree->setIndentation(18);
+    m_listTree->setSelectionMode(QAbstractItemView::ExtendedSelection);
     m_listTree->setStyleSheet(QStringLiteral("QTreeWidget { background: #FFFFFF; border: none; }"));
+    m_listTree->setItemDelegate(new TagCircleDelegate(m_listTree));
 
     connect(m_listTree, &QTreeWidget::itemClicked, this, &FinderColumnView::onListItemClicked);
     connect(m_listTree, &QTreeWidget::itemDoubleClicked, this, [this](QTreeWidgetItem *item, int /*col*/) {
@@ -56,6 +76,7 @@ void FinderColumnView::setupListView()
             Q_EMIT fileDoubleClicked(item->data(0, Qt::UserRole).toString());
         }
     });
+    connect(m_listTree, &QTreeWidget::itemSelectionChanged, this, &FinderColumnView::updateStorageStatus);
     m_viewStack->addWidget(m_listTree);
 }
 
@@ -132,6 +153,34 @@ void FinderColumnView::setupGalleryView()
     m_viewStack->addWidget(m_galleryWidget);
 }
 
+void FinderColumnView::setupPathBar()
+{
+    m_pathBar = new QWidget(this);
+    m_pathBar->setFixedHeight(22);
+    m_pathBar->setStyleSheet(QStringLiteral(
+        "QWidget { background-color: #F6F6F6; border-top: 1px solid #D1D1D6; font-size: 11px; }"
+        "QToolButton { border: none; background: transparent; padding: 0 4px; color: #3C3C43; font-weight: 500; }"
+        "QToolButton:hover { color: #007AFF; }"
+    ));
+
+    auto *hLayout = new QHBoxLayout(m_pathBar);
+    hLayout->setContentsMargins(8, 0, 8, 0);
+    hLayout->setSpacing(4);
+
+    auto *breadcrumbsContainer = new QWidget(m_pathBar);
+    m_breadcrumbsLayout = new QHBoxLayout(breadcrumbsContainer);
+    m_breadcrumbsLayout->setContentsMargins(0, 0, 0, 0);
+    m_breadcrumbsLayout->setSpacing(2);
+
+    m_statusLabel = new QLabel(m_pathBar);
+    m_statusLabel->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    m_statusLabel->setStyleSheet(QStringLiteral("color: #8E8E93; font-size: 11px;"));
+
+    hLayout->addWidget(breadcrumbsContainer);
+    hLayout->addStretch(1);
+    hLayout->addWidget(m_statusLabel);
+}
+
 void FinderColumnView::setViewMode(FinderViewMode mode)
 {
     m_viewMode = mode;
@@ -152,13 +201,36 @@ void FinderColumnView::setViewMode(FinderViewMode mode)
     Q_EMIT viewModeChanged(mode);
 }
 
+void FinderColumnView::setTagFilter(const QString &tag)
+{
+    if (m_tagFilter != tag) {
+        m_tagFilter = tag;
+        reloadCurrentDirectory();
+    }
+}
+
+void FinderColumnView::reloadCurrentDirectory()
+{
+    if (!m_rootPath.isEmpty()) {
+        setRootPath(m_rootPath);
+    }
+}
+
 void FinderColumnView::setRootPath(const QString &path)
 {
     m_rootPath = path;
+
+    // Actualizar observador de cambios
+    if (!m_watcher.directories().isEmpty()) {
+        m_watcher.removePaths(m_watcher.directories());
+    }
+    if (QDir(path).exists()) {
+        m_watcher.addPath(path);
+    }
+
     truncateColumnsAfter(-1);
     addColumn(path);
 
-    // Cargar también en la vista de lista, iconos y galería
     QDir dir(path);
     QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot, QDir::DirsFirst | QDir::Name);
 
@@ -167,16 +239,22 @@ void FinderColumnView::setRootPath(const QString &path)
     m_galleryThumbnailStrip->clear();
 
     for (const QFileInfo &info : entries) {
+        QString tag = FileOperations::getFileTag(info.absoluteFilePath());
+        if (!m_tagFilter.isEmpty() && tag != m_tagFilter) {
+            continue;
+        }
+
         // Iconos
         auto *iconItem = new QListWidgetItem(info.fileName(), m_iconsList);
         iconItem->setData(Qt::UserRole, info.absoluteFilePath());
 
-        // Lista con columnas
+        // Lista con columnas y delegado para tag
         auto *treeItem = new QTreeWidgetItem(m_listTree);
         treeItem->setText(0, info.isDir() ? QStringLiteral("▶  ") + info.fileName() : info.fileName());
         treeItem->setText(1, info.lastModified().toString(QStringLiteral("dd/MM/yyyy HH:mm")));
         treeItem->setText(2, info.isDir() ? QStringLiteral("--") : QString::number(info.size() / 1024) + QStringLiteral(" KB"));
         treeItem->setData(0, Qt::UserRole, info.absoluteFilePath());
+        treeItem->setData(0, QFileSystemModel::FilePathRole, info.absoluteFilePath());
 
         // Galería
         auto *galleryItem = new QListWidgetItem(info.fileName(), m_galleryThumbnailStrip);
@@ -192,6 +270,103 @@ void FinderColumnView::setRootPath(const QString &path)
         m_galleryMainPreview->setText(QStringLiteral("Carpeta vacía"));
         m_galleryDetailsLabel->setText(QString());
     }
+
+    updatePathBar();
+    updateStorageStatus();
+}
+
+void FinderColumnView::updatePathBar()
+{
+    if (!m_breadcrumbsLayout) {
+        return;
+    }
+
+    // Limpiar breadcrumbs anteriores
+    QLayoutItem *child;
+    while ((child = m_breadcrumbsLayout->takeAt(0)) != nullptr) {
+        if (child->widget()) {
+            child->widget()->deleteLater();
+        }
+        delete child;
+    }
+
+    QString normalized = QDir::cleanPath(m_rootPath);
+    QStringList parts = normalized.split(QLatin1Char('/'), Qt::SkipEmptyParts);
+
+    QString currentAcc = QStringLiteral("/");
+    auto *rootBtn = new QToolButton(m_pathBar);
+    rootBtn->setText(QStringLiteral("Macintosh HD"));
+    rootBtn->setAutoRaise(true);
+    connect(rootBtn, &QToolButton::clicked, this, [this]() {
+        Q_EMIT pathNavigated(QStringLiteral("/"));
+    });
+    m_breadcrumbsLayout->addWidget(rootBtn);
+
+    for (int i = 0; i < parts.size(); ++i) {
+        auto *sep = new QLabel(QStringLiteral("›"), m_pathBar);
+        sep->setStyleSheet(QStringLiteral("color: #C7C7CC; font-size: 12px;"));
+        m_breadcrumbsLayout->addWidget(sep);
+
+        currentAcc += parts[i];
+        QString stepPath = currentAcc;
+        if (i < parts.size() - 1) {
+            currentAcc += QStringLiteral("/");
+        }
+
+        auto *btn = new QToolButton(m_pathBar);
+        btn->setText(parts[i]);
+        btn->setAutoRaise(true);
+        connect(btn, &QToolButton::clicked, this, [this, stepPath]() {
+            Q_EMIT pathNavigated(stepPath);
+        });
+        m_breadcrumbsLayout->addWidget(btn);
+    }
+}
+
+void FinderColumnView::updateStorageStatus()
+{
+    if (!m_statusLabel) {
+        return;
+    }
+
+    int totalItems = 0;
+    int selectedCount = 0;
+
+    switch (m_viewMode) {
+    case FinderViewMode::Icons:
+        totalItems = m_iconsList->count();
+        selectedCount = m_iconsList->selectedItems().count();
+        break;
+    case FinderViewMode::List:
+        totalItems = m_listTree->topLevelItemCount();
+        selectedCount = m_listTree->selectedItems().count();
+        break;
+    case FinderViewMode::Columns:
+        if (!m_columns.isEmpty() && m_columns.last()) {
+            totalItems = m_columns.last()->count();
+            selectedCount = m_columns.last()->selectedItems().count();
+        }
+        break;
+    case FinderViewMode::Gallery:
+        totalItems = m_galleryThumbnailStrip->count();
+        selectedCount = m_galleryThumbnailStrip->selectedItems().count();
+        break;
+    }
+
+    QStorageInfo storage(m_rootPath.isEmpty() ? QDir::homePath() : m_rootPath);
+    qint64 freeBytes = storage.bytesAvailable();
+    double freeGB = static_cast<double>(freeBytes) / (1024.0 * 1024.0 * 1024.0);
+
+    if (selectedCount > 0) {
+        m_statusLabel->setText(QStringLiteral("%1 de %2 seleccionados, %3 GB disponibles")
+                                   .arg(selectedCount)
+                                   .arg(totalItems)
+                                   .arg(freeGB, 0, 'f', 1));
+    } else {
+        m_statusLabel->setText(QStringLiteral("%1 elementos, %2 GB disponibles")
+                                   .arg(totalItems)
+                                   .arg(freeGB, 0, 'f', 1));
+    }
 }
 
 void FinderColumnView::addColumn(const QString &path)
@@ -204,6 +379,7 @@ void FinderColumnView::addColumn(const QString &path)
     auto *listWidget = new QListWidget(m_columnsContainer);
     listWidget->setFixedWidth(220);
     listWidget->setFrameShape(QFrame::NoFrame);
+    listWidget->setItemDelegate(new TagCircleDelegate(listWidget));
     listWidget->setStyleSheet(QStringLiteral(
         "QListWidget { background-color: #FFFFFF; border-right: 1px solid #E5E5EA; }"
         "QListWidget::item { height: 26px; padding-left: 6px; border-radius: 4px; }"
@@ -212,6 +388,13 @@ void FinderColumnView::addColumn(const QString &path)
 
     QFileInfoList entries = dir.entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot, QDir::DirsFirst | QDir::Name);
     for (const QFileInfo &info : entries) {
+        if (!m_tagFilter.isEmpty()) {
+            QString tag = FileOperations::getFileTag(info.absoluteFilePath());
+            if (tag != m_tagFilter) {
+                continue;
+            }
+        }
+
         QString displayName = info.fileName();
         if (info.isDir()) {
             displayName += QStringLiteral("  ›");
@@ -219,6 +402,7 @@ void FinderColumnView::addColumn(const QString &path)
         auto *item = new QListWidgetItem(displayName, listWidget);
         item->setData(Qt::UserRole, info.absoluteFilePath());
         item->setData(Qt::UserRole + 1, info.isDir());
+        item->setData(QFileSystemModel::FilePathRole, info.absoluteFilePath());
     }
 
     connect(listWidget, &QListWidget::itemClicked, this, &FinderColumnView::onColumnItemClicked);
@@ -228,7 +412,6 @@ void FinderColumnView::addColumn(const QString &path)
         }
     });
 
-    // Si el inspector está en el layout, insertarlo antes del inspector
     if (m_inspectorWidget && m_columnsLayout->indexOf(m_inspectorWidget) != -1) {
         m_columnsLayout->removeWidget(m_inspectorWidget);
         m_columnsLayout->addWidget(listWidget);
@@ -265,13 +448,18 @@ void FinderColumnView::updateInspector(const QString &filePath)
     }
 
     m_inspectorPreviewLabel->setText(info.fileName());
+    QString tag = FileOperations::getFileTag(filePath);
+    QString tagStr = tag.isEmpty() ? QStringLiteral("Sin etiqueta") : tag;
+
     QString details = QStringLiteral("<b>Nombre:</b> %1<br>"
                                      "<b>Tipo:</b> %2<br>"
                                      "<b>Tamaño:</b> %3 bytes<br>"
-                                     "<b>Modificado:</b> %4")
+                                     "<b>Etiqueta:</b> %4<br>"
+                                     "<b>Modificado:</b> %5")
                           .arg(info.fileName())
                           .arg(info.isDir() ? QStringLiteral("Carpeta") : info.suffix().toUpper())
                           .arg(info.size())
+                          .arg(tagStr)
                           .arg(info.lastModified().toString(QStringLiteral("yyyy-MM-dd HH:mm")));
 
     m_inspectorDetailsLabel->setText(details);
@@ -308,6 +496,7 @@ void FinderColumnView::onColumnItemClicked(QListWidgetItem *item)
     } else {
         updateInspector(filePath);
     }
+    updateStorageStatus();
 }
 
 void FinderColumnView::onListItemClicked(QTreeWidgetItem *item, int /*column*/)
@@ -315,6 +504,7 @@ void FinderColumnView::onListItemClicked(QTreeWidgetItem *item, int /*column*/)
     QString path = item->data(0, Qt::UserRole).toString();
     m_currentSelectedFile = path;
     Q_EMIT fileSelected(path);
+    updateStorageStatus();
 }
 
 void FinderColumnView::onIconItemClicked(QListWidgetItem *item)
@@ -322,6 +512,7 @@ void FinderColumnView::onIconItemClicked(QListWidgetItem *item)
     QString path = item->data(Qt::UserRole).toString();
     m_currentSelectedFile = path;
     Q_EMIT fileSelected(path);
+    updateStorageStatus();
 }
 
 void FinderColumnView::onGalleryItemClicked(QListWidgetItem *item)
@@ -333,6 +524,7 @@ void FinderColumnView::onGalleryItemClicked(QListWidgetItem *item)
     m_currentSelectedFile = path;
     Q_EMIT fileSelected(path);
     updateGalleryPreview(path);
+    updateStorageStatus();
 }
 
 void FinderColumnView::updateGalleryPreview(const QString &filePath)
@@ -351,16 +543,29 @@ void FinderColumnView::updateGalleryPreview(const QString &filePath)
                     ext == QLatin1String("webp") || ext == QLatin1String("bmp"));
 
     if (isImage) {
-        QPixmap pix(filePath);
-        if (!pix.isNull()) {
+        QPixmap cached;
+        if (QPixmapCache::find(filePath, &cached)) {
+            m_galleryMainPreview->setPixmap(cached);
+        } else {
+            m_galleryMainPreview->setText(QStringLiteral("Cargando vista previa..."));
             QSize targetSize = m_galleryMainPreview->size();
             if (targetSize.width() < 100 || targetSize.height() < 100) {
                 targetSize = QSize(400, 300);
             }
-            m_galleryMainPreview->setPixmap(pix.scaled(targetSize, Qt::KeepAspectRatio, Qt::SmoothTransformation));
-        } else {
-            m_galleryMainPreview->clear();
-            m_galleryMainPreview->setText(info.fileName());
+            (void)QtConcurrent::run([this, filePath, targetSize]() {
+                QImageReader reader(filePath);
+                reader.setScaledSize(reader.size().scaled(targetSize, Qt::KeepAspectRatio));
+                QImage img = reader.read();
+                if (!img.isNull()) {
+                    QPixmap pm = QPixmap::fromImage(img);
+                    QPixmapCache::insert(filePath, pm);
+                    QMetaObject::invokeMethod(this, [this, filePath, pm]() {
+                        if (m_currentSelectedFile == filePath) {
+                            m_galleryMainPreview->setPixmap(pm);
+                        }
+                    });
+                }
+            });
         }
     } else if (info.isDir()) {
         m_galleryMainPreview->clear();
@@ -370,13 +575,51 @@ void FinderColumnView::updateGalleryPreview(const QString &filePath)
         m_galleryMainPreview->setText(QStringLiteral("📄  %1\n(%2)").arg(info.fileName(), info.suffix().toUpper()));
     }
 
-    QString details = QStringLiteral("<b>%1</b> &nbsp;|&nbsp; %2 &nbsp;|&nbsp; %3 &nbsp;|&nbsp; %4")
+    QString tag = FileOperations::getFileTag(filePath);
+    QString tagLabel = tag.isEmpty() ? QStringLiteral("Sin etiqueta") : tag;
+
+    QString details = QStringLiteral("<b>%1</b> &nbsp;|&nbsp; %2 &nbsp;|&nbsp; %3 &nbsp;|&nbsp; %4 &nbsp;|&nbsp; %5")
                           .arg(info.fileName())
                           .arg(info.isDir() ? QStringLiteral("Carpeta") : QString::number(info.size() / 1024) + QStringLiteral(" KB"))
                           .arg(info.isDir() ? QStringLiteral("Directorio") : (info.suffix().isEmpty() ? QStringLiteral("Archivo") : info.suffix().toUpper()))
+                          .arg(tagLabel)
                           .arg(info.lastModified().toString(QStringLiteral("dd/MM/yyyy HH:mm")));
 
     m_galleryDetailsLabel->setText(details);
+}
+
+QList<QString> FinderColumnView::selectedFilePaths() const
+{
+    QList<QString> paths;
+    switch (m_viewMode) {
+    case FinderViewMode::Icons:
+        for (auto *it : m_iconsList->selectedItems()) {
+            paths.append(it->data(Qt::UserRole).toString());
+        }
+        break;
+    case FinderViewMode::List:
+        for (auto *it : m_listTree->selectedItems()) {
+            paths.append(it->data(0, Qt::UserRole).toString());
+        }
+        break;
+    case FinderViewMode::Columns:
+        if (!m_columns.isEmpty() && m_columns.last()) {
+            for (auto *it : m_columns.last()->selectedItems()) {
+                paths.append(it->data(Qt::UserRole).toString());
+            }
+        }
+        break;
+    case FinderViewMode::Gallery:
+        for (auto *it : m_galleryThumbnailStrip->selectedItems()) {
+            paths.append(it->data(Qt::UserRole).toString());
+        }
+        break;
+    }
+
+    if (paths.isEmpty() && !m_currentSelectedFile.isEmpty()) {
+        paths.append(m_currentSelectedFile);
+    }
+    return paths;
 }
 
 int FinderColumnView::galleryItemCount() const

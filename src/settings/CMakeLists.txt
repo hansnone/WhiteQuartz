@@ -4,6 +4,7 @@ add_executable(quartz-settings
     settingsmodel.h
     settingsconfigcontroller.cpp
     settingsconfigcontroller.h
+    resources.qrc
 )
 
 target_compile_definitions(quartz-settings PRIVATE

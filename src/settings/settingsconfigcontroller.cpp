@@ -83,6 +83,32 @@ void SettingsConfigController::onConfigChanged(const QString &json)
             Q_EMIT iconThemeChanged(m_iconTheme);
         }
     }
+
+    if (obj.contains(QStringLiteral("wallpaper"))) {
+        QString wp = obj[QStringLiteral("wallpaper")].toString();
+        if (m_wallpaper != wp) {
+            m_wallpaper = wp;
+            Q_EMIT wallpaperChanged(m_wallpaper);
+        }
+    }
+
+    if (obj.contains(QStringLiteral("dock"))) {
+        QJsonObject dockObj = obj[QStringLiteral("dock")].toObject();
+        if (dockObj.contains(QStringLiteral("size"))) {
+            int dSize = dockObj[QStringLiteral("size")].toInt();
+            if (m_dockSize != dSize) {
+                m_dockSize = dSize;
+                Q_EMIT dockSizeChanged(m_dockSize);
+            }
+        }
+        if (dockObj.contains(QStringLiteral("magnification"))) {
+            bool mag = dockObj[QStringLiteral("magnification")].toBool();
+            if (m_magnificationEnabled != mag) {
+                m_magnificationEnabled = mag;
+                Q_EMIT magnificationEnabledChanged(m_magnificationEnabled);
+            }
+        }
+    }
 }
 
 void SettingsConfigController::setStageManagerEnabled(bool enabled)
@@ -130,6 +156,30 @@ void SettingsConfigController::setIconTheme(const QString &theme)
         if (m_dbus && m_dbus->isValid()) {
             m_dbus->call(QStringLiteral("set_icon_theme"), theme);
         }
+    }
+}
+
+void SettingsConfigController::setWallpaper(const QString &wp)
+{
+    if (m_wallpaper != wp) {
+        m_wallpaper = wp;
+        Q_EMIT wallpaperChanged(m_wallpaper);
+    }
+}
+
+void SettingsConfigController::setDockSize(int size)
+{
+    if (m_dockSize != size) {
+        m_dockSize = size;
+        Q_EMIT dockSizeChanged(m_dockSize);
+    }
+}
+
+void SettingsConfigController::setMagnificationEnabled(bool enabled)
+{
+    if (m_magnificationEnabled != enabled) {
+        m_magnificationEnabled = enabled;
+        Q_EMIT magnificationEnabledChanged(m_magnificationEnabled);
     }
 }
 

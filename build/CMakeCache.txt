@@ -361,6 +361,9 @@ QT_ADDITIONAL_HOST_PACKAGES_PREFIX_PATH:STRING=
 //Additional directories where find(Qt6 ...) components are searched
 QT_ADDITIONAL_PACKAGES_PREFIX_PATH:STRING=
 
+//The directory containing a CMake configuration file for Qt6Concurrent.
+Qt6Concurrent_DIR:PATH=/usr/lib/cmake/Qt6Concurrent
+
 //The directory containing a CMake configuration file for Qt6CoreTools.
 Qt6CoreTools_DIR:PATH=/usr/lib/cmake/Qt6CoreTools
 
@@ -1070,6 +1073,8 @@ Fontconfig_INCLUDE_DIR-ADVANCED:INTERNAL=1
 Fontconfig_LIBRARY-ADVANCED:INTERNAL=1
 //Test HAVE_STDATOMIC
 HAVE_STDATOMIC:INTERNAL=1
+//Test KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL
+KWIN_OFFSCREEN_EFFECT_DRAW_RETURNS_BOOL:INTERNAL=1
 //ADVANCED property for variable: OPENGL_EGL_INCLUDE_DIR
 OPENGL_EGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OPENGL_GLES2_INCLUDE_DIR

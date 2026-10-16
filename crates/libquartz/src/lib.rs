@@ -52,4 +52,56 @@ mod tests {
 
         let _ = std::fs::remove_file(&test_file);
     }
+
+    #[test]
+    fn test_desktop_config_backward_compatibility() {
+        // JSON heredado de Fase 3 (sin el campo nuevo "wallpaper" y con campos omitidos)
+        let legacy_json = r#"{
+            "appearance": "Dark",
+            "accent_color": "Blue",
+            "dock": {
+                "base_size": 52,
+                "magnification": false,
+                "max_magnified_size": 90
+            },
+            "theme_name": "Orchis-Dark",
+            "icon_theme": "Colloid"
+        }"#;
+
+        let deserialized = QuartzDesktopConfig::from_json(legacy_json).expect("Debe deserializar JSON heredado con serde(default)");
+        assert_eq!(deserialized.appearance, config::AppearanceMode::Dark);
+        assert_eq!(deserialized.accent_color, config::AccentColor::Blue);
+        assert_eq!(deserialized.dock.base_size, 52);
+        assert!(!deserialized.dock.magnification);
+        // Debe rellenar con defaults los campos que faltaban
+        assert!(deserialized.dock.bouncing_animation);
+        assert_eq!(deserialized.wallpaper, "/usr/share/backgrounds/quartz.png");
+    }
+
+    #[test]
+    fn test_desktop_config_bad_backup() {
+        let temp_dir = std::env::temp_dir();
+        let test_dir = temp_dir.join(format!("quartz_bad_test_{}", std::process::id()));
+        let _ = std::fs::create_dir_all(&test_dir);
+        let test_file = test_dir.join("config.json");
+        let bad_file = test_dir.join("config.json.bad");
+
+        // Escribir JSON inválido / corrupto
+        let _ = std::fs::write(&test_file, b"{ invalid json content ... ");
+
+        // Simular lógica de load_from_xdg
+        if test_file.exists() {
+            if let Ok(content) = std::fs::read_to_string(&test_file) {
+                if QuartzDesktopConfig::from_json(&content).is_err() {
+                    let _ = std::fs::rename(&test_file, &bad_file);
+                }
+            }
+        }
+
+        assert!(!test_file.exists());
+        assert!(bad_file.exists());
+
+        let _ = std::fs::remove_file(&bad_file);
+        let _ = std::fs::remove_dir(&test_dir);
+    }
 }

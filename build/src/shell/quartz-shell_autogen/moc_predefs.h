@@ -273,6 +273,7 @@
 #define __UINT64_MAX__ 0xffffffffffffffffUL
 #define __FLT_IS_IEC_60559__ 1
 #define __GNUC_WIDE_EXECUTION_CHARSET_NAME "UTF-32LE"
+#define HAVE_KF6WINDOWSYSTEM 1
 #define __FLT64X_DIG__ 18
 #define __INT8_TYPE__ signed char
 #define __cpp_digit_separators 201309L

@@ -121,10 +121,166 @@ Window {
                     }
                 }
 
+                // Vista de PDF
+                ColumnLayout {
+                    anchors.centerIn: parent
+                    visible: typeof quickLookCtrl !== "undefined" && quickLookCtrl.previewType === "Pdf"
+                    spacing: 16
+
+                    Rectangle {
+                        Layout.alignment: Qt.AlignHCenter
+                        width: 96
+                        height: 120
+                        radius: 8
+                        color: "#FFFFFF"
+                        border.color: "#E5E5EA"
+                        border.width: 1
+
+                        ColumnLayout {
+                            anchors.centerIn: parent
+                            spacing: 8
+                            Rectangle {
+                                Layout.alignment: Qt.AlignHCenter
+                                width: 44
+                                height: 26
+                                radius: 4
+                                color: "#FF3B30"
+                                Text {
+                                    anchors.centerIn: parent
+                                    text: "PDF"
+                                    font.bold: true
+                                    font.pixelSize: 12
+                                    color: "#FFFFFF"
+                                }
+                            }
+                            Text {
+                                Layout.alignment: Qt.AlignHCenter
+                                text: "📑"
+                                font.pixelSize: 32
+                            }
+                        }
+                    }
+
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: typeof quickLookCtrl !== "undefined" ? quickLookCtrl.fileName : ""
+                        font.bold: true
+                        font.pixelSize: 16
+                        color: "#1C1C1E"
+                    }
+
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: typeof quickLookCtrl !== "undefined" ? quickLookCtrl.summary : ""
+                        font.pixelSize: 12
+                        color: "#8E8E93"
+                    }
+
+                    Button {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: qsTr("Abrir con Vista Previa")
+                        onClicked: {
+                            if (typeof quickLookCtrl !== "undefined") {
+                                Qt.openUrlExternally(quickLookCtrl.fileUri)
+                                quickLookCtrl.closePreview()
+                            }
+                        }
+                    }
+                }
+
+                // Vista de Audio
+                ColumnLayout {
+                    anchors.centerIn: parent
+                    visible: typeof quickLookCtrl !== "undefined" && quickLookCtrl.previewType === "Audio"
+                    spacing: 16
+
+                    Rectangle {
+                        Layout.alignment: Qt.AlignHCenter
+                        width: 96
+                        height: 96
+                        radius: 48
+                        color: "#1C1C1E"
+                        Text {
+                            anchors.centerIn: parent
+                            text: "🎵"
+                            font.pixelSize: 42
+                        }
+                    }
+
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: typeof quickLookCtrl !== "undefined" ? quickLookCtrl.fileName : ""
+                        font.bold: true
+                        font.pixelSize: 16
+                        color: "#1C1C1E"
+                    }
+
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: typeof quickLookCtrl !== "undefined" ? quickLookCtrl.summary : ""
+                        font.pixelSize: 12
+                        color: "#8E8E93"
+                    }
+
+                    // Barra simulada de reproducción
+                    RowLayout {
+                        Layout.alignment: Qt.AlignHCenter
+                        spacing: 12
+                        Text { text: "▶️"; font.pixelSize: 20 }
+                        Rectangle {
+                            width: 200
+                            height: 6
+                            radius: 3
+                            color: "#D1D1D6"
+                            Rectangle {
+                                width: 70
+                                height: parent.height
+                                radius: 3
+                                color: "#007AFF"
+                            }
+                        }
+                    }
+                }
+
+                // Vista de Vídeo
+                ColumnLayout {
+                    anchors.centerIn: parent
+                    visible: typeof quickLookCtrl !== "undefined" && quickLookCtrl.previewType === "Video"
+                    spacing: 16
+
+                    Rectangle {
+                        Layout.alignment: Qt.AlignHCenter
+                        width: 120
+                        height: 80
+                        radius: 10
+                        color: "#000000"
+                        Text {
+                            anchors.centerIn: parent
+                            text: "🎬"
+                            font.pixelSize: 36
+                        }
+                    }
+
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: typeof quickLookCtrl !== "undefined" ? quickLookCtrl.fileName : ""
+                        font.bold: true
+                        font.pixelSize: 16
+                        color: "#1C1C1E"
+                    }
+
+                    Text {
+                        Layout.alignment: Qt.AlignHCenter
+                        text: typeof quickLookCtrl !== "undefined" ? quickLookCtrl.summary : ""
+                        font.pixelSize: 12
+                        color: "#8E8E93"
+                    }
+                }
+
                 // Vista Genérica / Documentos
                 ColumnLayout {
                     anchors.centerIn: parent
-                    visible: typeof quickLookCtrl !== "undefined" && quickLookCtrl.previewType !== "Image" && quickLookCtrl.previewType !== "Text"
+                    visible: typeof quickLookCtrl !== "undefined" && quickLookCtrl.previewType !== "Image" && quickLookCtrl.previewType !== "Text" && quickLookCtrl.previewType !== "Pdf" && quickLookCtrl.previewType !== "Audio" && quickLookCtrl.previewType !== "Video"
                     spacing: 12
 
                     Rectangle {

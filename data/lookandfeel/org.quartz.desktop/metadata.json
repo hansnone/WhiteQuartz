@@ -1,0 +1,19 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "info@quartzde.org",
+                "Name": "QuartzDE Team"
+            }
+        ],
+        "Category": "",
+        "Description": "QuartzDE macOS Sonoma/Sequoia Look and Feel Package",
+        "Id": "org.quartz.desktop",
+        "Name": "QuartzDE",
+        "ServiceTypes": [
+            "Plasma/LookAndFeel"
+        ],
+        "Version": "0.1.0",
+        "Website": "https://github.com/hansnone/WhiteQuartz"
+    }
+}

@@ -332,7 +332,16 @@ Window {
                             anchors.fill: parent
                             hoverEnabled: true
                             cursorShape: Qt.PointingHandCursor
-                            onClicked: {
+                            acceptedButtons: Qt.LeftButton | Qt.RightButton
+
+                            onClicked: (mouse) => {
+                                if (mouse.button === Qt.RightButton) {
+                                    if (!modelData.isSeparator) {
+                                        dockContextMenu.open()
+                                    }
+                                    return
+                                }
+
                                 if (modelData.name === "Descargas") {
                                     var itemCenterX = dockContainer.x + dockRow.x + dockItem.x + dockItem.width / 2
                                     if (stackPopup.visible) {
@@ -342,6 +351,12 @@ Window {
                                     }
                                     return
                                 }
+                                if (modelData.name === "Launchpad") {
+                                    if (typeof launchpadCtrl !== "undefined") {
+                                        launchpadCtrl.toggle()
+                                        return
+                                    }
+                                }
                                 if (modelData.cmd === "quartz-spotlight") {
                                     if (typeof spotlightCtrl !== "undefined") {
                                         spotlightCtrl.toggle()
@@ -349,6 +364,34 @@ Window {
                                     }
                                 }
                                 dockCtrl.launchApp(modelData.cmd)
+                            }
+                        }
+
+                        Menu {
+                            id: dockContextMenu
+                            y: -height - 8
+
+                            Menu {
+                                title: qsTr("Opciones")
+                                MenuItem {
+                                    text: qsTr("Mantener en el Dock")
+                                    checkable: true
+                                    checked: true
+                                    onTriggered: dockCtrl.toggleKeepInDock(modelData.cmd)
+                                }
+                                MenuItem { text: qsTr("Abrir al iniciar sesión") }
+                                MenuItem { text: qsTr("Mostrar en el Finder") }
+                            }
+                            MenuSeparator { visible: modelData.running }
+                            MenuItem {
+                                text: qsTr("Salir")
+                                visible: modelData.running
+                                onTriggered: dockCtrl.quitApp(modelData.cmd)
+                            }
+                            MenuItem {
+                                text: qsTr("Forzar salida")
+                                visible: modelData.running
+                                onTriggered: dockCtrl.forceQuitApp(modelData.cmd)
                             }
                         }
 

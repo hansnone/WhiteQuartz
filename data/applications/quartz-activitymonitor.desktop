@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Monitor de Actividad
+GenericName=Monitor del Sistema y Procesos
+Comment=Supervisa el uso de CPU, memoria, energía, disco y red
+Exec=plasma-systemmonitor
+Icon=utilities-system-monitor
+Terminal=false
+Categories=System;Monitor;
+StartupNotify=true

@@ -12,6 +12,10 @@
 		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
 		"/usr/lib/cmake/LayerShellQt/LayerShellQtTargets.cmake",
 		"/usr/lib/cmake/LayerShellQt/LayerShellQtTargets-noconfig.cmake",
+		"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfigVersion.cmake",
+		"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/KF6WindowSystem/KF6WindowSystemTargets.cmake",
 		"/home/pedro/Proyectos/WhiteQuartz/src/shell/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/pedro/Proyectos/WhiteQuartz",
@@ -21,9 +25,27 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/controlcenter/SystemHardwareController.h",
+			"MU",
+			"AGE4P4IIZX/moc_SystemHardwareController.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/corners/HotCornersController.h",
+			"MU",
+			"ZR44OU4CHX/moc_HotCornersController.cpp",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/shell/dock/DockController.h",
 			"MU",
 			"647R6NJRF7/moc_DockController.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/launchpad/LaunchpadController.h",
+			"MU",
+			"PI5WBIHD2P/moc_LaunchpadController.cpp",
 			null
 		],
 		[
@@ -39,9 +61,45 @@
 			null
 		],
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/missioncontrol/MissionControlController.h",
+			"MU",
+			"RGSWMBCMVQ/moc_MissionControlController.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationModel.h",
+			"MU",
+			"EN6JRXVE77/moc_NotificationModel.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationServer.h",
+			"MU",
+			"EN6JRXVE77/moc_NotificationServer.cpp",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.h",
 			"MU",
 			"OHMANK7QA7/moc_QuickLookController.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/services/QuartzServices.h",
+			"MU",
+			"3BYFHCGL5U/moc_QuartzServices.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/shortcuts/GlobalShortcuts.h",
+			"MU",
+			"FC54EBKBLD/moc_GlobalShortcuts.cpp",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/sni/StatusNotifierWatcher.h",
+			"MU",
+			"UPL3HQLO75/moc_StatusNotifierWatcher.cpp",
 			null
 		],
 		[
@@ -56,6 +114,7 @@
 	"MOC_COMPILATION_FILE" : "/home/pedro/Proyectos/WhiteQuartz/build/src/shell/quartz-shell_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
+		"HAVE_KF6WINDOWSYSTEM",
 		"HAVE_LAYERSHELLQT",
 		"QT_CORE_LIB",
 		"QT_DBUS_LIB",
@@ -92,6 +151,7 @@
 		"/usr/include/qt6/QtNetwork",
 		"/usr/include/qt6/QtOpenGL",
 		"/usr/include/qt6/QtDBus",
+		"/usr/include/KF6/KWindowSystem",
 		"/usr/include",
 		"/usr/include/c++/16",
 		"/usr/include/c++/16/x86_64-pc-linux-gnu",
@@ -137,7 +197,22 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/controlcenter/SystemHardwareController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/corners/HotCornersController.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/shell/dock/DockController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/launchpad/LaunchpadController.cpp",
 			"MU",
 			null
 		],
@@ -153,7 +228,37 @@
 			null
 		],
 		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/missioncontrol/MissionControlController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationModel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/notifications/NotificationServer.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/pedro/Proyectos/WhiteQuartz/src/shell/quicklook/QuickLookController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/services/QuartzServices.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/shortcuts/GlobalShortcuts.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pedro/Proyectos/WhiteQuartz/src/shell/sni/StatusNotifierWatcher.cpp",
 			"MU",
 			null
 		],

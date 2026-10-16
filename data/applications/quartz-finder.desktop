@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Finder
+GenericName=Gestor de Archivos
+Comment=Navegador y gestor de archivos nativo de QuartzDE
+Exec=quartz-finder %U
+Icon=system-file-manager
+Terminal=false
+Categories=System;FileManager;
+MimeType=inode/directory;
+StartupNotify=true

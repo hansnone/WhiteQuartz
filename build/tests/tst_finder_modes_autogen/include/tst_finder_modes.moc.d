@@ -1,5 +1,6 @@
 /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/include/tst_finder_modes.moc: /home/pedro/Proyectos/WhiteQuartz/tests/tst_finder_modes.cpp \
   /home/pedro/Proyectos/WhiteQuartz/build/tests/tst_finder_modes_autogen/moc_predefs.h \
+  /home/pedro/Proyectos/WhiteQuartz/src/finder/fileoperations.h \
   /home/pedro/Proyectos/WhiteQuartz/src/finder/findercolumnview.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -316,6 +317,7 @@
   /usr/include/qt6/QtCore/QEvent \
   /usr/include/qt6/QtCore/QFile \
   /usr/include/qt6/QtCore/QFileInfo \
+  /usr/include/qt6/QtCore/QFileSystemWatcher \
   /usr/include/qt6/QtCore/QList \
   /usr/include/qt6/QtCore/QMargins \
   /usr/include/qt6/QtCore/QMetaEnum \
@@ -323,7 +325,11 @@
   /usr/include/qt6/QtCore/QRect \
   /usr/include/qt6/QtCore/QSize \
   /usr/include/qt6/QtCore/QSizeF \
+  /usr/include/qt6/QtCore/QString \
+  /usr/include/qt6/QtCore/QStringList \
   /usr/include/qt6/QtCore/QTemporaryDir \
+  /usr/include/qt6/QtCore/QTimer \
+  /usr/include/qt6/QtCore/QUrl \
   /usr/include/qt6/QtCore/q17memory.h \
   /usr/include/qt6/QtCore/q20bit.h \
   /usr/include/qt6/QtCore/q20functional.h \
@@ -386,6 +392,7 @@
   /usr/include/qt6/QtCore/qfile.h \
   /usr/include/qt6/QtCore/qfiledevice.h \
   /usr/include/qt6/QtCore/qfileinfo.h \
+  /usr/include/qt6/QtCore/qfilesystemwatcher.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
   /usr/include/qt6/QtCore/qforeach.h \
@@ -468,6 +475,7 @@
   /usr/include/qt6/QtCore/qtextstream.h \
   /usr/include/qt6/QtCore/qtformat_impl.h \
   /usr/include/qt6/QtCore/qthread.h \
+  /usr/include/qt6/QtCore/qtimer.h \
   /usr/include/qt6/QtCore/qtimezone.h \
   /usr/include/qt6/QtCore/qtmetamacros.h \
   /usr/include/qt6/QtCore/qtnoop.h \
@@ -489,7 +497,10 @@
   /usr/include/qt6/QtCore/qxpfunctional.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \
+  /usr/include/qt6/QtGui/QColor \
   /usr/include/qt6/QtGui/QTransform \
+  /usr/include/qt6/QtGui/QUndoCommand \
+  /usr/include/qt6/QtGui/QUndoStack \
   /usr/include/qt6/QtGui/qaction.h \
   /usr/include/qt6/QtGui/qbitmap.h \
   /usr/include/qt6/QtGui/qbrush.h \
@@ -528,6 +539,7 @@
   /usr/include/qt6/QtGui/qtguiexports.h \
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
+  /usr/include/qt6/QtGui/qundostack.h \
   /usr/include/qt6/QtGui/qvalidator.h \
   /usr/include/qt6/QtGui/qvector2d.h \
   /usr/include/qt6/QtGui/qvector3d.h \
@@ -565,9 +577,11 @@
   /usr/include/qt6/QtWidgets/QScrollArea \
   /usr/include/qt6/QtWidgets/QSizePolicy \
   /usr/include/qt6/QtWidgets/QStackedWidget \
+  /usr/include/qt6/QtWidgets/QToolButton \
   /usr/include/qt6/QtWidgets/QTreeWidget \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
+  /usr/include/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
   /usr/include/qt6/QtWidgets/qabstractitemview.h \
   /usr/include/qt6/QtWidgets/qabstractscrollarea.h \
@@ -592,6 +606,7 @@
   /usr/include/qt6/QtWidgets/qtabbar.h \
   /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtestsupport_widgets.h \
+  /usr/include/qt6/QtWidgets/qtoolbutton.h \
   /usr/include/qt6/QtWidgets/qtreeview.h \
   /usr/include/qt6/QtWidgets/qtreewidget.h \
   /usr/include/qt6/QtWidgets/qtreewidgetitemiterator.h \

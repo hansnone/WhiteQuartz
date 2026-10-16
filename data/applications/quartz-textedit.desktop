@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=TextEdit
+GenericName=Editor de Texto
+Comment=Editor de texto plano y enriquecido de QuartzDE
+Exec=kate %U
+Icon=accessories-text-editor
+Terminal=false
+Categories=Utility;TextEditor;
+MimeType=text/plain;text/markdown;text/x-rust;text/x-c++src;application/json;
+StartupNotify=true
